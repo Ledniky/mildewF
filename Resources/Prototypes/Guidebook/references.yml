@@ -8,6 +8,7 @@
   - Drinks
   - EntityRecipes
   - FoodRecipes
+  - PlantNutrients #Persistence 14
   - Writing
   - Lawsets
 
@@ -136,9 +137,16 @@
   filterEnabled: True
 
 - type: guideEntry
+  id: PlantNutrients
+  name: guide-entry-plant-nutrients
+  text: "/ServerInfo/_Persistence14/Guidebook/ReferenceTables/PlantNutrients.xml"
+
+- type: guideEntry
   id: Writing
   name: guide-entry-writing
   text: "/ServerInfo/Guidebook/Writing.xml"
+  children:
+    - TextColors       # Persistence14 addition
 
 - type: guideEntry
   id: Lawsets

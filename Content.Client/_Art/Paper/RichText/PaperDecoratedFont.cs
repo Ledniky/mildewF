@@ -45,54 +45,65 @@ public sealed class PaperDecoratedFont : Font
         return _inner.GetCharMetrics(rune, scale, fallback);
     }
 
-	public override float DrawChar(
-		DrawingHandleBase handle,
-		Rune rune,
-		Vector2 baseline,
-		float scale,
-		Color color,
-		bool fallback = true)
-	{
-		var advance = _inner.DrawChar(handle, rune, baseline, scale, color, fallback);
-		if (advance <= 0 || _decorations == default)
-			return advance;
+    public override float DrawCharOutline(
+        DrawingHandleBase handle,
+        Rune rune,
+        Vector2 baseline,
+        float scale,
+        TextOutline outline,
+        bool fallback = true)
+    {
+        return _inner.DrawCharOutline(handle, rune, baseline, scale, outline, fallback);
+    }
 
-		var endX = baseline.X + advance;
+    public override float DrawChar(
+        DrawingHandleBase handle,
+        Rune rune,
+        Vector2 baseline,
+        float scale,
+        Color color,
+        bool fallback = true)
+    {
+        var advance = _inner.DrawChar(handle, rune, baseline, scale, color, fallback);
+        if (advance <= 0 || _decorations == default)
+            return advance;
 
-		var thickness = (int) MathF.Max(1f, MathF.Round(_inner.GetAscent(scale) * 0.08f));
+        var endX = baseline.X + advance;
 
-		if (_decorations.Strikethrough)
-		{
-			var y = MathF.Round(baseline.Y - _inner.GetAscent(scale) * 0.35f);
-			DrawThickLine(handle, baseline.X, endX, y, thickness, color);
-		}
+        var thickness = (int)MathF.Max(1f, MathF.Round(_inner.GetAscent(scale) * 0.08f));
 
-		if (_decorations.Underline)
-		{
-			var y = MathF.Round(baseline.Y + MathF.Max(1f, _inner.GetDescent(scale) * 0.5f));
-			DrawThickLine(handle, baseline.X, endX, y, thickness, color);
-		}
+        if (_decorations.Strikethrough)
+        {
+            var y = MathF.Round(baseline.Y - _inner.GetAscent(scale) * 0.35f);
+            DrawThickLine(handle, baseline.X, endX, y, thickness, color);
+        }
 
-		return advance;
-	}
+        if (_decorations.Underline)
+        {
+            var y = MathF.Round(baseline.Y + MathF.Max(1f, _inner.GetDescent(scale) * 0.5f));
+            DrawThickLine(handle, baseline.X, endX, y, thickness, color);
+        }
 
-	private static void DrawThickLine(
-		DrawingHandleBase handle,
-		float startX,
-		float endX,
-		float y,
-		int thickness,
-		Color color)
-	{
-		for (var i = 0; i < thickness; i++)
-		{
-			var offset = i - (thickness - 1) / 2f;
-			handle.DrawLine(
-				new Vector2(startX, y + offset),
-				new Vector2(endX, y + offset),
-				color);
-		}
-	}
+        return advance;
+    }
+
+    private static void DrawThickLine(
+        DrawingHandleBase handle,
+        float startX,
+        float endX,
+        float y,
+        int thickness,
+        Color color)
+    {
+        for (var i = 0; i < thickness; i++)
+        {
+            var offset = i - (thickness - 1) / 2f;
+            handle.DrawLine(
+                new Vector2(startX, y + offset),
+                new Vector2(endX, y + offset),
+                color);
+        }
+    }
 }
 
 public static class PaperDecorationTagHelper

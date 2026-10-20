@@ -23,15 +23,17 @@ namespace Content.Client.Paper.UI
     public sealed partial class PaperWindow : BaseWindow
     {
         private string _currentRawText = string.Empty;
-        [Dependency] private readonly IInputManager _inputManager = default!;
-        [Dependency] private readonly IResourceCache _resCache = default!;
+        [Dependency] private IInputManager _inputManager = default!;
+        [Dependency] private IResourceCache _resCache = default!;
 		[Dependency] private IFileDialogManager _fileDialogs = default!; // Art-edit
 		
         private bool _imageDialogOpen; // Art-edit
 
         private static readonly Color DefaultTextColor = new(25, 25, 25);
 
-        // <summary>
+        // Default color for text which hasn't been changed using markup
+        private Color _writtenTextColor = DefaultTextColor;
+
         // Size of resize handles around the paper
         private const int DRAG_MARGIN_SIZE = 16;
 
@@ -123,10 +125,6 @@ namespace Content.Client.Paper.UI
 
             SaveButton.Text = Loc.GetString("paper-ui-save-button",
                 ("keybind", _inputManager.GetKeyFunctionButtonString(EngineKeyFunctions.MultilineTextSubmit)));
-
-            for (var p = 10; p <= 100; p += 10)
-                ImageScaleSelector.AddItem(Loc.GetString("paper-ui-insert-image-scale", ("percent", p)));
-            ImageScaleSelector.SelectId(4);
         }
 
         /// <summary>
@@ -185,7 +183,7 @@ namespace Content.Client.Paper.UI
                     visuals.FooterMargin.Right, visuals.FooterMargin.Bottom);
 
             PaperContent.ModulateSelfOverride = visuals.ContentImageModulate;
-            FillStatus.ModulateSelfOverride = visuals.FontAccentColor;
+            _writtenTextColor = visuals.DefaultTextColor ?? DefaultTextColor;
 
             var contentImage = visuals.ContentImagePath != null ? _resCache.GetResource<TextureResource>(visuals.ContentImagePath) : null;
             if (contentImage != null)
@@ -312,7 +310,7 @@ namespace Content.Client.Paper.UI
 
             var fm = new FormattedMessage();
             fm.AddMarkupPermissive(state.Text);
-            WrittenTextLabel.SetMessage(fm, _allowedTags, DefaultTextColor);
+            WrittenTextLabel.SetMessage(fm, _allowedTags, _writtenTextColor);
 			// Art-start
 			WrittenContent.Visible = state.Text.Length > 0;
 			RebuildWrittenContent(state.Text, state.StampedBy.Count > 0);
@@ -433,8 +431,7 @@ namespace Content.Client.Paper.UI
             }
 
             var maxChars = GetRemainingInputChars();
-            var fillPercent = (ImageScaleSelector.SelectedId + 1) * 10; // Art-edit
-            if (!PaperPixelArtImporter.TryImport(file, GetRemainingInputChars(), fillPercent, out var markup, out var error)) // Art-edit
+            if (!PaperPixelArtImporter.TryImport(file, maxChars, 100, out var markup, out var error))
             {
                 FillStatus.Text = Loc.GetString(error switch
                 {

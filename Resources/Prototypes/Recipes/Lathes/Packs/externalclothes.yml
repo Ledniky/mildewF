@@ -2,19 +2,25 @@
   id: Hardsuits
   recipes:
   - Spationautsuit
+  - Donknautsuit
   - EVAsuit
   - EVAsuitHelmet
   - Engineeringsuit
+  - WaffleCoEngisuit
+  - Atmossuit
+  - WaffleCoAtmossuit
+  - AtmosFireSuit
+  - AtmosFireHelmet
   - Miningsuit
+  - DonkMicrowaveSuit
   - Luxuryminingsuit
   - Researchdirectorsuit
   - Chiefengineersuit
+  - WaffleCoElitesuit
   - Captainsuit
   - ClothingHandsGlovesCaptain
-  # add atmos suit
-  - Atmossuit
-  - SuitAtmosFire  
-  - HelmetAtmosFire
+  - ExtendedEmergencyOxygenTank
+  - ExtendedEmergencyNitrogenTank
 
 - type: latheRecipePack
   id: SecurityHardsuits
@@ -28,3 +34,4 @@
   id: MedicalHardsuits
   recipes:
   - Chiefmedicalsuit
+  - Paramedsuit

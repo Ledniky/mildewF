@@ -6,8 +6,10 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Fluids;
 using Content.Shared.Fluids.Components;
+using Content.Shared.Gravity; // Persistence: Prevent footprints in zero G
 using Content.Shared.Inventory;
 using Content.Shared.Standing;
+using Content.Shared.Maps; // Persistence: Prevent footprints on space tiles (lattice)
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -17,15 +19,16 @@ using Robust.Shared.Random;
 
 namespace Content.Server._Funkystation.Footprints;
 
-public sealed class FootprintSystem : EntitySystem
+public sealed partial class FootprintSystem : EntitySystem
 {
-    [Dependency] private readonly TransformSystem _transform = null!;
-    [Dependency] private readonly SharedMapSystem _map = null!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = null!;
-    [Dependency] private readonly SharedPuddleSystem _puddle = null!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = null!;
-    [Dependency] private readonly IRobustRandom _random = null!;
-    [Dependency] private readonly InventorySystem _inventory = null!;
+    [Dependency] private TransformSystem _transform = null!;
+    [Dependency] private SharedMapSystem _map = null!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainer = null!;
+    [Dependency] private SharedPuddleSystem _puddle = null!;
+    [Dependency] private IRobustRandom _random = null!;
+    [Dependency] private InventorySystem _inventory = null!;
+
+    [Dependency] private TurfSystem _turf = default!; // Persistence: Prevent footprints on space tiles (lattice)
 
     private static readonly FixedPoint2 MaxVolumePerTile = 50;
     private static readonly EntProtoId FootprintEntityId = "Footprint";
@@ -50,10 +53,10 @@ public sealed class FootprintSystem : EntitySystem
         SubscribeLocalEvent<PuddleComponent, MapInitEvent>(OnPuddleInit);
 
         // Listen for chemical changes (like Space Cleaner)
-        SubscribeLocalEvent<FootprintComponent, SolutionContainerChangedEvent>(OnSolutionChanged);
+        SubscribeLocalEvent<FootprintComponent, SolutionChangedEvent>(OnSolutionChanged);
     }
 
-    private void OnSolutionChanged(EntityUid uid, FootprintComponent component, ref SolutionContainerChangedEvent args)
+    private void OnSolutionChanged(EntityUid uid, FootprintComponent component, ref SolutionChangedEvent args)
     {
         UpdatePrintColors(uid, component);
     }
@@ -63,7 +66,7 @@ public sealed class FootprintSystem : EntitySystem
         if (!_solutionContainer.TryGetSolution(uid, PrintSolutionName, out var solution, out _))
             return;
 
-        var newBaseColor = solution.Value.Comp.Solution.GetColor(_prototypeManager);
+        var newBaseColor = solution.Value.Comp.Solution.GetColor(ProtoMan);
 
         for (var i = 0; i < component.Prints.Count; i++)
         {
@@ -87,6 +90,11 @@ public sealed class FootprintSystem : EntitySystem
         if (HasComp<NoFootprintsComponent>(uid))
             return;
 
+        // Persistence: Footprints shouldn't form when there's no gravity
+        if (TryComp<GravityAffectedComponent>(uid, out var gravityAffected) &&
+            gravityAffected.Weightless)
+            return;
+
         if (_inventory.TryGetSlotEntity(uid, "shoes", out var shoes) && HasComp<NoFootprintsComponent>(shoes))
             return;
 
@@ -108,6 +116,11 @@ public sealed class FootprintSystem : EntitySystem
 
         var xform = Transform(uid);
         if (xform.GridUid is not { } gridUid || !TryComp<MapGridComponent>(gridUid, out var grid))
+            return;
+
+        // Persistence: Prevent footprints on space tiles (lattice)
+        var tileRef = _map.GetTileRef(gridUid, grid, args.Component.Coordinates);
+        if (tileRef.Tile.IsEmpty || _turf.IsSpace(tileRef))
             return;
 
         var oldLocal = _map.WorldToLocal(gridUid, grid, prevPos);
@@ -145,14 +158,14 @@ public sealed class FootprintSystem : EntitySystem
 
         var maxStorage = isStanding ? component.MaxFootVolume : component.MaxBodyVolume;
 
-        if (!_solutionContainer.EnsureSolutionEntity(uid, PrintSolutionName, out _, out var ownerSolution, FixedPoint2.Max(component.MaxFootVolume, component.MaxBodyVolume)))
-            return false;
+        _solutionContainer.EnsureSolution(uid, PrintSolutionName, out var ownerSolution);
+        ownerSolution.Comp.Solution.MaxVolume = FixedPoint2.Max(component.MaxFootVolume, component.MaxBodyVolume);
 
-        var amountToWash = CalculateTransferVolume(component, ownerSolution.Value, isStanding);
-        _solutionContainer.TryTransferSolution(puddleSolution.Value, ownerSolution.Value.Comp.Solution, amountToWash);
+        var amountToWash = CalculateTransferVolume(component, ownerSolution, isStanding);
+        _solutionContainer.TryTransferSolution(puddleSolution.Value, ownerSolution.Comp.Solution, amountToWash);
 
-        var spaceLeft = FixedPoint2.Max(0, maxStorage - ownerSolution.Value.Comp.Solution.Volume);
-        _solutionContainer.TryTransferSolution(ownerSolution.Value, puddleSolution.Value.Comp.Solution, spaceLeft);
+        var spaceLeft = FixedPoint2.Max(0, maxStorage - ownerSolution.Comp.Solution.Volume);
+        _solutionContainer.TryTransferSolution(ownerSolution, puddleSolution.Value.Comp.Solution, spaceLeft);
 
         _solutionContainer.UpdateChemicals(puddleSolution.Value, false);
         return true;
@@ -173,18 +186,19 @@ public sealed class FootprintSystem : EntitySystem
             printComp = Comp<FootprintComponent>(printUid);
         }
 
-        if (!_solutionContainer.EnsureSolutionEntity(printUid, PrintSolutionName, out _, out var printSolution, MaxVolumePerTile))
-            return;
+        _solutionContainer.EnsureSolution(printUid, PrintSolutionName, out var printSolution);
+        printSolution.Comp.Solution.MaxVolume = MaxVolumePerTile;
+
 
         var maxVol = isStanding ? component.MaxFootprintVolume : component.MaxBodyprintVolume;
-        var alpha = (float)transferAmount / maxVol * 0.9f;
-        var color = ownerSolution.Value.Comp.Solution.GetColor(_prototypeManager).WithAlpha(alpha);
+        var alpha = (float)transferAmount / maxVol / 0.9f; // Persistence: 2f < 0.9f
+        var color = ownerSolution.Value.Comp.Solution.GetColor(ProtoMan).WithAlpha(alpha);
 
-        _solutionContainer.TryTransferSolution(printSolution.Value, ownerSolution.Value.Comp.Solution, transferAmount);
+        _solutionContainer.TryTransferSolution(printSolution, ownerSolution.Value.Comp.Solution, transferAmount);
 
-        if (printSolution.Value.Comp.Solution.Volume >= MaxVolumePerTile)
+        if (printSolution.Comp.Solution.Volume >= MaxVolumePerTile)
         {
-            var solClone = printSolution.Value.Comp.Solution.Clone();
+            var solClone = printSolution.Comp.Solution.Clone();
             QueueDel(printUid);
             _puddle.TrySpillAt(coords, solClone, out _, false);
             return;

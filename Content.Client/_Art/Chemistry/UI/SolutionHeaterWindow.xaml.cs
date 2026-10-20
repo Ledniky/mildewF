@@ -82,9 +82,11 @@ public sealed partial class SolutionHeaterWindow : FancyWindow
 
         foreach (var (reagentId, quantity) in info.Reagents)
         {
-            var reagentName = _prototypeManager.TryIndex(reagentId.Prototype, out ReagentPrototype? proto)
-                ? proto.LocalizedName
-                : reagentId.Prototype;
+            string reagentName;
+            if (_prototypeManager.TryIndex(reagentId.Prototype, out ReagentPrototype? proto))
+                reagentName = proto.LocalizedName;
+            else
+                reagentName = reagentId.Prototype;
 
             ContainerInfo.Children.Add(new Label
             {

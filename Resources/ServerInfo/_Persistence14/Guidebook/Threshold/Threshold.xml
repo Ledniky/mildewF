@@ -1,25 +1,23 @@
-<Document>  
-  # Порог  
-  Это руководство объяснит Порог — регион космоса, в котором вы сейчас находитесь.  
-  
-  ## Основы  
-  Порог — регион космоса, ранее недоступный из-за аномальных физических свойств, изолировавших его от остальной галактики.  
-  Nanotrasen совместно с базирующимся на Земле Солнечным легионом и Вокс разработала новые технологии, позволившие отправить колонистов в Порог.  
-  
-  Вы — один из таких колонистов.  
-  
-  ## Подробности  
-  В Порог трудно попасть, но невозможно выбраться.  
-  Если лететь на корабле в любом направлении достаточно долго, вы в конце концов упрётесь в барьер и будете оттолкнуты обратно к центру.  
-  Пока колонисты Порога не найдут способ расширить или отключить барьер, они заперты в пузыре пространства.  
-  Когда вам нужно поспать, вернитесь в криокамеру, из которой вы прибыли, и вы сможете безопасно отдохнуть в крио-хранилище.  
-  
-  Спасательный шаттл в ближайшее время не прилетит. Вам нужно найти способ жить здесь вместе с другими колонистами, поддерживая достаточно энергии, воздуха, еды и воды для выживания всех.  
-  
-  ## Независимость и взаимозависимость  
-  Как колонист в Пороге вы не обязаны работать только на Nanotrasen или Солнечный легион.  
-  
-  Торговые станции расположены слишком далеко друг от друга, чтобы одна организация могла эффективно управлять ими всеми, поэтому устройства создания фракций были распределены по Порогу.  
-  Фракции можно создавать для организации колонистов в группы — от небольших предприятий и экипажей шаттлов до крупных организаций, способных управлять полноразмерными космическими станциями.  
-  Колонисты могут свободно сотрудничать с несколькими фракциями одновременно.  
+<Document>
+  # Welcome to Persistence SS14!
+
+  ## The Basics
+
+  In Persistence SS14 the game world and characters are saved and loaded and so the round never ends; nothing is ever reset and the world is built up continously.
+
+  These guidebook entries will teach you how to get started in Persistence SS14 and the important mechanics to have an enjoyable and successful time.
+
+  ## Getting Started
+  A jobs desk will be nearby the starting cryogenic storage which can help you find an assignment with the station or an independent faction.
+  You can always change your assignment, join a faction or start an independent crew later once you have the necessary equipment and money.
+
+  Your character has access to exclusive rumors and rumored imports which makes you a valuable member of any crew. Completing rumors is important for characters to become wealthy and powerful.
+
+  ## Access your Job Network Implant
+ The Job Network is used to manage assignment, insights, rumors and more. Using the Job Network is key to managing your character and understanding the game world.
+  <Box>
+    <GuideEntityEmbed Entity="ReinforcementRadioSyndicateNukeops" Caption="Open Job Network"/>
+  </Box>
+  The Job Network is opened using an action with this icon.
 </Document>
+

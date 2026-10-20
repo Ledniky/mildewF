@@ -12,6 +12,7 @@ namespace Content.Client.Cargo.UI;
 [GenerateTypedNameReferences]
 public sealed partial class BountyEntry : BoxContainer
 {
+    [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     public Action? OnLabelButtonPressed;
@@ -31,29 +32,24 @@ public sealed partial class BountyEntry : BoxContainer
             return;
         IdLabel.SetMarkup(Loc.GetString("bounty-console-id-label", ("id", bounty.Id)));
         var items = new List<string>();
-        foreach (var entry in bountyPrototype.Entries)
+        foreach (var entry in bountyPrototype.Condition.GetManifestEntry(_entityManager, _prototype))
         {
-            items.Add(Loc.GetString("bounty-console-manifest-entry",
-                ("amount", entry.Amount),
-                ("item", Loc.GetString(entry.Name))));
+            items.Add(entry);
         }
         ManifestLabel.SetMarkup(Loc.GetString("bounty-console-manifest-label", ("item", string.Join(", ", items))));
-        if (bountyPrototype.BountyType == BountyType.PayOnComplete)
-        {
-            RewardLabel.SetMarkup(Loc.GetString("bounty-console-reward-label", ("reward", bountyPrototype.Reward)));
-            DescriptionLabel.SetMarkup(Loc.GetString("bounty-console-description-label", ("description", Loc.GetString(bountyPrototype.Description))));
-            LevelBar.Visible = false;
-
-        }
-        if (bountyPrototype.BountyType == BountyType.PayPer || bountyPrototype.BountyType == BountyType.PayPerReagent || bountyPrototype.BountyType == BountyType.PayPerGas)
-        {
-            LevelBar.Visible = true;
-            RewardLabel.SetMarkup($"Price Per Unit: [color=limegreen]${bountyPrototype.Reward}[/color]");
-            var entry = bountyPrototype.Entries.FirstOrDefault();
-            LevelBar.MaxValue = entry.Amount;
-            LevelBar.Value = bounty.AmountCompleted;
-            LevelBarText.Text = $"{bounty.AmountCompleted} / {entry.Amount}";
-        }
+        DescriptionLabel.SetMarkup(Loc.GetString("bounty-console-description-label", ("description", Loc.GetString(bountyPrototype.Description))));
+        LevelBar.Visible = true;
+        var calculatedReward = bountyPrototype.Reward * bounty.PriceMultiplier;
+        var hasPricePer = bountyPrototype.Condition.TryGetPricePer(calculatedReward, out var pricePer, out var unitName);
+        RewardLabel.SetMarkup(Loc.GetString("bounty-total-value",
+            ("reward", calculatedReward.ToString("F2")),
+            ("hasPricePer", hasPricePer),
+            ("pricePer", pricePer.ToString("F2")),
+            ("unit", unitName ?? "")
+            ));
+        LevelBar.MaxValue = 1f;
+        LevelBar.Value = bounty.PercentCompleted;
+        LevelBarText.Text = $"{bounty.PercentCompleted:P2}";
         PrintButton.OnPressed += _ => OnLabelButtonPressed?.Invoke();
     }
 }

@@ -22,9 +22,9 @@
   - type: WashingMachine
     washTime: 60
     cooldown: 10
-    bluntDamagePerSecond: 6
-    selfDamagePerSecond: 6
-    waterSprayAmount: 150
+    bluntDamagePerSecond: 1
+    selfDamagePerSecond: 1
+    waterSprayAmount: 15
     washLoopSound:
       path: /Audio/_Funkystation/Machines/washing_loop.ogg
       params:
@@ -71,8 +71,9 @@
     graph: Machine
     node: machine
     containers: [machine_parts, machine_board, entity_storage]
-  - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
+  - type: Damageable
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:
@@ -88,3 +89,6 @@
         node: machineFrame
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: Upgradeable
+    upgrades:
+      EntityStorageCapacityMarine : 0
