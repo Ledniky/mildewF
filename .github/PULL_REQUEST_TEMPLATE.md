@@ -33,7 +33,6 @@ Small fixes/refactors are exempt. Media may be used in SS14 progress reports wit
 - [ ] I have added media to this PR or it does not require an in-game showcase.
 <!-- You should understand that not following the above may get your PR closed at maintainer’s discretion -->
 
-<<<<<<< HEAD
 ## Fork checklist (hakumai / ss14-art)
 <!-- See AGENTS.md and .agents/rules/. Place an X in the brackets. -->
 - [ ] New fork systems/components/files are in `_Art` folders, not in upstream files.
@@ -42,13 +41,6 @@ Small fixes/refactors are exempt. Media may be used in SS14 progress reports wit
 - [ ] Player interactions are predicted (logic in `Content.Shared`), replicated state is `Dirty`'d, and entities in network messages/state use `NetEntity`.
 - [ ] Every player-facing string is localized (`fork-`-prefixed keys in `Resources/Locale/en-US/_Art/*.ftl`, `{Loc ...}` in XAML, locale keys for entity `name`/`description`).
 - [ ] Upstream diff is minimal (prefer subscribing from `_Art` over editing upstream systems).
-=======
-## Disclaimers
-<!-- Per contribution guidelines, all contributions which use AI must disclose that use. Mark which section(s) best describe the use of AI in this PR. If AI was not used, this section may be skipped -->
-- [ ] AI was used to aid in brainstorming, testing, or debugging of systems within this PR
-- [ ] AI developed assets are included as parts of this PR. These assets are identified as AI developed in the file and are listed below:
-    - <!-- Add any AI generated file names here. --> 
->>>>>>> persi/server-us
 
 ## Breaking changes
 <!-- List any breaking changes, including namespaces, public class/method/field changes, prototype renames; and provide instructions for fixing them.
