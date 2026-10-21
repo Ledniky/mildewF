@@ -1,12 +1,6 @@
 blank_issues_enabled: false
 
 contact_links:
-<<<<<<< HEAD
   - name: Вопросы?
-    url: https://github.com/ReWAFFlution
-    about: Все вопросы можно задать в личные сообщения по дискорду rewafflution .
-=======
-- name: Discord
-  url: https://discord.gg/g5hcqjt2c
-  about: Always feel free to ask questions or discuss ideas with us over on discord!
->>>>>>> persi/server-us
+    url: https://github.com/Odleer
+    about: Все вопросы можно задать в личные сообщения по дискорду odlieerr.
