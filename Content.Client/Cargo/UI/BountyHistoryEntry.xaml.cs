@@ -11,6 +11,7 @@ namespace Content.Client.Cargo.UI;
 public sealed partial class BountyHistoryEntry : BoxContainer
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
 
     public BountyHistoryEntry(CargoBountyHistoryData bounty)
     {
@@ -21,15 +22,14 @@ public sealed partial class BountyHistoryEntry : BoxContainer
             return;
 
         var items = new List<string>();
-        foreach (var entry in bountyPrototype.Entries)
+        foreach (var entry in bountyPrototype.Condition.GetManifestEntry(_entityManager, _prototype))
         {
-            items.Add(Loc.GetString("bounty-console-manifest-entry",
-                ("amount", entry.Amount),
-                ("item", Loc.GetString(entry.Name))));
+            items.Add(entry);
         }
 
         ManifestLabel.SetMarkup(Loc.GetString("bounty-console-manifest-label", ("item", string.Join(", ", items))));
-        RewardLabel.SetMarkup(Loc.GetString("bounty-console-reward-label", ("reward", bountyPrototype.Reward)));
+        var calculatedReward = bountyPrototype.Reward * bounty.PriceMult;
+        RewardLabel.SetMarkup(Loc.GetString("bounty-console-reward-label", ("reward", calculatedReward)));
         IdLabel.SetMarkup(Loc.GetString("bounty-console-id-label", ("id", bounty.Id)));
 
         TimestampLabel.SetMarkup(bounty.Timestamp.ToString(@"hh\:mm\:ss"));

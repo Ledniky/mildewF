@@ -23,19 +23,19 @@ using Content.Shared.Temperature.Components; // Triad
 
 namespace Content.Server.Atmos.EntitySystems;
 
-public sealed class HeatExchangerSystem : EntitySystem
+public sealed partial class HeatExchangerSystem : EntitySystem
 {
-    [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!; // Triad
-    [Dependency] private readonly SharedAudioSystem _audio = default!; // Triad
-    [Dependency] private readonly TemperatureSystem _temperature = default!; // Triad
-    [Dependency] private readonly DamageableSystem _damageable = default!; // Triad
-    [Dependency] private readonly IPrototypeManager _proto = default!; // Triad
-    [Dependency] private readonly IRobustRandom _random = default!; // Triad
-    [Dependency] private readonly SharedPointLightSystem _pointLight = default!; // Triad
+    [Dependency] private AtmosphereSystem _atmosphereSystem = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private NodeContainerSystem _nodeContainer = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!; // Triad
+    [Dependency] private SharedAudioSystem _audio = default!; // Triad
+    [Dependency] private TemperatureSystem _temperature = default!; // Triad
+    [Dependency] private DamageableSystem _damageable = default!; // Triad
+    [Dependency] private IPrototypeManager _proto = default!; // Triad
+    [Dependency] private IRobustRandom _random = default!; // Triad
+    [Dependency] private SharedPointLightSystem _pointLight = default!; // Triad
 
     // Triad: bucket boundaries (K), index i is the floor of bucket i+1 in
     // RadiatorThermalBucket order. The real incandescence ladder, no
@@ -58,6 +58,8 @@ public sealed class HeatExchangerSystem : EntitySystem
 
     // Triad: odds that a bucket transition actually creaks.
     private const float CreakChance = 0.25f;
+
+	private static readonly ProtoId<DamageTypePrototype> StructuralDamage = "Structural"; // Triad
 
     private bool _overheatDamage; // Triad
 
@@ -349,10 +351,10 @@ public sealed class HeatExchangerSystem : EntitySystem
                 continue;
             }
 
-            var dT = comp.BodyTemperature - temp.CurrentTemperature;
+            var dT = comp.BodyTemperature - temp.Temperature;
             var dE = comp.ContactConductance * dT * dt;
-            _temperature.ChangeHeat(mob, dE, false, temp);
-            comp.BodyTemperature -= dE / comp.BodyHeatCapacity;
+            var applied = _temperature.ChangeHeat((mob, temp), dE, ignoreHeatResistance: false);
+            comp.BodyTemperature -= applied / comp.BodyHeatCapacity;
         }
     }
 
@@ -365,8 +367,8 @@ public sealed class HeatExchangerSystem : EntitySystem
         if (!_overheatDamage || comp.Bucket < RadiatorThermalBucket.White)
             return;
 
-        var damage = new DamageSpecifier(_proto.Index<DamageTypePrototype>("Structural"),
-            comp.OverheatDamagePerSecond * dt);
+		var damage = new DamageSpecifier(_proto.Index(StructuralDamage),
+			comp.OverheatDamagePerSecond * dt);
         _damageable.TryChangeDamage(uid, damage, ignoreResistances: true);
     }
 

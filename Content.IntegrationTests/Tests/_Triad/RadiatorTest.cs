@@ -13,7 +13,6 @@ using Content.Shared._Triad.CCVar;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Maths;
-using Content.Server.Atmos.Components;
 using Content.Shared.Damage.Systems;
 
 namespace Content.IntegrationTests.Tests._Triad;

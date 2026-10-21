@@ -1,16 +1,20 @@
-<Document>  
-  # Смерть и что будет дальше  
-  Это руководство объяснит смерть в Пороге и что с ней делать.  
-  
-  ## Почему не стоит умирать?  
-  Выживание невероятно важно в Пороге! Клонирование здесь редкость, и многие погибшие никогда не будут возвращены к жизни.  
-  Как только сознание покидает тело, оно становится мозгово-мёртвым и не поддаётся восстановлению. Каждый раз, умирая, вы рискуете исчезнуть навсегда.  
-  Не умирайте!  
-  
-  ## Я мёртв, что делать?  
-  Когда вы умираете в Пороге, вживлённый нами имплантат удерживает ваше сознание на самом краю небытия. Не волнуйтесь, это не больно!  
-  Пребывание в этом полумёртвом состоянии предотвращает разложение тела. Даже если вы остаётесь мёртвым неделями или месяцами, опытный врач Порога всё ещё сможет вас реанимировать.  
-  
-  Однако в качестве меры безопасности, чтобы вы не оказались заперты вечно между жизнью и смертью, вы сможете активировать аварийный механизм и освободить своё сознание.  
-  После этого вы умрёте навсегда без шанса на восстановление. Настоятельно рекомендуем ждать спасения как можно дольше.  
+<Document>
+  # Death
+  This guide will explain death in Persistence and what you can do about it.
+
+  Characters in Persistence are typically recoverable and so a dead character usually has two options:
+
+  ## Death SOS
+    Using the "Death Network" action you can open a menu where you can emit a death SOS.
+    This broadcasts a radio globally which contains the coordinates of your body.
+
+    Typically you can be swiftly recovered by a medical department and revived even after a prolonged period of rotting.
+
+  ## Accept Death
+    Using the "Death Network" action you can open a menu where you can accept death.
+    A character that accepts death will be permanently killed and cannot be recreated.
+
+    You will be returned to the lobby to create a new character.
+
 </Document>
+

@@ -17,15 +17,15 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.Chemistry.EntitySystems;
 
-public sealed class SolutionHeaterSystem : EntitySystem
+public sealed partial class SolutionHeaterSystem : EntitySystem
 {
-    [Dependency] private readonly PowerReceiverSystem _powerReceiver = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private PowerReceiverSystem _powerReceiver = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private UserInterfaceSystem _userInterface = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -174,19 +174,16 @@ public sealed class SolutionHeaterSystem : EntitySystem
         placedEntity = EntityUid.Invalid;
         solution = default;
 
-        foreach (var candidate in entity.Comp.PlacedEntities)
-        {
-            if (!TryComp<SolutionContainerManagerComponent>(candidate, out var container))
-                continue;
+		foreach (var candidate in entity.Comp.PlacedEntities)
+		{
+			var firstSolution = _solutionContainer.EnumerateSolutions(candidate).FirstOrDefault();
+			if (firstSolution.Solution.Owner == default)
+				continue;
 
-            var firstSolution = _solutionContainer.EnumerateSolutions((candidate, container)).FirstOrDefault();
-            if (firstSolution.Solution.Owner == default)
-                continue;
-
-            placedEntity = candidate;
-            solution = firstSolution.Solution;
-            return true;
-        }
+			placedEntity = candidate;
+			solution = firstSolution.Solution;
+			return true;
+		}
         return false;
     }
 
