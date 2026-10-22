@@ -1,20 +1,19 @@
 <Document>
-  # Death
-  This guide will explain death in Persistence and what you can do about it.
+  # Смерть
+  Это руководство объясняет смерть в Persistence и что вы можете с этим сделать.
 
-  Characters in Persistence are typically recoverable and so a dead character usually has two options:
+  Персонажи в Persistence обычно подлежат восстановлению, поэтому у мёртвого персонажа обычно есть два варианта:
 
-  ## Death SOS
-    Using the "Death Network" action you can open a menu where you can emit a death SOS.
-    This broadcasts a radio globally which contains the coordinates of your body.
+  ## SOS о смерти
+    Используя действие "Сеть смерти", вы можете открыть меню, где можно отправить SOS о смерти.
+    Это транслирует радиосигнал по всему миру, содержащий координаты вашего тела.
 
-    Typically you can be swiftly recovered by a medical department and revived even after a prolonged period of rotting.
+    Обычно вас могут быстро найти и оживить медицинский отдел даже после длительного периода разложения.
 
-  ## Accept Death
-    Using the "Death Network" action you can open a menu where you can accept death.
-    A character that accepts death will be permanently killed and cannot be recreated.
+  ## Принять смерть
+    Используя действие "Сеть смерти", вы можете открыть меню, где можно принять смерть.
+    Персонаж, принявший смерть, будет окончательно убит и не может быть воссоздан.
 
-    You will be returned to the lobby to create a new character.
+    Вы вернётесь в лобби, чтобы создать нового персонажа.
 
 </Document>
-

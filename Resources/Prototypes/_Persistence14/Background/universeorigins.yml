@@ -1,34 +1,34 @@
 - type: universeOrigin
   id: Zenith
-  name: Zenith Universe
-  description: "The Threshold in the Zenith Universe is controlled by the Solar Legion.\nColonists are brought into the Threshold by the Solar Legion and Nanotrasen.\n[italic]This is a suitable choice for characters from past Persistence 14 iterations."
+  name: Вселенная Зенит
+  description: "Порог во Вселенной Зенит контролируется Солнечным Легионом.\nКолонистов в Порог доставляют Солнечный Легион и Nanotrasen.\n[italic]Это подходящий выбор для персонажей из прошлых итераций Persistence 14."
   effects:
     - TraitOriginZenith
 
 - type: universeOrigin
   id: Green
-  name: Green Universe
-  description: "The Threshold in the Green Universe is controlled by Nanotrasen. \nNanotrasen pays people to enter the Threshold as colonists.\n[italic]This is a suitable choice for traditional SS14 characters."
+  name: Зелёная Вселенная
+  description: "Порог в Зелёной Вселенной контролируется Nanotrasen.\nNanotrasen платит людям, чтобы они вошли в Порог в качестве колонистов.\n[italic]Это подходящий выбор для традиционных персонажей SS14."
   effects:
     - TraitOriginGreen
 
 - type: universeOrigin
   id: Marine
-  name: Marine Universe
-  description: "The Threshold in the Marine Universe is contested between the United Nations and an endless hoard of hostile aliens.\nColonists are drawn into the Threshold to support the conflict.\n[italic]This is a suitable choice for RMC characters."
+  name: Вселенная Морпехов
+  description: "Порог во Вселенной Морпехов оспаривается между Объединёнными Нациями и бесконечной ордой враждебных пришельцев.\nКолонистов втягивают в Порог для поддержки конфликта.\n[italic]Это подходящий выбор для персонажей RMC."
   effects:
     - TraitOriginMarine
 
 - type: universeOrigin
   id: Precursor
-  name: Precursor Universe
-  description: "The Threshold in the Precursor Universe is controlled by a group of corporations which calls itself 'The Syndicate'.\nColonists are lured into the Threshold by the schemes of the Syndicate.\n[italic]This is a suitable choice for rougish characters."
+  name: Вселенная Предтеч
+  description: "Порог во Вселенной Предтеч контролируется группой корпораций, которая называет себя 'Синдикат'.\nКолонистов заманивают в Порог схемами Синдиката.\n[italic]Это подходящий выбор для плутоватых персонажей."
   effects:
     - TraitOriginPrecursor
 
 - type: universeOrigin
   id: Shadow
-  name: Shadow Universe
-  description: "The Threshold in the Shadow Universe is controlled by insipid, malevolent entities that manipulate mortals to do their bidding.\nColonists are tricked into entering the Threshold by the gambits of the Shadow Entities.\n[italic]This is an unusual origin."
+  name: Теневая Вселенная
+  description: "Порог в Теневой Вселенной контролируется безликими, злонамеренными сущностями, которые манипулируют смертными, чтобы те выполняли их волю.\nКолонистов обманом заставляют войти в Порог происками Теневых Сущностей.\n[italic]Это необычное происхождение."
   effects:
     - TraitOriginShadow

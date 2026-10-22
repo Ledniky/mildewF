@@ -37,12 +37,19 @@ public sealed partial class JobNetMenu : DefaultWindow
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
-        MasterTabContainer.SetTabTitle(0, "Job Network");
-        MasterTabContainer.SetTabTitle(1, "Insights");
-        MasterTabContainer.SetTabTitle(2, "Sector");
-        MasterTabContainer.SetTabTitle(3, "Upgrades");
-        MasterTabContainer.SetTabTitle(4, "Rumors");
-        MasterTabContainer.SetTabTitle(5, "Messages");
+        MasterTabContainer.SetTabTitle(0, Loc.GetString("job-net-menu-tab-job-network"));
+        MasterTabContainer.SetTabTitle(1, Loc.GetString("job-net-menu-tab-insights"));
+        MasterTabContainer.SetTabTitle(2, Loc.GetString("job-net-menu-tab-sector"));
+        MasterTabContainer.SetTabTitle(3, Loc.GetString("job-net-menu-tab-upgrades"));
+        MasterTabContainer.SetTabTitle(4, Loc.GetString("job-net-menu-tab-rumors"));
+        MasterTabContainer.SetTabTitle(5, Loc.GetString("job-net-menu-tab-messages"));
+
+        SectorTabContainer.SetTabTitle(0, Loc.GetString("job-net-menu-tab-status"));
+        SectorTabContainer.SetTabTitle(1, Loc.GetString("job-net-menu-tab-achievements"));
+
+        RumorTabContainer.SetTabTitle(0, Loc.GetString("job-net-menu-rumors-current"));
+        RumorTabContainer.SetTabTitle(1, Loc.GetString("job-net-menu-rumors-reputations"));
+        RumorTabContainer.SetTabTitle(2, Loc.GetString("job-net-menu-rumors-imports"));
     }
 
     public void UpdateState(JobNetUpdateState state)
@@ -67,8 +74,8 @@ public sealed partial class JobNetMenu : DefaultWindow
         var dependencies = IoCManager.Instance!;
         var localPlayer = dependencies.Resolve<IPlayerManager>().LocalEntity;
         PossibleJobs.Clear();
-        PossibleJobs.AddItem("Off Duty", 0);
-        RumorTaxLabel.Text = $"{state.RumorTax.ToString()}% of rumor money rewards paid to your employer.";
+        PossibleJobs.AddItem(Loc.GetString("job-net-menu-off-duty"), 0);
+        RumorTaxLabel.Text = Loc.GetString("job-net-menu-rumor-tax-desc", ("tax", state.RumorTax));
         SectorStatusLabel.Text = state.SectorStatus;
         if (state.Stations != null)
         {
@@ -89,7 +96,7 @@ public sealed partial class JobNetMenu : DefaultWindow
         }
         else
         {
-            CSLabel.Text = "Off Duty";
+            CSLabel.Text = Loc.GetString("job-net-menu-off-duty");
             AssignmentDetails.Visible = false;
         }
         if (state.Wage != null)
@@ -107,7 +114,7 @@ public sealed partial class JobNetMenu : DefaultWindow
         }
         else
         {
-            TimeLabel.Text = "Invalid";
+            TimeLabel.Text = Loc.GetString("job-net-menu-invalid");
         }
         CurrentObjectives.RemoveAllChildren();
         foreach (var objective in state.CurrentObjectives)
@@ -176,19 +183,19 @@ public sealed partial class JobNetMenu : DefaultWindow
                 _prototypeManager.Resolve(levelProto.Next, out nextLevelProto);
 
             CurrentLevelLabel.Text = levelProto.Name;
-            string levelDesc = $"Owned Tile Limit:[color=yellow]{levelProto.TileLimit}[/color]";
+            string levelDesc = Loc.GetString("job-net-menu-tile-limit", ("limit", levelProto.TileLimit));
             CurrentBenefitsLabel.SetMarkup(levelDesc);
             string nextLevelDesc;
             if (nextLevelProto == null)
             {
-                NextLevelLabel.Text = "Max Level Attained";
-                nextLevelDesc = "[color=green]Maximum Level Attained[/color]";
+                NextLevelLabel.Text = Loc.GetString("job-net-menu-max-level");
+                nextLevelDesc = Loc.GetString("job-net-menu-max-level-markup");
                 LevelPurchaseButton.Visible = false;
             }
             else
             {
                 NextLevelLabel.Text = nextLevelProto.Name;
-                nextLevelDesc = $"Owned Tile Limit:[color=green]{nextLevelProto.TileLimit}[/color]";
+                nextLevelDesc = Loc.GetString("job-net-menu-tile-limit-next", ("limit", nextLevelProto.TileLimit));
                 LevelPurchaseButton.Visible = true;
                 LevelPurchaseButton.Text = $"${nextLevelProto.Cost}";
             }
@@ -233,7 +240,7 @@ public sealed partial class JobNetMenu : DefaultWindow
             RewardCooldownLbl.Text = $"{state.RewardCooldown.Value.ToString("hh\\:mm\\:ss")}";
             UntilNextReward = state.RewardCooldown.Value;
         }
-        RumorLimitLbl.Text = $"{state.Rumors.Count.ToString()}/4 Available";
+        RumorLimitLbl.Text = Loc.GetString("job-net-menu-rumor-limit", ("count", state.Rumors.Count));
 
         ActiveConversations.RemoveAllChildren();
         if (state.DirectMessages != null && Owner != null)

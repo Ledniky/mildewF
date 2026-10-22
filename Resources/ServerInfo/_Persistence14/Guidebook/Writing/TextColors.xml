@@ -1,152 +1,152 @@
 <Document>
-  #Text Colors
+  #Цвета текста
 
-  This is quick cheat sheet for the colors that SS14 natively supports by name.
+  Это краткая шпаргалка по цветам, которые SS14 поддерживает по названию.
 
-  Transparent = [color=transparent]Transperent[/color] \n
-  Alice Blue = [color=aliceblue]AliceBlue[/color] \n
-  Antique White = [color=antiquewhite]AntiqueWhite[/color] \n
-  Aqua = [color=aqua]Aqua[/color] \n
-  Aquamarine = [color=aquamarine]Aquamarine[/color] \n
-  Azure = [color=azure]Azure[/color] \n
-  Beige = [color=beige]Beige[/color] \n
-  Better Violet = [color=betterviolet]BetterViolet[/color] \n
-  Bisque = [color=bisque]Bisque[/color] \n
-  Black = [color=black]Black[/color] \n
-  Blanched Almond = [color=blanchedalmond]BlanchedAlmond[/color] \n
-  Blue = [color=blue]Blue[/color] \n
-  Blue Violet = [color=blueviolet]BlueViolet[/color] \n
-  Brown = [color=brown]Brown[/color] \n
-  Burly Wood = [color=burlywood]BurlyWood[/color] \n
-  Cadet Blue = [color=cadetblue]CadetBlue[/color] \n
-  Chartreuse = [color=chartreuse]Chartreuse[/color] \n
-  Chocolate = [color=chocolate]Chocolate[/color] \n
-  Coral = [color=coral]Coral[/color] \n
-  Conrnflower Blue = [color=cornflowerblue]CornflowerBlue[/color] \n
-  Cornsilk = [color=cornsilk]Cornsilk[/color] \n
-  Crimson = [color=crimson]Crimson[/color] \n
-  Cyan = [color=cyan]Cyan[/color] \n
-  Dark Blue = [color=darkblue]DarkBlue[/color] \n
-  Dark Cyan = [color=darkcyan]DarkCyan[/color] \n
-  Dark Goldenrod = [color=darkgoldenrod]DarkGoldenrod[/color] \n
-  Dark Gray = [color=darkgray]DarkGray[/color] \n
-  Dark Green = [color=darkgreen]DarkGreen[/color] \n
-  Dark Khaki = [color=darkkhaki]DarkKhaki[/color] \n
-  Dark Magenta = [color=darkmagenta]DarkMagenta[/color] \n
-  Dark Olive Green = [color=darkolivegreen]DarkOliveGreen[/color] \n
-  Dark Orange = [color=darkorange]DarkOrange[/color] \n
-  Dark Orchid = [color=darkorchid]DarkOrchid[/color] \n
-  Dark Red = [color=darkred]DarkRed[/color] \n
-  Dark Salmon = [color=darksalmon]DarkSalmon[/color] \n
-  Dark Sea Green = [color=Darkseagreen]DarkSeaGreen[/color] \n
-  Dark Slate Blue = [color=darkslateblue]DarkSlateBlue[/color] \n
-  Dark Slate Gray = [color=darkslategray]DarkSlateGray[/color] \n
-  Dark Turquoise = [color=darkturquoise]DarkTurquoise[/color] \n
-  Dark Violet = [color=darkviolet]DarkViolet[/color] \n
-  Deep Pink = [color=deeppink]DeepPink[/color] \n
-  Deep Sky Blue = [color=deepskyblue]DeepSkyBlue[/color] \n
-  Dim Gray = [color=dimgray]DimGray[/color] \n
-  Dodger Blue = [color=dodgerblue]DodgerBlue[/color] \n
-  Firebrick = [color=firebrick]Firebrick[/color] \n
-  Floral White = [color=floralwhite]FloralWhite[/color] \n
-  Forest Green = [color=forestgreen]ForestGreen[/color] \n
-  Fuchsia = [color=fuchsia]Fuchsia[/color] \n
-  Gainsboro = [color=gainsboro]Gainsboro[/color] \n
-  Ghost White = [color=GhostWhite]GhostWhite[/color] \n
-  Gold = [color=gold]Gold[/color] \n
-  Goldenrod = [color=goldenrod]Goldenrod[/color] \n
-  Gray = [color=gray]Gray[/color] \n
-  Green = [color=green]Green[/color] \n
-  Green Yellow = [color=Greenyellow]GreenYellow[/color] \n
-  Honeydew = [color=honeydew]Honeydew[/color] \n
-  Hot Pink = [color=hotpink]HotPink[/color] \n
-  Indian Red = [color=indianred]IndianRed[/color] \n
-  Indigo = [color=indigo]Indigo[/color] \n
-  Ivory = [color=ivory]Ivory[/color] \n
-  Khaki = [color=khaki]Khaki[/color] \n
-  Lavender = [color=lavender]Lavender[/color] \n
-  Lavender Blush = [color=lavenderblush]LavenderBlush[/color] \n
-  Lawn Green = [color=lawngreen]LawnGreen[/color] \n
-  Lemon Chiffon = [color=lemonchiffon]LemonChiffon[/color] \n
-  Light Blue = [color=lightblue]LightBlue[/color] \n
-  Light Coral = [color=lightcoral]LightCoral[/color] \n
-  Light Cyan = [color=lightcyan]LightCyan[/color] \n
-  Light Goldenrod Yellow = [color=lightgoldenrodyellow]LightGoldenrodYellow[/color] \n
-  Light Green = [color=lightgreen]LightGreen[/color] \n
-  Light Gray = [color=lightgray]LightGray[/color] \n
-  Light Pink = [color=lightpink]LightPink[/color] \n
-  Light Salmon = [color=lightsalmon]LightSalmon[/color] \n
-  Light Sea Green = [color=lightseagreen]LightSeaGreen[/color] \n
-  Light Sky Blue = [color=lightskyblue]LightSkyBlue[/color] \n
-  Light Slate Gray = [color=lightslategray]LightSlateGray[/color] \n
-  Light Steel Blue = [color=lightsteelblue]LightSteelBlue[/color] \n
-  Light Yellow = [color=lightyellow]LightYellow[/color] \n
-  Lime = [color=lime]Lime[/color] \n
-  Lime Green = [color=limegreen]LimeGreen[/color] \n
-  Linen = [color=linen]Linen[/color] \n
-  Magenta = [color=magenta]Magenta[/color] \n
-  Maroon = [color=maroon]Maroon[/color] \n
-  Medium Aquamarine = [color=mediumaquamarine]MediumAquamarine[/color] \n
-  Medium Blue = [color=mediumblue]MediumBlue[/color] \n
-  Medium Orchid = [color=mediumorchid]MediumOrchid[/color] \n
-  Medium Purple = [color=mediumpurple]MediumPurple[/color] \n
-  Medium Sea Green = [color=mediumseagreen]MediumSeaGreen[/color] \n
-  Medium Slate Blue = [color=mediumslateblue]MediumSlateBlue[/color] \n
-  Medium Spring Green = [color=mediumspringgreen]MediumSpringGreen[/color] \n
-  Medium Turquoise = [color=mediumturquoise]MediumTurquoise[/color] \n
-  Medium Violet Red = [color=mediumvioletred]MediumVioletRed[/color] \n
-  Midnight Blue = [color=midnightblue]MidnightBlue[/color] \n
-  Mint Cream = [color=mintcream]MintCream[/color] \n
-  Misty Rose = [color=mistyrose]MistyRose[/color] \n
-  Moccasin = [color=moccasin]Moccasin[/color] \n
-  Navajo White = [color=navajowhite]NavajoWhite[/color] \n
-  Navy = [color=navy]Navy[/color] \n
-  Old Lace = [color=oldlace]OldLace[/color] \n
-  Olive = [color=olive]Olive[/color] \n
-  Olive Drab = [color=olivedrab]OliveDrab[/color] \n
-  Orange = [color=orange]Orange[/color] \n
-  Orange Red = [color=orangered]OrangeRed[/color] \n
-  Orchid = [color=orchid]Orchid[/color] \n
-  Pale Goldenrod = [color=palegoldenrod]PaleGoldenrod[/color] \n
-  Pale Green = [color=palegreen]PaleGreen[/color] \n
-  Pale Turquoise = [color=paleturquoise]PaleTurquoise[/color] \n
-  Pale Violet Red = [color=palevioletred]PaleVioletRed[/color] \n
-  Papaya Whip = [color=papayawhip]PapayaWhip[/color] \n
-  Peach Puff = [color=peachpuff]PeachPuff[/color] \n
-  Peru = [color=peru]Peru[/color] \n
-  Pink = [color=pink]Pink[/color] \n
-  Plum = [color=plum]Plum[/color] \n
-  Powder Blue = [color=powderblue]PowderBlue[/color] \n
-  Purple = [color=purple]Purple[/color] \n
-  Red = [color=red]Red[/color] \n
-  Rosy Brown = [color=rosybrown]RosyBrown[/color] \n
-  Royal Blue = [color=royalblue]RoyalBlue[/color] \n
-  Ruber = [color=ruber]Ruber[/color] \n
-  Saddle Brown = [color=saddlebrown]SaddleBrown[/color] \n
-  Salmon = [color=salmon]Salmon[/color] \n
-  Sandy Brown = [color=sandybrown]SandyBrown[/color] \n
-  Sea Blue = [color=seablue]SeaBlue[/color] \n
-  Sea Green = [color=seagreen]SeaGreen[/color] \n
-  Sea Shell = [color=seashell]SeaShell[/color] \n
-  Sienna = [color=sienna]Sienna[/color] \n
-  Silver = [color=silver]Silver[/color] \n
-  Sky Blue = [color=skyblue]SkyBlue[/color] \n
-  Slate Blue = [color=slateblue]SlateBlue[/color] \n
-  Slate Gray = [color=slategray]SlateGray[/color] \n
-  Snow = [color=snow]Snow[/color] \n
-  Spring Green = [color=springgreen]SpringGreen[/color] \n
-  Steel Blue = [color=steelblue]SteelBlue[/color] \n
-  Tan = [color=tan]Tan[/color] \n
-  Teal = [color=teal]Teal[/color] \n
-  Thistle = [color=thistle]Thistle[/color] \n
-  Tomato = [color=tomato]Tomato[/color] \n
-  Turquoise = [color=turquoise]Turquoise[/color] \n
-  Violet = [color=violet]Violet[/color] \n
-  Vivid Gamboge = [color=vividgamboge]VividGamboge[/color] \n
-  Wheat = [color=wheat]Wheat[/color] \n
-  White = [color=white]White[/color] \n
-  White Smoke = [color=whitesmoke]WhiteSmoke[/color] \n
-  Yellow = [color=yellow]Yellow[/color] \n
-  Yellow Green = [color=yellowgreen]YellowGreen[/color] \n
+  Прозрачный = [color=transparent]Прозрачный[/color] \n
+  Бледно-голубой (Alice Blue) = [color=aliceblue]AliceBlue[/color] \n
+  Антично-белый (Antique White) = [color=antiquewhite]AntiqueWhite[/color] \n
+  Аква = [color=aqua]Aqua[/color] \n
+  Аквамарин = [color=aquamarine]Aquamarine[/color] \n
+  Лазурный (Azure) = [color=azure]Azure[/color] \n
+  Бежевый = [color=beige]Beige[/color] \n
+  Улучшенный фиолетовый (Better Violet) = [color=betterviolet]BetterViolet[/color] \n
+  Бисквитный (Bisque) = [color=bisque]Bisque[/color] \n
+  Чёрный = [color=black]Black[/color] \n
+  Бланшированный миндаль (Blanched Almond) = [color=blanchedalmond]BlanchedAlmond[/color] \n
+  Синий = [color=blue]Blue[/color] \n
+  Сине-фиолетовый (Blue Violet) = [color=blueviolet]BlueViolet[/color] \n
+  Коричневый = [color=brown]Brown[/color] \n
+  Песочный (Burly Wood) = [color=burlywood]BurlyWood[/color] \n
+  Кадетский синий (Cadet Blue) = [color=cadetblue]CadetBlue[/color] \n
+  Шартрёз (Chartreuse) = [color=chartreuse]Chartreuse[/color] \n
+  Шоколадный = [color=chocolate]Chocolate[/color] \n
+  Коралловый = [color=coral]Coral[/color] \n
+  Васильковый (Cornflower Blue) = [color=cornflowerblue]CornflowerBlue[/color] \n
+  Кукурузный шёлк (Cornsilk) = [color=cornsilk]Cornsilk[/color] \n
+  Малиновый (Crimson) = [color=crimson]Crimson[/color] \n
+  Циан = [color=cyan]Cyan[/color] \n
+  Тёмно-синий = [color=darkblue]DarkBlue[/color] \n
+  Тёмно-циановый = [color=darkcyan]DarkCyan[/color] \n
+  Тёмный золотарник (Dark Goldenrod) = [color=darkgoldenrod]DarkGoldenrod[/color] \n
+  Тёмно-серый = [color=darkgray]DarkGray[/color] \n
+  Тёмно-зелёный = [color=darkgreen]DarkGreen[/color] \n
+  Тёмный хаки (Dark Khaki) = [color=darkkhaki]DarkKhaki[/color] \n
+  Тёмно-пурпурный = [color=darkmagenta]DarkMagenta[/color] \n
+  Тёмный оливково-зелёный (Dark Olive Green) = [color=darkolivegreen]DarkOliveGreen[/color] \n
+  Тёмно-оранжевый = [color=darkorange]DarkOrange[/color] \n
+  Тёмная орхидея (Dark Orchid) = [color=darkorchid]DarkOrchid[/color] \n
+  Тёмно-красный = [color=darkred]DarkRed[/color] \n
+  Тёмный лосось (Dark Salmon) = [color=darksalmon]DarkSalmon[/color] \n
+  Тёмный морской зелёный (Dark Sea Green) = [color=Darkseagreen]DarkSeaGreen[/color] \n
+  Тёмный аспидно-синий (Dark Slate Blue) = [color=darkslateblue]DarkSlateBlue[/color] \n
+  Тёмный аспидно-серый (Dark Slate Gray) = [color=darkslategray]DarkSlateGray[/color] \n
+  Тёмная бирюза (Dark Turquoise) = [color=darkturquoise]DarkTurquoise[/color] \n
+  Тёмно-фиолетовый = [color=darkviolet]DarkViolet[/color] \n
+  Глубокий розовый (Deep Pink) = [color=deeppink]DeepPink[/color] \n
+  Глубокий небесно-голубой (Deep Sky Blue) = [color=deepskyblue]DeepSkyBlue[/color] \n
+  Тускло-серый (Dim Gray) = [color=dimgray]DimGray[/color] \n
+  Доджер-синий (Dodger Blue) = [color=dodgerblue]DodgerBlue[/color] \n
+  Кирпичный (Firebrick) = [color=firebrick]Firebrick[/color] \n
+  Цветочно-белый (Floral White) = [color=floralwhite]FloralWhite[/color] \n
+  Лесной зелёный (Forest Green) = [color=forestgreen]ForestGreen[/color] \n
+  Фуксия = [color=fuchsia]Fuchsia[/color] \n
+  Гейнсборо (Gainsboro) = [color=gainsboro]Gainsboro[/color] \n
+  Призрачно-белый (Ghost White) = [color=GhostWhite]GhostWhite[/color] \n
+  Золотой = [color=gold]Gold[/color] \n
+  Золотарник (Goldenrod) = [color=goldenrod]Goldenrod[/color] \n
+  Серый = [color=gray]Gray[/color] \n
+  Зелёный = [color=green]Green[/color] \n
+  Зелёно-жёлтый (Green Yellow) = [color=Greenyellow]GreenYellow[/color] \n
+  Медвяная роса (Honeydew) = [color=honeydew]Honeydew[/color] \n
+  Ярко-розовый (Hot Pink) = [color=hotpink]HotPink[/color] \n
+  Индийский красный (Indian Red) = [color=indianred]IndianRed[/color] \n
+  Индиго = [color=indigo]Indigo[/color] \n
+  Слоновая кость (Ivory) = [color=ivory]Ivory[/color] \n
+  Хаки = [color=khaki]Khaki[/color] \n
+  Лавандовый = [color=lavender]Lavender[/color] \n
+  Лавандовый румянец (Lavender Blush) = [color=lavenderblush]LavenderBlush[/color] \n
+  Луговой зелёный (Lawn Green) = [color=lawngreen]LawnGreen[/color] \n
+  Лимонный шифон (Lemon Chiffon) = [color=lemonchiffon]LemonChiffon[/color] \n
+  Светло-голубой = [color=lightblue]LightBlue[/color] \n
+  Светло-коралловый = [color=lightcoral]LightCoral[/color] \n
+  Светло-циановый = [color=lightcyan]LightCyan[/color] \n
+  Светло-золотисто-жёлтый (Light Goldenrod Yellow) = [color=lightgoldenrodyellow]LightGoldenrodYellow[/color] \n
+  Светло-зелёный = [color=lightgreen]LightGreen[/color] \n
+  Светло-серый = [color=lightgray]LightGray[/color] \n
+  Светло-розовый = [color=lightpink]LightPink[/color] \n
+  Светлый лосось (Light Salmon) = [color=lightsalmon]LightSalmon[/color] \n
+  Светлый морской зелёный (Light Sea Green) = [color=lightseagreen]LightSeaGreen[/color] \n
+  Светлый небесно-голубой (Light Sky Blue) = [color=lightskyblue]LightSkyBlue[/color] \n
+  Светлый аспидно-серый (Light Slate Gray) = [color=lightslategray]LightSlateGray[/color] \n
+  Светлый стально-синий (Light Steel Blue) = [color=lightsteelblue]LightSteelBlue[/color] \n
+  Светло-жёлтый = [color=lightyellow]LightYellow[/color] \n
+  Лайм = [color=lime]Lime[/color] \n
+  Лаймово-зелёный (Lime Green) = [color=limegreen]LimeGreen[/color] \n
+  Льняной (Linen) = [color=linen]Linen[/color] \n
+  Пурпурный (Magenta) = [color=magenta]Magenta[/color] \n
+  Тёмно-бордовый (Maroon) = [color=maroon]Maroon[/color] \n
+  Средний аквамарин (Medium Aquamarine) = [color=mediumaquamarine]MediumAquamarine[/color] \n
+  Средний синий (Medium Blue) = [color=mediumblue]MediumBlue[/color] \n
+  Средняя орхидея (Medium Orchid) = [color=mediumorchid]MediumOrchid[/color] \n
+  Средний фиолетовый (Medium Purple) = [color=mediumpurple]MediumPurple[/color] \n
+  Средний морской зелёный (Medium Sea Green) = [color=mediumseagreen]MediumSeaGreen[/color] \n
+  Средний аспидно-синий (Medium Slate Blue) = [color=mediumslateblue]MediumSlateBlue[/color] \n
+  Средний весенне-зелёный (Medium Spring Green) = [color=mediumspringgreen]MediumSpringGreen[/color] \n
+  Средняя бирюза (Medium Turquoise) = [color=mediumturquoise]MediumTurquoise[/color] \n
+  Средний фиолетово-красный (Medium Violet Red) = [color=mediumvioletred]MediumVioletRed[/color] \n
+  Полуночно-синий (Midnight Blue) = [color=midnightblue]MidnightBlue[/color] \n
+  Мятно-кремовый (Mint Cream) = [color=mintcream]MintCream[/color] \n
+  Туманно-розовый (Misty Rose) = [color=mistyrose]MistyRose[/color] \n
+  Мокасиновый (Moccasin) = [color=moccasin]Moccasin[/color] \n
+  Навахо-белый (Navajo White) = [color=navajowhite]NavajoWhite[/color] \n
+  Тёмно-синий (Navy) = [color=navy]Navy[/color] \n
+  Старое кружево (Old Lace) = [color=oldlace]OldLace[/color] \n
+  Оливковый = [color=olive]Olive[/color] \n
+  Оливково-серый (Olive Drab) = [color=olivedrab]OliveDrab[/color] \n
+  Оранжевый = [color=orange]Orange[/color] \n
+  Оранжево-красный (Orange Red) = [color=orangered]OrangeRed[/color] \n
+  Орхидея (Orchid) = [color=orchid]Orchid[/color] \n
+  Бледный золотарник (Pale Goldenrod) = [color=palegoldenrod]PaleGoldenrod[/color] \n
+  Бледно-зелёный (Pale Green) = [color=palegreen]PaleGreen[/color] \n
+  Бледная бирюза (Pale Turquoise) = [color=paleturquoise]PaleTurquoise[/color] \n
+  Бледный фиолетово-красный (Pale Violet Red) = [color=palevioletred]PaleVioletRed[/color] \n
+  Папайя-крем (Papaya Whip) = [color=papayawhip]PapayaWhip[/color] \n
+  Персиковый пух (Peach Puff) = [color=peachpuff]PeachPuff[/color] \n
+  Перу (Peru) = [color=peru]Peru[/color] \n
+  Розовый = [color=pink]Pink[/color] \n
+  Сливовый (Plum) = [color=plum]Plum[/color] \n
+  Порохово-голубой (Powder Blue) = [color=powderblue]PowderBlue[/color] \n
+  Фиолетовый (Purple) = [color=purple]Purple[/color] \n
+  Красный = [color=red]Red[/color] \n
+  Розово-коричневый (Rosy Brown) = [color=rosybrown]RosyBrown[/color] \n
+  Королевский синий (Royal Blue) = [color=royalblue]RoyalBlue[/color] \n
+  Рубиновый (Ruber) = [color=ruber]Ruber[/color] \n
+  Седельный коричневый (Saddle Brown) = [color=saddlebrown]SaddleBrown[/color] \n
+  Лососевый (Salmon) = [color=salmon]Salmon[/color] \n
+  Песчано-коричневый (Sandy Brown) = [color=sandybrown]SandyBrown[/color] \n
+  Морской синий (Sea Blue) = [color=seablue]SeaBlue[/color] \n
+  Морской зелёный (Sea Green) = [color=seagreen]SeaGreen[/color] \n
+  Морская ракушка (Sea Shell) = [color=seashell]SeaShell[/color] \n
+  Сиенна (Sienna) = [color=sienna]Sienna[/color] \n
+  Серебряный = [color=silver]Silver[/color] \n
+  Небесно-голубой (Sky Blue) = [color=skyblue]SkyBlue[/color] \n
+  Аспидно-синий (Slate Blue) = [color=slateblue]SlateBlue[/color] \n
+  Аспидно-серый (Slate Gray) = [color=slategray]SlateGray[/color] \n
+  Снежный (Snow) = [color=snow]Snow[/color] \n
+  Весенне-зелёный (Spring Green) = [color=springgreen]SpringGreen[/color] \n
+  Стально-синий (Steel Blue) = [color=steelblue]SteelBlue[/color] \n
+  Загорелый (Tan) = [color=tan]Tan[/color] \n
+  Чирок (Teal) = [color=teal]Teal[/color] \n
+  Чертополох (Thistle) = [color=thistle]Thistle[/color] \n
+  Томатный (Tomato) = [color=tomato]Tomato[/color] \n
+  Бирюзовый (Turquoise) = [color=turquoise]Turquoise[/color] \n
+  Фиалковый (Violet) = [color=violet]Violet[/color] \n
+  Яркий гамбодж (Vivid Gamboge) = [color=vividgamboge]VividGamboge[/color] \n
+  Пшеничный (Wheat) = [color=wheat]Wheat[/color] \n
+  Белый = [color=white]White[/color] \n
+  Белый дым (White Smoke) = [color=whitesmoke]WhiteSmoke[/color] \n
+  Жёлтый = [color=yellow]Yellow[/color] \n
+  Жёлто-зелёный (Yellow Green) = [color=yellowgreen]YellowGreen[/color] \n
 
 </Document>

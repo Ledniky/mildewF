@@ -1,40 +1,39 @@
 <Document>
-  # Threshold Cargo
-  This guide will explain the many special mechanics you must navigate when importing, exporting or working a cargo job in the Threshold.
+  # Грузоперевозки в Пороге
+  Это руководство объясняет множество особых механик, с которыми вам придётся иметь дело при импорте, экспорте или работе грузовым заданием в Пороге.
 
-  ## Trade Stations
-  In the Threshold we rely on imports to provide the crucial goods that we cannot produce ourselves and we rely on exports to provide money for our local economy.
-  We can't rely on a single trade station to source all of our imports and exports but luckily there are many trade stations scattered around the Threshold.
+  ## Торговые станции
+  В Пороге мы полагаемся на импорт для обеспечения жизненно важных товаров, которые мы не можем производить сами, и мы полагаемся на экспорт для обеспечения деньгами нашей местной экономики.
+  Мы не можем полагаться на одну торговую станцию для снабжения всего нашего импорта и экспорта, но, к счастью, по всему Порогу разбросано множество торговых станций.
 
-  ### Imports
-  Goods can be imported from any cargo request computer.
-  You dont need to be a Quartermaster to approve orders as anyone can spend their own hard earned money to approve orders at a cargo request computer.
+  ### Импорт
+  Товары можно импортировать с любого компьютера грузовых запросов.
+  Вам не нужно быть квартирмейстером, чтобы одобрять заказы, так как любой может потратить свои с трудом заработанные деньги, чтобы одобрить заказы на компьютере грузовых запросов.
 
-  The cargo request computer has an option to choose which trade station you are importing from.
-  Trade stations have very different inventories from one another and those inventories can be improved if the trade station levels up.
-  When a cargo order is approved it appears on the trade station that it was ordered from.
+  Компьютер грузовых запросов имеет опцию выбора торговой станции, с которой вы импортируете.
+  Торговые станции имеют очень разные инвентари друг от друга, и эти инвентари могут быть улучшены, если торговая станция повышает уровень.
+  Когда грузовой заказ одобрен, он появляется на торговой станции, с которой он был заказан.
 
-  Some trade stations are very far away and may require a well equipped vessel to safely reach.
-  The closest trade station to where you first arrive is the Nanotrasen trade station.
-  Before you place an import order make sure the trade station you are buying from is reachable or else your goods may be stranded or stolen.
+  Некоторые торговые станции находятся очень далеко и могут потребовать хорошо оснащённого судна для безопасного достижения.
+  Ближайшая торговая станция к месту вашего первого прибытия — это торговая станция Nanotrasen.
+  Прежде чем разместить заказ на импорт, убедитесь, что торговая станция, у которой вы покупаете, достижима, иначе ваши товары могут застрять или быть украдены.
 
-  ### Exports
-  Goods can be sold at any trade station for cash or to direct deposit into a faction account.
-  Exporting without fufilling a cargo bounty occurs a heafty price penalty in the Threshold.
+  ### Экспорт
+  Товары можно продавать на любой торговой станции за наличные или для прямого депозита на счёт фракции.
+  Экспорт без выполнения грузовой награды влечёт за собой hefty ценовое наказание в Пороге.
 
-  ### Bounties
-  Any individual or faction is free to pursue cargo bounties in the Threshold, provided they can get the goods to the trade station that offers the bounty.
-  There are a wide variety of bounties in the Threshold and different types of trade stations offer different types of bounties.
-  Bounties in the Threshold are spawned on a two and a half hour cycle. Make sure you will have enough time to complete a bounty before starting it.
+  ### Награды
+  Любое лицо или фракция могут свободно преследовать грузовые награды в Пороге, при условии, что они могут доставить товары на торговую станцию, предлагающую награду.
+  В Пороге существует широкий спектр наград, и разные типы торговых станций предлагают разные типы наград.
+  Награды в Пороге появляются с циклом в два с половиной часа. Убедитесь, что у вас будет достаточно времени, чтобы выполнить награду, прежде чем начинать её.
 
-  A bounty [bold]must be brought to the trade station that offered it[/bold] to be completed.
-  The closest trade station to where you first arrive is the Nanotrasen trade station.
+  Награда [bold]должна быть доставлена на торговую станцию, которая её предложила[/bold], чтобы быть выполненной.
+  Ближайшая торговая станция к месту вашего первого прибытия — это торговая станция Nanotrasen.
 
-  ### Trade Station Control
-  When a faction controls a trade station the trade station provides more bounties and starts to earn XP towards leveling up.
-  When bounties are completed a trade station gains XP and when bounties expire without being completed the trade station loses XP.
-  Factions may set an import and export tax on their trade station which is deposited directly into their account.
-  Factions earn a lot of passive income when they control a high level trade station.
+  ### Контроль над торговой станцией
+  Когда фракция контролирует торговую станцию, торговая станция предлагает больше наград и начинает зарабатывать опыт для повышения уровня.
+  Когда награды выполнены, торговая станция получает опыт, а когда награды истекают без выполнения, торговая станция теряет опыт.
+  Фракции могут устанавливать налог на импорт и экспорт на своей торговой станции, который вносится напрямую на их счёт.
+  Фракции получают много пассивного дохода, когда контролируют торговую станцию высокого уровня.
 
 </Document>
-

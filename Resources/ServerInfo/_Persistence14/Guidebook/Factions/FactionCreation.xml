@@ -1,23 +1,23 @@
 <Document>
-  # Faction Creation
-  This guide will explain how to start your own faction from scratch!
+  # Создание фракции
+  Это руководство объяснит, как начать свою собственную фракцию с нуля!
 
-  ## Faction Genesis Device
-  To begin with you need to obtain a faction genesis device. These are found in a crate called the "faction starter crate" sold through cargo imports in the Nanotrasen trade station.
+  ## Устройство генезиса фракции
+  Для начала вам нужно получить устройство генезиса фракции. Они находятся в ящике под названием "стартовый набор фракции", который продаётся через грузовой импорт на торговой станции Nanotrasen.
   <Box>
-    <GuideEntityEmbed Entity="StationGenesisDevice" Caption="Faction Genesis Device"/>
+    <GuideEntityEmbed Entity="StationGenesisDevice" Caption="Устройство генезиса фракции"/>
   </Box>
 
-  Once you have a faction genesis device you can use it to create the faction. The ID inserted into the faction genesis device will determine who the first faction owner will be. Faction owners always have all access to the faction.
-  The faction starter crate also contains other machines you will need to setup the new faction including a grid configurator, a faction tagger and the faction modification computer.
+  Как только у вас есть устройство генезиса фракции, вы можете использовать его для создания фракции. ID, вставленный в устройство генезиса фракции, определит, кто будет первым владельцем фракции. Владельцы фракции всегда имеют полный доступ к фракции.
+  Стартовый набор фракции также содержит другие машины, которые вам понадобятся для настройки новой фракции, включая конфигуратор сетки, маркер фракции и компьютер модификации фракции.
 
   <Box>
-    <GuideEntityEmbed Entity="GridConfigurator" Caption="Grid Configurator"/>
-    <GuideEntityEmbed Entity="StationTagger" Caption="Faction Tagger"/>
+    <GuideEntityEmbed Entity="GridConfigurator" Caption="Конфигуратор сетки"/>
+    <GuideEntityEmbed Entity="StationTagger" Caption="Маркер фракции"/>
   </Box>
   
-  If you are starting the faction on an unclaimed grid you can use the grid configurator to claim the grid for your faction. Any machines built on a grid that your faction controls will default to being under the control of your faction.
-  If you are using a grid that is under someone elses control you can use the faction tagger to tag machines as being under the control of your faction. Deploy the faction modification computer somewhere and tag it to your faction if necessary.
+  Если вы начинаете фракцию на незахваченной сетке, вы можете использовать конфигуратор сетки, чтобы захватить сетку для вашей фракции. Любые машины, построенные на сетке, которую контролирует ваша фракция, по умолчанию будут находиться под контролем вашей фракции.
+  Если вы используете сетку, которая находится под чьим-то ещё контролем, вы можете использовать маркер фракции, чтобы пометить машины как находящиеся под контролем вашей фракции. Разместите компьютер модификации фракции где-нибудь и при необходимости пометьте его для вашей фракции.
 
-  The faction is now created and can be managed through the faction modification computer.
+  Теперь фракция создана, и ею можно управлять через компьютер модификации фракции.
 </Document>

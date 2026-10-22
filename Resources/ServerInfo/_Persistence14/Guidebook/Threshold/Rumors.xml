@@ -1,57 +1,56 @@
 <Document>
-  # Rumors
-  This guide will explain how rumors can be used to gain money, equipment and influence in Persistence. Rumors are a great source of income for all characters and gaining reputation with the Nations is a key element of character progression.
+  # Слухи
+  Это руководство объясняет, как слухи можно использовать для получения денег, оборудования и влияния в Persistence. Слухи — отличный источник дохода для всех персонажей, а зарабатывание репутации с Нациями является ключевым элементом развития персонажа.
 
-  Information about rumors currently available to your character is accessed through the 'Rumors' tab of the [bold]Job Network Menu[/bold].
+  Информация о слухах, доступных вашему персонажу в настоящее время, доступна на вкладке 'Слухи' [bold]меню сети заданий[/bold].
 
-  ## What Rumors are
+  ## Что такое слухи
 
-  Rumors are jobs given to characters by the Nations that colonize the Thresholds. Completing these rumors will give the character money and reputation with the Nation it comes from.
+  Слухи — это задания, даваемые персонажам Нациями, колонизирующими Пороги. Выполнение этих слухов даёт персонажу деньги и репутацию с Нацией, от которой он исходит.
 
-  As you gain reputation with the Nations they will send more rewarding rumors and you will unlock additional [bold]Rumored Imports[/bold] from that Nation.
+  По мере роста репутации с Нациями они будут присылать более выгодные слухи, и вы разблокируете дополнительные [bold]Слухи об импорте[/bold] от этой Нации.
 
-  For more information see the Rumored Imports guide.
+  Для получения дополнительной информации см. руководство "Слухи об импорте".
 
-  ## Gaining Rumors
-  Characters gain a new rumor once every 60 minutes as long as they don't have 4 already.
-  Rumors can be transfered between characters so they can be bought or sold.
+  ## Получение слухов
+  Персонажи получают новый слух каждые 60 минут, если у них ещё нет 4 слухов.
+  Слухи можно передавать между персонажами, поэтому их можно покупать или продавать.
 
-  Rumors with simple objectives will progress into more complex rumors when completed.
+  Слухи с простыми целями переходят в более сложные слухи после выполнения.
 
-  ## Completing Rumors
-  You can view the objective of the rumor through the Job Nework Menu.
+  ## Выполнение слухов
+  Вы можете просмотреть цель слуха через меню сети заданий.
 
-  ### Eat/Drink Rumors
-  These require the character [bold]travel to the specified station[/bold] and eat or drink something [bold]with the specified flavors[/bold].
+  ### Слухи "Поесть/Попить"
+  Они требуют, чтобы персонаж [bold]отправился на указанную станцию[/bold] и съел или выпил что-нибудь [bold]с указанными вкусами[/bold].
 
-  Drinking will not work for an Eat requirement and eatng will not work for a Drink requirement.
+  Питьё не засчитывается для требования "Поесть", а еда не засчитывается для требования "Попить".
 
-  ### Pray/Reflect Rumors
-  These require the character [bold]travel to the specified station[/bold] and [bold]pray or reflect using an altar[/bold].
+  ### Слухи "Помолиться/Поразмышлять"
+  Они требуют, чтобы персонаж [bold]отправился на указанную станцию[/bold] и [bold]помолился или поразмышлял у алтаря[/bold].
 
-  Characters with an [bold]Insight[/bold] that makes them capable of using a bible are able to use that [bold]on the specified station[/bold] to complete the rumor.
+  Персонажи с [bold]инсайтом[/bold], который позволяет им использовать библию, могут использовать её [bold]на указанной станции[/bold] для выполнения слуха.
 
-  ### Bounty Rumors
-  These require the character to use a cargo bounty computer to complete a bounty [bold]on the specified station[/bold] from the 'Rumors' tab of the bounty computer.
+  ### Слухи "Награда"
+  Они требуют, чтобы персонаж использовал компьютер грузовых наград для выполнения награды [bold]на указанной станции[/bold] на вкладке 'Слухи' компьютера наград.
 
-  Only the character with the rumor can see the bounty on the cargo bounty computer, but anyone can do the actual exporting once the manifest is printed.
+  Только персонаж со слухом может видеть награду на компьютере грузовых наград, но любой может выполнить фактический экспорт после печати манифеста.
 
-  ### Explore Rumors
-  These require the character to travel [bold]to specific coordinates in space[/bold] where a nearby grid will spawn.
-  The character who holds the rumor must approach the coordinates to trigger the grid to spawn.
+  ### Слухи "Исследование"
+  Они требуют, чтобы персонаж отправился [bold]к определённым координатам в космосе[/bold], где появится ближайшая сетка.
+  Персонаж, владеющий слухом, должен приблизиться к координатам, чтобы вызвать появление сетки.
 
-  Then the character who holds the rumor must [bold]board the new grid[/bold] to complete the rumor.
+  Затем персонаж, владеющий слухом, должен [bold]подняться на новую сетку[/bold], чтобы выполнить слух.
 
-  ### Rescue Rumors
-  These require the character to travel [bold]to specific coordinates in space[/bold] where a nearby grid will spawn.
-  The character who holds the rumor must approach the coordinates to trigger the grid to spawn.
+  ### Слухи "Спасение"
+  Они требуют, чтобы персонаж отправился [bold]к определённым координатам в космосе[/bold], где появится ближайшая сетка.
+  Персонаж, владеющий слухом, должен приблизиться к координатам, чтобы вызвать появление сетки.
 
-  Then any humanoid NPCs aboard the grid must be [bold]brought to the specified station, healed and revived[/bold] to complete the rumor.
+  Затем любые гуманоидные NPC на борту сетки должны быть [bold]доставлены на указанную станцию, вылечены и оживлены[/bold], чтобы выполнить слух.
 
-  ### Recharge Rumors
-  These require the character to travel [bold]to specific coordinates in space[/bold] where a nearby grid will spawn.
-  The character who holds the rumor must approach the coordinates to trigger the grid to spawn.
+  ### Слухи "Подзарядка"
+  Они требуют, чтобы персонаж отправился [bold]к определённым координатам в космосе[/bold], где появится ближайшая сетка.
+  Персонаж, владеющий слухом, должен приблизиться к координатам, чтобы вызвать появление сетки.
 
-  Then the [bold]specified machines on board the grid must be fully recharged[/bold] to complete the rumor.
+  Затем [bold]указанные машины на борту сетки должны быть полностью заряжены[/bold], чтобы выполнить слух.
 </Document>
-

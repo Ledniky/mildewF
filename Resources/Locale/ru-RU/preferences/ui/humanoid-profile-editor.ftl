@@ -62,3 +62,49 @@ humanoid-profile-editor-trait-count-hint = Доступно очков: [{ $curr
 trait-category-disabilities = Ограничения
 trait-category-speech = Черты речи
 trait-category-quirks = Причуды
+
+# Кнопки входа  
+humanoid-profile-editor-finalize-join-button = Завершить и войти  
+humanoid-profile-editor-join-button = Войти в игру  
+  
+# Рандомайзер  
+humanoid-profile-editor-randomize = Рандомизация  
+humanoid-profile-editor-randomize-name-button = Имя  
+humanoid-profile-editor-randomize-species-button = Вид  
+humanoid-profile-editor-randomize-age-button = Возраст  
+humanoid-profile-editor-randomize-sex-button = Пол  
+humanoid-profile-editor-randomize-skin-button = Кожа  
+humanoid-profile-editor-randomize-eye-button = Глаза  
+humanoid-profile-editor-randomize-markings-button = Черты  
+humanoid-profile-editor-randomize-unlocked-button = Случайный выбор  
+humanoid-profile-editor-voice-label = Голос:  
+  
+# Вкладки SS14-Art  
+humanoid-profile-editor-background-tab = Происхождение  
+humanoid-profile-editor-journey-tab = Путь  
+  
+# Страница «Происхождение»  
+humanoid-profile-editor-alignment-prefix = Этот персонаж придерживается морали:  
+humanoid-profile-editor-origin-prefix = Этот персонаж прибыл из:  
+humanoid-profile-editor-motive-prefix = Этот персонаж пришёл в Порог в поисках:  
+humanoid-profile-editor-unselected = *НЕ ВЫБРАНО*  
+humanoid-profile-editor-background-traits = Черты происхождения  
+  
+# Страница «Путь»  
+humanoid-profile-editor-threshold-title = Порог  
+humanoid-profile-editor-turning-point-prefix = Всё изменилось для вас, когда вы:  
+humanoid-profile-editor-nexus-title = Пространство Нексуса  
+humanoid-profile-editor-threshold-lore =  
+    Путешествие в Порог — строго в один конец, и вы оставили всё позади в момент прохождения через барьер истинного пространства.  
+    Порог разделён на сектора; каждый сектор богат редкими материалами и ксеноартефактами.  
+    Вы поселились в одном из этих секторов и собирались остаться, пока...  
+humanoid-profile-editor-nexus-lore =  
+    В центре каждого Порога находится [bold]Пространство Нексуса[/bold].  
+    Это пространство является общим и доступно через Пороги более чем дюжины вселенных.  
+    Этот сектор колонизирован как нейтральная территория, чтобы предотвратить вспышку [bold][color=red]Универсальной Войны[/bold][/color].  
+    Великие державы связанных вселенных отправляют колонистов в Пространство Нексуса как «независимых».  
+  
+# Требования для сохранения  
+humanoid-profile-editor-requirements-background = Завершите страницу «Происхождение».  
+humanoid-profile-editor-requirements-journey = Завершите страницу «Путь».  
+humanoid-profile-editor-requirements-name = Задайте имя персонажа.

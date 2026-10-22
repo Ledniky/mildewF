@@ -1,32 +1,32 @@
 <Document>
-  # Resuscitation
+  # Реанимация
   \n
-  Someone died on you or went into crit? Here's what you need!
+  Кто-то умер у вас на руках или впал в критическое состояние? Вот что вам нужно!
 
-  ## CPR
-  If someone is in a critical state you can do [bold]CPR[/bold] to keep them alive for longer! Get them off their hardsuit and get to work!\n
+  ## СЛР
+  Если кто-то находится в критическом состоянии, вы можете делать [bold]СЛР[/bold], чтобы поддерживать в нём жизнь дольше! Снимите с него скафандр и приступайте к работе!\n
 
   <Box>
     <GuideEntityEmbed Entity="EmergencyRollerBed" Caption=""/>
   </Box>
 
   \n
-  [color=burlywood]You can do [bold]CPR[/bold] on someone who is in critical state (or dead)[/color] and isn't wearing any outer clothing. This will slowly heal up [color=lightcoral]Asphyxiation[/color] damage, it is enough to fight off the effects of being in critical and potentially even enough to recover them. \n
-  [color=burlywood]After 10 compressions you will eventually break their ribs[/color], this will deal [color=lightcoral]20 Blunt[/color] damage [color=burlywood][bold]once[/bold][/color] and it won't happen again unless they are recovered and then go into a critical state again.\n
-  [bold]CPR[/bold] also has a very small chance to revive someone who is dead, but it won't heal [color=lightcoral]Asphyxiation[/color] on a dead body.\n
+  [color=burlywood]Вы можете делать [bold]СЛР[/bold] кому-то в критическом состоянии (или мёртвому)[/color], если на нём нет верхней одежды. Это медленно лечит [color=lightcoral]удушье[/color], чего достаточно, чтобы бороться с последствиями критического состояния и потенциально даже вернуть человека к жизни. \n
+  [color=burlywood]После 10 компрессий вы в конце концов сломаете ему рёбра[/color], это нанесёт [color=lightcoral]20 тупого урона[/color] [color=burlywood][bold]один раз[/bold][/color], и это не повторится, если только человек не восстановится и снова не впадёт в критическое состояние.\n
+  [bold]СЛР[/bold] также имеет очень небольшой шанс оживить мёртвого, но она не лечит [color=lightcoral]удушье[/color] у мёртвого тела.\n
 
 
-  ## Defibrillators
+  ## Дефибрилляторы
 
-  You likely have seen these outside the Threshold, but there's some things you need to know around here...
+  Вы, вероятно, видели их за пределами Порога, но здесь есть некоторые вещи, о которых нужно знать...
 
   <Box>
-    <GuideEntityEmbed Entity="Defibrillator" Caption="Defibrillator"/>
-    <GuideEntityEmbed Entity="DefibrillatorSyndicate" Caption="Defibrillator"/>
+    <GuideEntityEmbed Entity="Defibrillator" Caption="Дефибриллятор"/>
+    <GuideEntityEmbed Entity="DefibrillatorSyndicate" Caption="Дефибриллятор"/>
   </Box>
 
-  Jumpsuits and outer clothing will get in the way of a [bold]defibrillator[/bold], you need to remove them.\n
-  And before you start zapping keep in mind: [color=burlywood]a [bold]defibrillator[/bold] needs [color=lightgoldenrodyellow]1 unit[/color] of [color=#d2fffa]Epinephrine[/color] to work[/color] and it will use up that amount of [color=#d2fffa]Epinephrine[/color] per [italic]zap[/italic].\n
-  In the Threshold, [bold]defibrillators[/bold] are not guaranteed to revive every time, they have around a 70% success rate. A [italic]zap[/italic] that doesn't result in a revive will still consume the [color=#d2fffa]Epinephrine[/color].
+  Комбинезоны и верхняя одежда мешают работе [bold]дефибриллятора[/bold], их нужно снять.\n
+  И прежде чем начать разряжать, имейте в виду: [color=burlywood]для работы [bold]дефибриллятору[/bold] нужна [color=lightgoldenrodyellow]1 единица[/color] [color=#d2fffa]эпинефрина[/color][/color], и он расходует это количество [color=#d2fffa]эпинефрина[/color] за каждый [italic]разряд[/italic].\n
+  В Пороге [bold]дефибрилляторы[/bold] не гарантируют оживления каждый раз, их успешность составляет около 70%. [italic]Разряд[/italic], не приведший к оживлению, всё равно расходует [color=#d2fffa]эпинефрин[/color].
 
 </Document>

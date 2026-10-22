@@ -1,19 +1,18 @@
 <Document>
-  # Upgrades
-  This guide will explain Upgrade Modules and how they can be used to upgrade items and machines in a variety of ways.
+  # Улучшения
+  Это руководство объясняет модули улучшений и то, как их можно использовать для улучшения предметов и машин различными способами.
 
-  ## View Available Upgrades
-  To view what upgrades an item or machine has available you must stand close to it and press the 'Upgrades' button under the examine dropdown of the right click menu.
-  If 'Upgrades' does not appear then it may not have any available upgrades.
+  ## Просмотр доступных улучшений
+  Чтобы просмотреть, какие улучшения доступны для предмета или машины, вы должны стоять рядом с ним и нажать кнопку "Улучшения" в выпадающем меню осмотра в меню правой кнопки мыши.
+  Если "Улучшения" не появляется, то, возможно, для этого предмета нет доступных улучшений.
 
-  If you can examine the upgrades it will list the available upgrades along with [bold]the upgrade module type required to apply it[/bold].
-  When the upgrades say 'choose one' only one type of upgrade can be applied before locking the others out.
+  Если вы можете осмотреть улучшения, будет показан список доступных улучшений вместе с [bold]типом модуля улучшения, необходимым для его применения[/bold].
+  Если в улучшениях указано "выберите одно", только один тип улучшения может быть применён, прежде чем остальные будут заблокированы.
 
-  ## Upgrade Modules
-  Upgrade Modules are available through the Rumored Imports with every upgrade module having a specific pattern that it relates to.
-  Every upgrade requires a specific type of module to apply it.
+  ## Модули улучшений
+  Модули улучшений доступны через Слухи об импорте, причём каждый модуль улучшения имеет определённый шаблон, к которому он относится.
+  Для применения каждого улучшения требуется определённый тип модуля.
 
-  ## Applying the Upgrade Modules
-  Hold the upgrade module in your active hand and choose the "Upgrade" option from the right click menu of the device.
+  ## Применение модулей улучшений
+  Держите модуль улучшения в активной руке и выберите опцию "Улучшить" в меню правой кнопки мыши на устройстве.
 </Document>
-

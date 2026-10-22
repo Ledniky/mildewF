@@ -1,60 +1,60 @@
 - type: backgroundEffect
   id: TraitGood
-  description: "[color=green]You will gain the 'Good' trait."
+  description: "[color=green]Вы получите черту 'Добрый'."
   traits:
     - Good
 
 - type: backgroundEffect
   id: TraitLawfulGood
-  description: "[color=green]You will gain the 'Lawful Good' trait."
+  description: "[color=green]Вы получите черту 'Законопослушный добрый'."
   traits:
     - LawfulGood
 
 - type: backgroundEffect
   id: TraitChaoticGood
-  description: "[color=green]You will gain the 'Chaotic Good' trait."
+  description: "[color=green]Вы получите черту 'Хаотично добрый'."
   traits:
     - ChaoticGood
 
 - type: backgroundEffect
   id: TraitChaotic
-  description: "[color=green]You will gain the 'Chaotic' trait."
+  description: "[color=green]Вы получите черту 'Хаотичный'."
   traits:
     - Chaotic
 
 - type: backgroundEffect
   id: TraitLawful
-  description: "[color=green]You will gain the 'Lawful' trait."
+  description: "[color=green]Вы получите черту 'Законопослушный'."
   traits:
     - Lawful
 
 - type: backgroundEffect
   id: TraitNeutral
-  description: "[color=green]You will gain the 'Neutral' trait."
+  description: "[color=green]Вы получите черту 'Нейтральный'."
   traits:
     - Neutral
 
 - type: backgroundEffect
   id: TraitEvil
-  description: "[color=green]You will gain the 'Evil' trait."
+  description: "[color=green]Вы получите черту 'Злой'."
   traits:
     - Evil
 
 - type: backgroundEffect
   id: TraitLawfulEvil
-  description: "[color=green]You will gain the 'Lawful Evil' trait."
+  description: "[color=green]Вы получите черту 'Законопослушный злой'."
   traits:
     - LawfulEvil
 
 - type: backgroundEffect
   id: TraitChaoticEvil
-  description: "[color=green]You will gain the 'Chaotic Evil' trait."
+  description: "[color=green]Вы получите черту 'Хаотично злой'."
   traits:
     - ChaoticEvil
 
 - type: backgroundEffect
   id: TraitOriginZenith
-  description: "[color=green]You will gain the 'Worked with Solar Legion' trait.\nA codex entry will be unlocked."
+  description: "[color=green]Вы получите черту 'Работал с Солнечным Легионом'.\nБудет разблокирована запись кодекса."
   traits:
     - OriginZenith
   equipment:
@@ -68,7 +68,7 @@
 
 - type: backgroundEffect
   id: TraitOriginGreen
-  description: "[color=green]You will gain the 'Known to Nanotrasen' trait.\nA codex entry will be unlocked."
+  description: "[color=green]Вы получите черту 'Известен Nanotrasen'.\nБудет разблокирована запись кодекса."
   traits:
     - OriginGreen
   equipment:
@@ -82,7 +82,7 @@
 
 - type: backgroundEffect
   id: TraitOriginMarine
-  description: "[color=green]You will gain the 'Familiar with the UNMC' trait.\nA codex entry will be unlocked."
+  description: "[color=green]Вы получите черту 'Знаком с UNMC'.\nБудет разблокирована запись кодекса."
   traits:
     - OriginMarine
   equipment:
@@ -97,7 +97,7 @@
 
 - type: backgroundEffect
   id: TraitOriginPrecursor
-  description: "[color=green]You will gain the 'Syndicate Associate' trait.\nA codex entry will be unlocked."
+  description: "[color=green]Вы получите черту 'Связной Синдиката'.\nБудет разблокирована запись кодекса."
   traits:
     - OriginPrecursor
   equipment:
@@ -111,7 +111,7 @@
 
 - type: backgroundEffect
   id: TraitOriginShadow
-  description: "[color=green]You will gain the 'Seen too much' trait.\nA codex entry will be unlocked."
+  description: "[color=green]Вы получите черту 'Увидел слишком много'.\nБудет разблокирована запись кодекса."
   traits:
     - OriginShadow
   equipment:
@@ -126,33 +126,33 @@
 
 - type: backgroundEffect
   id: TraitPledge
-  description: "[color=green]You will gain the 'Freelancer Pledge' trait."
+  description: "[color=green]Вы получите черту 'Клятва фрилансера'."
   traits:
     - NexusPledge
 
 - type: backgroundEffect
   id: MotiveWealth
-  description: "[color=green]You will arrive with an additional $2000"
+  description: "[color=green]Вы прибудете с дополнительными 2000 $"
   bonusCash: 2000
 
 - type: backgroundEffect
   id: MotivePower
-  description: "[color=green]You will arrive with an additional rumor"
+  description: "[color=green]Вы прибудете с дополнительным слухом"
   extraRumors: 1
 
 - type: backgroundEffect
   id: MotiveSecretKnowledge
-  description: "[color=green]You will unlock a Codex entry."
+  description: "[color=green]Вы разблокируете запись кодекса."
   codexEntries:
     - Shadow102
 
 - type: backgroundEffect
   id: MotiveFriendship
-  description: "[color=green]You will arrive with an additional rumor"
+  description: "[color=green]Вы прибудете с дополнительным слухом"
   extraRumors: 1
 
 - type: backgroundEffect
   id: MotiveEnlightenment
-  description: "[color=green]You will unlock a Codex entry."
+  description: "[color=green]Вы разблокируете запись кодекса."
   codexEntries:
     - Luminal101

@@ -49,13 +49,13 @@
                 <BoxContainer Orientation="Vertical" MinSize="60 0" HorizontalExpand="True" HorizontalAlignment="Right">
                     <ui:HighlightedContainer Name="ProfileHighlight">
                         <BoxContainer Orientation="Vertical">
-                            <Button Name="SaveButton" Text="Finalize and Join"/>
+                            <Button Name="SaveButton" Text="{Loc 'humanoid-profile-editor-finalize-join-button'}"/>
                             <Button Name="ResetButton" Disabled="True" Text="{Loc 'humanoid-profile-editor-reset-button'}"/>
                             <Button Name="ImportButton" Text="{Loc 'humanoid-profile-editor-import-button'}"/>
                             <Button Name="ExportButton" Text="{Loc 'humanoid-profile-editor-export-button'}"/>
                             <Button Name="ExportImageButton" Text="{Loc 'humanoid-profile-editor-export-image-button'}"/>
                             <Button Name="OpenImagesButton" Text="{Loc 'humanoid-profile-editor-open-image-button'}"/>
-                            <Button Name="JoinGameButton" Text="Join Game"/>
+                            <Button Name="JoinGameButton" Text="{Loc 'humanoid-profile-editor-join-button'}"/>
                             <RichTextLabel Name="RequirementsNameLbl" />
                             <RichTextLabel Name="RequirementsLbl" />
                             <RichTextLabel Name="RequirementsJourneyLbl" />
@@ -139,7 +139,7 @@
                     <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
                         <BoxContainer Orientation="Vertical" >
                             <BoxContainer Orientation="Horizontal">
-                                <Label Text="This character has the moral alignment of " />
+                                <Label Text="{Loc 'humanoid-profile-editor-alignment-prefix'}" />
                                 <OptionButton Name="AlignmentButton" HorizontalAlignment="Right" />
                             </BoxContainer>
                             <BoxContainer Orientation="Vertical" >
@@ -149,7 +149,7 @@
                             </BoxContainer>
                             <Control MinHeight="50" />
                             <BoxContainer Orientation="Horizontal">
-                                <Label Text="This character comes from the " />
+                                <Label Text="{Loc 'humanoid-profile-editor-origin-prefix'}" />
                                 <OptionButton Name="BGButton" HorizontalAlignment="Right" />
                             </BoxContainer>
                             <BoxContainer Orientation="Vertical" >
@@ -160,7 +160,7 @@
                             </BoxContainer>
                             <Control MinHeight="50" />
                             <BoxContainer Orientation="Horizontal">
-                                <Label Text="This character came to the Threshold seeking  " />
+                                <Label Text="{Loc 'humanoid-profile-editor-motive-prefix'}" />
                                 <OptionButton Name="MotiveButton" HorizontalAlignment="Right" />
                             </BoxContainer>
                             <BoxContainer Orientation="Vertical" >
@@ -171,30 +171,26 @@
                             </BoxContainer>
                         </BoxContainer>
                     </ScrollContainer>
-              
                 </BoxContainer>
                 <BoxContainer Name="Journey" Orientation="Vertical" Margin="10">
                     <ScrollContainer VerticalExpand="True" HScrollEnabled="False" >
-                        <BoxContainer Orientation="Vertical" >
-                            <Label Text="The Threshold" StyleClasses="LabelHeading" />
+                        <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                            <Label Text="{Loc 'humanoid-profile-editor-threshold-title'}" StyleClasses="LabelHeading" />
                             <Control MinHeight="30" />
-                            <RichTextLabel HorizontalAlignment="Left"
-                                           Name="ThresholdLoreLabel" />
+                            <RichTextLabel Name="ThresholdLoreLabel" HorizontalExpand="True" />
                             <Control MinHeight="30" />
                             <BoxContainer Orientation="Horizontal">
-                                <Label Text="Everything changed for you when you were " />
+                                <Label Text="{Loc 'humanoid-profile-editor-turning-point-prefix'}" />
                                 <OptionButton Name="TurningPointButton" HorizontalAlignment="Right" />
                             </BoxContainer>
                             <Label Name="TurningPointTitleLabel" StyleClasses="LabelHeading" />
                             <Control MinHeight="30" />
-                            <RichTextLabel HorizontalAlignment="Left"
-                                           Name="TurningPointLabel" />
-                            <RichTextLabel Name="TurningPointEffectsLabel" HorizontalAlignment="Left"/>
+                            <RichTextLabel Name="TurningPointLabel" HorizontalExpand="True" />
+                            <RichTextLabel Name="TurningPointEffectsLabel" HorizontalExpand="True" />
                             <Control MinHeight="30" />
-                            <Label Text="Nexus Space" StyleClasses="LabelHeading" />
+                            <Label Text="{Loc 'humanoid-profile-editor-nexus-title'}" StyleClasses="LabelHeading" />
                             <Control MinHeight="30" />
-                            <RichTextLabel HorizontalAlignment="Left"
-                                           Name="NexusLoreLabel" />
+                            <RichTextLabel Name="NexusLoreLabel" HorizontalExpand="True" />
                         </BoxContainer>
                     </ScrollContainer>
                 </BoxContainer>
@@ -202,13 +198,12 @@
                     <!-- Traits -->
                     <ScrollContainer VerticalExpand="True">
                         <BoxContainer Name="TraitsMainBC" Orientation="Vertical">
-                            <Label Text="Background Traits" StyleClasses="LabelHeading" />
+                            <Label Text="{Loc 'humanoid-profile-editor-background-traits'}" StyleClasses="LabelHeading" />
                             <BoxContainer Name="BackgroundTraits" Orientation="Vertical" />
                             <BoxContainer Name="TraitsList" Orientation="Horizontal" />
                         </BoxContainer>
                     </ScrollContainer>
                 </BoxContainer>
-                
             </TabContainer>
         </BoxContainer>
         <!-- Right side -->

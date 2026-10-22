@@ -1,50 +1,49 @@
 <Document>
-  # Trade Stations/Resonance
-  This guide will explain Trade Stations and the Resonance that they generate. Trade Stations and Resonance are pivotal to the economy and politics of the sector.
+  # Торговые станции/Резонанс
+  Это руководство объясняет торговые станции и резонанс, который они генерируют. Торговые станции и резонанс имеют ключевое значение для экономики и политики сектора.
 
-  ## Imports and Bounties
-  Every Trade Station gets a unique set of imports that can be purchased through a Cargo Request Console and unique bounties that can be viewed through a Bounty Console.
+  ## Импорт и награды
+  Каждая торговая станция получает уникальный набор импорта, который можно приобрести через консоль грузовых запросов, и уникальные награды, которые можно просмотреть через консоль наград.
 
-  More imports become available as the Trade Station Infrastructure increases.
+  По мере повышения уровня инфраструктуры торговой станции становится доступно больше импорта.
 
-  Bounties can be completed by individual characters or factions but they are subject to the export tax that the faction who controls the Trade Station sets.
+  Награды могут выполняться отдельными персонажами или фракциями, но они облагаются экспортным налогом, который устанавливает фракция, контролирующая торговую станцию.
 
-  ## Infrastructure Level
-  The Infrastructure Level is determined by [bold]the amount of Trade Nodes that are stored aboard[/bold] the Trade Station.
-  As the infrastructure level increases a Trade Station will offer more imports and bounties.
-  Infrastructure Level is only applied to Trade Stations which are directly controlled by a Faction.
+  ## Уровень инфраструктуры
+  Уровень инфраструктуры определяется [bold]количеством торговых узлов, хранящихся на борту[/bold] торговой станции.
+  По мере повышения уровня инфраструктуры торговая станция предлагает больше импорта и наград.
+  Уровень инфраструктуры применяется только к торговым станциям, которые напрямую контролируются фракцией.
 
-  ### Trade Nodes
-  Trade Nodes are purchased through Rumored Imports and [bold]must be stored aboard a Trade Station[/bold] to increase the Infrastructure Level and [bold]generate Resonance for the owner of the Trade Station[/bold].
-  Trade Nodes can be exported for $10,000  so they are expensive and must be defended.
+  ### Торговые узлы
+  Торговые узлы приобретаются через Слухи об импорте и [bold]должны храниться на борту торговой станции[/bold], чтобы повысить уровень инфраструктуры и [bold]генерировать резонанс для владельца торговой станции[/bold].
+  Торговые узлы можно экспортировать за 10 000 $, поэтому они дороги и должны охраняться.
 
-  ## Controlling a Trade Station
-  Trade Stations can only be claimed by a Level 3 Faction and it requires at least 5 Trade Nodes already be stored aboard.
+  ## Контроль над торговой станцией
+  Торговые станции могут быть заявлены только фракцией 3-го уровня, и для этого необходимо, чтобы на борту уже хранилось как минимум 5 торговых узлов.
 
-  [bold]If a Trade Station ever drops below 5 stored Trade Nodes it will be automatically unclaimed![/bold]
+  [bold]Если на торговой станции когда-либо окажется менее 5 хранящихся торговых узлов, она будет автоматически освобождена от контроля![/bold]
 
-  ## Resonance
-  Factions that control a Trade Station will generate 10 Resonance for each Trade Node stored aboard.
-  This Resonance is generated every time the Trade Station Bounties refresh.
+  ## Резонанс
+  Фракции, контролирующие торговую станцию, генерируют 10 резонанса за каждый торговый узел, хранящийся на борту.
+  Этот резонанс генерируется каждый раз, когда обновляются награды торговой станции.
 
-  Resonance can be [bold]spent by a faction owner at the Resonance Market available through a Faction Modification Computer[/bold]
-  The Resonance Market contains Unique Artifacts of extreme power and decisions that can shape the entire sector.
-  Most purchases can only be made once.
+  Резонанс может быть [bold]потрачен владельцем фракции на Рынке резонанса, доступном через компьютер модификации фракции[/bold]
+  Рынок резонанса содержит уникальные артефакты огромной силы и решения, способные изменить весь сектор.
+  Большинство покупок можно совершить только один раз.
 
-  ## Example Purchases
+  ## Примеры покупок
 
-  ### Sector Boundary increase
-  Resonance can be contributed by all the Trade Stations to expand the sector boundary giving more space for asteroids and additional installations.
+  ### Увеличение границы сектора
+  Резонанс может быть внесён всеми торговыми станциями для расширения границы сектора, что даёт больше места для астероидов и дополнительных установок.
 
-  ### Sector Awakening
-  The hidden powers of the sector can be awakened unlocking tier 3 insights for all characters permanently and makes numerous other changes to the gameplay.
+  ### Пробуждение сектора
+  Скрытые силы сектора могут быть пробуждены, что навсегда разблокирует инсайты 3-го уровня для всех персонажей и внесёт множество других изменений в игровой процесс.
 
-  ### Unique Artifacts
-  Completely unique artifacts of history or power can be purchased. These artifacts can unlock Codex entries or have other powerful properties.
+  ### Уникальные артефакты
+  Можно приобрести совершенно уникальные артефакты истории или силы. Эти артефакты могут разблокировать записи Кодекса или обладать другими мощными свойствами.
 
-  ### New Place of Interest
-  Powerful factions will determine which places of interest can be discovered in the available territory such as Geysers, Salvage Magnets or additional Trade Stations.
+  ### Новое место интереса
+  Могущественные фракции будут определять, какие места интереса могут быть обнаружены на доступной территории, такие как гейзеры, магниты для утилизации или дополнительные торговые станции.
 
 
 </Document>
-

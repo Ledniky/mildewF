@@ -1,23 +1,22 @@
 <Document>
-  # Welcome to Persistence SS14!
+  # Добро пожаловать в Persistence SS14!
 
-  ## The Basics
+  ## Основы
 
-  In Persistence SS14 the game world and characters are saved and loaded and so the round never ends; nothing is ever reset and the world is built up continously.
+  В Persistence SS14 игровой мир и персонажи сохраняются и загружаются, поэтому раунд никогда не заканчивается; ничего никогда не сбрасывается, и мир строится непрерывно.
 
-  These guidebook entries will teach you how to get started in Persistence SS14 and the important mechanics to have an enjoyable and successful time.
+  Эти записи руководства научат вас, как начать играть в Persistence SS14, и важным механикам для приятного и успешного времяпрепровождения.
 
-  ## Getting Started
-  A jobs desk will be nearby the starting cryogenic storage which can help you find an assignment with the station or an independent faction.
-  You can always change your assignment, join a faction or start an independent crew later once you have the necessary equipment and money.
+  ## Начало работы
+  Рядом с начальным криогенным хранилищем будет находиться стол заданий, который поможет вам найти назначение на станции или в независимой фракции.
+  Вы всегда можете изменить своё назначение, присоединиться к фракции или начать независимый экипаж позже, как только у вас будет необходимое оборудование и деньги.
 
-  Your character has access to exclusive rumors and rumored imports which makes you a valuable member of any crew. Completing rumors is important for characters to become wealthy and powerful.
+  Ваш персонаж имеет доступ к эксклюзивным слухам и слухам об импорте, что делает вас ценным членом любого экипажа. Выполнение слухов важно для того, чтобы персонажи становились богатыми и могущественными.
 
-  ## Access your Job Network Implant
- The Job Network is used to manage assignment, insights, rumors and more. Using the Job Network is key to managing your character and understanding the game world.
+  ## Доступ к вашему импланту сети заданий
+ Сеть заданий используется для управления назначением, инсайтами, слухами и многим другим. Использование сети заданий является ключом к управлению вашим персонажем и пониманию игрового мира.
   <Box>
-    <GuideEntityEmbed Entity="ReinforcementRadioSyndicateNukeops" Caption="Open Job Network"/>
+    <GuideEntityEmbed Entity="ReinforcementRadioSyndicateNukeops" Caption="Открыть сеть заданий"/>
   </Box>
-  The Job Network is opened using an action with this icon.
+  Сеть заданий открывается с помощью действия с этой иконкой.
 </Document>
-

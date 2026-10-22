@@ -1,34 +1,34 @@
 - type: turningPoint
   id: ChosenByAuthority
-  name: Chosen for the Nexus
-  description: "The ruling authority in your sector selected you to send into the [bold]Nexus Space[/bold].\nYou must cut formal ties as the [bold]NCC[/bold] requires that everyone who enters [bold]Nexus Space[/bold] does so as an independent."
+  name: Избран для Нексуса
+  description: "Правящая власть в вашем секторе выбрала вас для отправки в [bold]Пространство Нексуса[/bold].\nВы должны разорвать формальные связи, так как [bold]NCC[/bold] требует, чтобы каждый, кто входит в [bold]Пространство Нексуса[/bold], делал это как независимый."
   effects:
     - TraitPledge
 
 - type: turningPoint
   id: FellFromGrace
-  name: Suddenly Disgraced
-  description: "As your reputation with the local authorities soured you were to flee into the [bold]Nexus Space[/bold].\nBecause of the [bold]NCC[/bold] and the [italic]Independents Truce[/italic] you know your pursuers cannot follow you into the [bold]Nexus Space[/bold]."
+  name: Внезапно в опале
+  description: "Когда ваша репутация у местных властей испортилась, вам пришлось бежать в [bold]Пространство Нексуса[/bold].\nБлагодаря [bold]NCC[/bold] и [italic]Перемирию независимых[/italic] вы знаете, что ваши преследователи не смогут последовать за вами в [bold]Пространство Нексуса[/bold]."
   effects:
     - TraitPledge
 
 - type: turningPoint
   id: Magician
-  name: Encountered by a Magician
-  description: "You encountered a strange traveler from beyond your Universe.\nThey claimed to be a [color=gray]Magician[/color] and convinced you to travel to the [bold]Nexus Space[/bold].\nYou left everything behind to pursue this Destiny."
+  name: Встреча с Магом
+  description: "Вы встретили странного путешественника из-за пределов вашей Вселенной.\nОн назвал себя [color=gray]Магом[/color] и убедил вас отправиться в [bold]Пространство Нексуса[/bold].\nВы оставили всё позади, чтобы следовать этой Судьбе."
   effects:
     - TraitPledge
 
 - type: turningPoint
   id: Priestess
-  name: Encouraged by a Priestess
-  description: "You encountered a wise [color=yellow]Priestess[/color] who knew many secrets of the Threshold.\nShe encouraged you to travel to the [bold]Nexus Space[/bold] to seek the Gods.\nYou left everything behind to pursue this Destiny."
+  name: Воодушевление от Жрицы
+  description: "Вы встретили мудрую [color=yellow]Жрицу[/color], которая знала многие секреты Порога.\nОна воодушевила вас отправиться в [bold]Пространство Нексуса[/bold] на поиски Богов.\nВы оставили всё позади, чтобы следовать этой Судьбе."
   effects:
     - TraitPledge
 
 - type: turningPoint
   id: Rational
-  name: Lectured by a Rationalist
-  description: "A rationalist genius gave a lecture in your sector.\nThey said that everything about the Threshold can be explained by the science being conducted in the [bold]Nexus Space[/bold].\nYou left everything behind to pursue this Destiny."
+  name: Лекция от Рационалиста
+  description: "Гениальный рационалист прочитал лекцию в вашем секторе.\nОн сказал, что всё в Пороге можно объяснить наукой, проводимой в [bold]Пространстве Нексуса[/bold].\nВы оставили всё позади, чтобы следовать этой Судьбе."
   effects:
     - TraitPledge

@@ -105,3 +105,37 @@ job-net-menu-teleport-label = Метка телепорта
 precursor-objective-drunk-name = Напиться в стельку
 precursor-objective-hallucinate-name = Поймать галюны
 precursor-objective-jitter-name = Стать сильно дёрганым
+
+# Вкладки MasterTabContainer (новые)
+job-net-menu-tab-insights = Аналитика
+job-net-menu-tab-rumors = Слухи
+job-net-menu-tab-messages = Сообщения
+
+# Аналитика (Insights)
+job-net-menu-unspent-insights = Неиспользованные очки:
+job-net-menu-codex-unlocks-required = Требуется записей кодекса:
+job-net-menu-insights = Аналитика
+
+# Налог на слухи
+job-net-menu-rumor-tax = Налог на слухи:
+job-net-menu-rumor-tax-desc = { $tax }% денежных наград за слухи выплачивается вашему работодателю.
+
+# Слухи (Rumors)
+job-net-menu-rumors-current = Текущие
+job-net-menu-rumors-reputations = Репутация
+job-net-menu-rumors-imports = Импорт
+job-net-menu-rumor-limit = { $count }/4 доступно
+job-net-menu-next-rumor = Следующий слух:
+job-net-menu-refresh-in = Обновление через:
+
+# Сектор (новая вкладка)
+job-net-menu-sector-status-title = Статус сектора
+job-net-menu-tab-status = Статус
+job-net-menu-tab-achievements-2 = Достижения
+
+# Сообщения
+job-net-menu-dm-hint = [color=yellow][bold]Используйте доску сообщений для отправки личных сообщений.[/bold][/color]
+job-net-menu-conversations = Диалоги:
+
+# Лимит тайлов (для разметки уровней)
+job-net-menu-tile-limit-cur = Лимит тайлов:[color=yellow]{ $limit }[/color]

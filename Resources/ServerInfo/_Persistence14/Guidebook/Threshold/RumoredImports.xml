@@ -1,49 +1,48 @@
 <Document>
-  # Rumored Imports
-  This guide will explain how rumored imports play a key role in the economy and are crucial opportunities that allow characters to obtain the most exclusive devices and equipment which can be resold or utilized.
+  # Слухи об импорте
+  Это руководство объясняет, как слухи об импорте играют ключевую роль в экономике и являются важнейшими возможностями, позволяющими персонажам получать самые эксклюзивные устройства и оборудование, которые можно перепродать или использовать.
 
-  Information about imports currently available to your character is accessed through the 'Imports' tab of the Rumors section of the [bold]Job Network Menu[/bold].
+  Информация об импорте, доступном вашему персонажу в настоящее время, доступна на вкладке 'Импорт' раздела Слухов [bold]меню сети заданий[/bold].
 
-  ## Delivery
+  ## Доставка
 
-  Each rumored import will [bold]tell you which Trade Station it will be delivered to[/bold] before you purchase it.
-  You do not need to be near the trade station to make this purchase.
+  Каждый слух об импорте [bold]сообщит вам, на какую торговую станцию он будет доставлен[/bold] перед покупкой.
+  Вам не нужно находиться рядом с торговой станцией, чтобы совершить эту покупку.
 
-  The item is delivered in a crate which is locked specifically to you.
+  Товар доставляется в ящике, запертом специально для вас.
 
-  ## Reputations
+  ## Репутация
 
-  Your reputation with each Nation determines which imports will be available for you.
-  Reputation is earned by completing rumors. As you earn reputation with a Nation your title will increase, unlocking more imports and better rumors.
+  Ваша репутация с каждой Нацией определяет, какой импорт будет доступен для вас.
+  Репутация зарабатывается выполнением слухов. По мере роста репутации с Нацией ваш титул повышается, открывая больше импорта и лучшие слухи.
 
-  Information about your current reputation and title with the Nations is available through the 'Reputations' tab of the Rumors section of the [bold]Job Network Menu[/bold].
+  Информация о вашей текущей репутации и титуле с Нациями доступна на вкладке 'Репутация' раздела Слухов [bold]меню сети заданий[/bold].
 
-  ## Exclusive Devices
-  Some devices which are crucial to the economy such as Upgrade Modules, Trade Nodes and Codex Fragments are exclusive to the Rumored Imports.
+  ## Эксклюзивные устройства
+  Некоторые устройства, критически важные для экономики, такие как модули улучшений, торговые узлы и фрагменты кодекса, являются эксклюзивными для Слухов об импорте.
 
-  The limited availability of these items mean they have extreme resale value as they are crucial for character or faction progression.
+  Ограниченная доступность этих предметов означает, что они имеют чрезвычайную ценность при перепродаже, поскольку они критически важны для развития персонажа или фракции.
 
-  ### Upgrade Modules
-  Each Nation offers an exclusive variant of these. These devices can be applied to a wide variety of items and machines.
-  For more information see the 'Upgrades' guidepage.
+  ### Модули улучшений
+  Каждая Нация предлагает эксклюзивный вариант этих устройств. Эти устройства можно применять к широкому спектру предметов и машин.
+  Для получения дополнительной информации см. руководство "Улучшения".
 
-  ### Trade Nodes
-  Trade Stations must stockpile Trade Nodes to upgrade their Infrastructure level which leads to more profitable bounties.
-  Trade stations generate 10 Resonance per stored Trade Node every time bounties refresh.
-  For more information see the 'Trade Station/Resonance' guidepage.
+  ### Торговые узлы
+  Торговые станции должны накапливать торговые узлы для повышения уровня инфраструктуры, что ведёт к более прибыльным наградам.
+  Торговые станции генерируют 10 резонанса за каждый хранящийся торговый узел каждый раз, когда обновляются награды.
+  Для получения дополнительной информации см. руководство "Торговая станция/Резонанс".
 
-  Trade Nodes can be exported for more than they cost to import, but the factions which control Trade Stations may purchase these at an even higher price.
+  Торговые узлы можно экспортировать дороже, чем они стоят при импорте, но фракции, контролирующие торговые станции, могут покупать их по ещё более высокой цене.
 
-  ### Codex Fragments
-  Each Nation offers an exclusive variant of these. Using these will unlock 1 of 5 codex entries for the related Nation.
-  Every five codex entries that a character unlock will grant them an Insight Perk choice.
-  These Insights are incredibly powerful and so Codex Fragments are key for all characters progression.
-  For more information see the 'Insights/Codex' guidepage
+  ### Фрагменты кодекса
+  Каждая Нация предлагает эксклюзивный вариант этих фрагментов. Использование их разблокирует 1 из 5 записей кодекса для соответствующей Нации.
+  Каждые пять записей кодекса, которые персонаж разблокирует, дают ему выбор перка инсайта.
+  Эти инсайты невероятно мощны, поэтому фрагменты кодекса являются ключом к прогрессу всех персонажей.
+  Для получения дополнительной информации см. руководство "Инсайты/Кодекс"
 
-  Codex Fragments are consumed on use and so trade demand for Fragments is always high.
+  Фрагменты кодекса расходуются при использовании, поэтому спрос на фрагменты в торговле всегда высок.
 
-  ## Exclusive Equipment
-  As your title increases the Nations will offer increasingly powerful equipment that is exclusive to the Rumored Imports.
+  ## Эксклюзивное оборудование
+  По мере повышения вашего титула Нации будут предлагать всё более мощное оборудование, эксклюзивное для Слухов об импорте.
 
 </Document>
-

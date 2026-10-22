@@ -1,63 +1,63 @@
 <Document>
-# Medicine and your Metabolism
+# Медицина и ваш метаболизм
 \n
-In the Threshold most [italic]medicine[/italic] works slower. This means that what will usually take you 1 minute to get healed up elsewhere may take you 10 minutes to heal in here.\n
-  [italic]Note: Harmful reagents will still hurt you the same.[/italic]
+В Пороге большинство [italic]лекарств[/italic] работают медленнее. Это означает, что то, что обычно занимает у вас 1 минуту, чтобы вылечиться в другом месте, может занять у вас 10 минут, чтобы вылечиться здесь.\n
+  [italic]Примечание: Вредные реагенты всё равно будут вредить вам так же.[/italic]
 \n
 
-  ## Absorption Rates and Effectiveness
+  ## Скорость абсорбции и эффективность
 
-  This is the biggest effect that that the Threshold has on our metabolism. [color=burlywood]Absorption rates are lowered:[/color] the medicine stays in the patient's bloodstream for longer and it heals for less with each tick. \n
+  Это самый большой эффект, который Порог оказывает на наш метаболизм. [color=burlywood]Скорость абсорбции снижена:[/color] лекарство остаётся в кровотоке пациента дольше и лечит меньше с каждым тиком. \n
   \n
-  Let's take a common medicine like [color=#ffaa00]Bicaridine[/color] as an example:
+  Возьмём для примера обычное лекарство, такое как [color=#ffaa00]Бикаридин[/color]:
   <Box>
-    <GuideEntityEmbed Entity="PillBicaridine" Caption="Bicaridine"/>
+    <GuideEntityEmbed Entity="PillBicaridine" Caption="Бикаридин"/>
   </Box>
-  Outside the Threshold [color=#ffaa00]Bicaridine[/color] usually is absorbed at the rate of [color=lightgoldenrodyellow]0.5u per second[/color] and each time it is aborbed it heals [color=forestgreen]1.5 Brute[/color].\n
-  In the Threshold [color=#ffaa00]Bicaridine[/color] will instead be absorbed at a rate of [color=lightgoldenrodyellow]0.05u per second[/color] and each time it heals [color=forestgreen]0.15 Brute[/color]. \n
-  What this means is that [color=lightgoldenrodyellow]5 units[/color] of [color=#ffaa00]Bicaridine[/color] will heal [color=forestgreen]7.5 Brute[/color] both outside and inside the Threshold, but in the Threshold [color=burlywood]it will take [bold]10 times as long[/bold] for the same amount of medicine to be processed[/color].\n
+  За пределами Порога [color=#ffaa00]Бикаридин[/color] обычно абсорбируется со скоростью [color=lightgoldenrodyellow]0.5 ед. в секунду[/color], и каждый раз при абсорбции он лечит [color=forestgreen]1.5 механического урона[/color].\n
+  В Пороге [color=#ffaa00]Бикаридин[/color] вместо этого будет абсорбироваться со скоростью [color=lightgoldenrodyellow]0.05 ед. в секунду[/color], и каждый раз он лечит [color=forestgreen]0.15 механического урона[/color]. \n
+  Это означает, что [color=lightgoldenrodyellow]5 единиц[/color] [color=#ffaa00]Бикаридина[/color] вылечат [color=forestgreen]7.5 механического урона[/color] как за пределами, так и внутри Порога, но в Пороге [color=burlywood]потребуется [bold]в 10 раз больше времени[/bold] для обработки того же количества лекарства[/color].\n
 \n
-  [bold]OVERDOSES:[/bold] They still work the same! \n
-  Keeping with our example: someone with [color=lightgoldenrodyellow]15 or more units[/color] of [color=#ffaa00]Bicaridine[/color] will still take damage at a rate of [color=lightcoral]0.5 Asphyxiation[/color] and [color=lightcoral]1.5 Poison[/color] per tick, and the overdose will not speed up the absorption rate, meaning it will taker longer for the [color=#ffaa00]Bicaridine[/color] to go under [color=lightgoldenrodyellow]15 units[/color].\n
+  [bold]ПЕРЕДОЗИРОВКИ:[/bold] Они всё ещё работают так же! \n
+  Продолжая наш пример: кто-то с [color=lightgoldenrodyellow]15 или более единицами[/color] [color=#ffaa00]Бикаридина[/color] всё ещё будет получать урон со скоростью [color=lightcoral]0.5 удушья[/color] и [color=lightcoral]1.5 яда[/color] за тик, и передозировка не ускорит скорость абсорбции, что означает, что [color=#ffaa00]Бикаридину[/color] потребуется больше времени, чтобы опуститься ниже [color=lightgoldenrodyellow]15 единиц[/color].\n
   \n
 
-  ## Some Exceptions
+  ## Некоторые исключения
 
-  There has been some work done to make sure that some medicines do remain unaffected as they could become pretty much useless otherwise.
-
-  <Box>
-    <GuideEntityEmbed Entity="EmergencyMedipen" Caption="Epinephrine"/>
-    <GuideEntityEmbed Entity="PillKelotane" Caption="Inaprovaline"/>
-    <GuideEntityEmbed Entity="PillDexalin" Caption="Dexalin/Dexalin+"/>
-    <GuideEntityEmbed Entity="WaterJug" Caption="Saline"/>
-  </Box>
-
-  [color=#d2fffa]Epinphrine[/color], [color=darkred]Inaprovaline[/color], [color=#0041a8]Dexalin[/color], and [color=#4da0bd]Dexalin plus[/color] remain as effective as ever, this ensures going into a critical state isn't outright a death sentence.\n
-  [color=#0064C8]Saline[/color] also remains unaffected.\n
+  Была проделана некоторая работа, чтобы убедиться, что некоторые лекарства остаются незатронутыми, так как иначе они могли бы стать практически бесполезными.
 
   <Box>
-    <GuideEntityEmbed Entity="PillCharcoal" Caption="Charcoal"/>
+    <GuideEntityEmbed Entity="EmergencyMedipen" Caption="Эпинефрин"/>
+    <GuideEntityEmbed Entity="PillKelotane" Caption="Инапровалин"/>
+    <GuideEntityEmbed Entity="PillDexalin" Caption="Дексалин/Дексалин+"/>
+    <GuideEntityEmbed Entity="WaterJug" Caption="Физраствор"/>
   </Box>
 
-  [color=slategray]Charcoal[/color] is a special case. Its [color=lightpink]Poison[/color] healing effectiveness has been vastly reduced. You will need [color=lightgoldenrodyellow]10 units[/color] of [color=slategray]Charcoal[/color] to heal what you can heal with [color=lightgoldenrodyellow]1 unit[/color] outside the Threshold.\n
-  However, its absorption rate is still the same and [color=burlywood]it clears the bloodstream with the same effectiveness[/color].\n
-  This all means that in the Threhsold it will take you more [color=slategray]Charcoal[/color] than usual to heal [color=lightpink]Poison[/color] but the same amount of [color=slategray]Charcoal[/color] as usual to clear other reagents.\n
-
-  ## Intravenous
-
-  [bold]IV bags[/bold] have been brought into the Threshold to help adapt to the slower rates.
+  [color=#d2fffa]Эпинефрин[/color], [color=darkred]Инапровалин[/color], [color=#0041a8]Дексалин[/color] и [color=#4da0bd]Дексалин плюс[/color] остаются такими же эффективными, как всегда, это гарантирует, что переход в критическое состояние не является прямым смертным приговором.\n
+  [color=#0064C8]Физраствор[/color] также остаётся незатронутым.\n
 
   <Box>
-    <GuideEntityEmbed Entity="CMBloodPack" Caption="IV Bag"/>
-    <GuideEntityEmbed Entity="CMIV" Caption="IV Stand"/>
+    <GuideEntityEmbed Entity="PillCharcoal" Caption="Уголь"/>
   </Box>
 
-  You can use an [bold]IV bag[/bold] to slowly drip the medicine you need to get into a patient.\n
-  To do this attach an [bold]IV bag[/bold] filled with medicine to a patient and [color=burlywood]so long as that medicine is not present in their bloodstream[/color] it will drip [color=lightgoldenrodyellow]1 unit[/color] at a time.\n
-  You can also use [bold]IV bags[/bold] to draw and inject blood from and into someone. [color=burlywood]Blood given via an IV bag will not naturally poison someone[/color], so long as it is the right type of blood for their species.\n
-  If you pull someone away from their [bold]IV[/bold] or their [bold]IV[/bold] away from them you will snap the line and injure the patient slightly.\n
+  [color=slategray]Уголь[/color] — особый случай. Его эффективность лечения [color=lightpink]яда[/color] была сильно снижена. Вам потребуется [color=lightgoldenrodyellow]10 единиц[/color] [color=slategray]угля[/color], чтобы вылечить то, что вы можете вылечить с помощью [color=lightgoldenrodyellow]1 единицы[/color] за пределами Порога.\n
+  Однако его скорость абсорбции остаётся той же, и [color=burlywood]он очищает кровоток с той же эффективностью[/color].\n
+  Всё это означает, что в Пороге вам потребуется больше [color=slategray]угля[/color], чем обычно, чтобы вылечить [color=lightpink]яд[/color], но то же количество [color=slategray]угля[/color], что и обычно, чтобы очистить другие реагенты.\n
+
+  ## Внутривенный
+
+  [bold]Внутривенные пакеты[/bold] были введены в Порог, чтобы помочь адаптироваться к более медленным скоростям.
+
+  <Box>
+    <GuideEntityEmbed Entity="CMBloodPack" Caption="Внутривенный пакет"/>
+    <GuideEntityEmbed Entity="CMIV" Caption="Внутривенная стойка"/>
+  </Box>
+
+  Вы можете использовать [bold]внутривенный пакет[/bold], чтобы медленно капать лекарство, которое нужно ввести пациенту.\n
+  Для этого прикрепите [bold]внутривенный пакет[/bold], заполненный лекарством, к пациенту, и [color=burlywood]до тех пор, пока это лекарство отсутствует в его кровотоке[/color], оно будет капать по [color=lightgoldenrodyellow]1 единице[/color] за раз.\n
+  Вы также можете использовать [bold]внутривенные пакеты[/bold], чтобы забирать и вводить кровь кому-либо. [color=burlywood]Кровь, введённая через внутривенный пакет, не будет естественным образом отравлять человека[/color], при условии, что это правильный тип крови для его вида.\n
+  Если вы оттащите кого-то от его [bold]внутривенной[/bold] или её от него, вы оборвёте линию и слегка раните пациента.\n
   \n
-  [bold]IV stands[/bold] allow you to leave the [bold]IV[/bold] line connected to a patient while you go elsewhere, but you can use [bold]IV bags[/bold] without a stand, so long as you remain near the person it's connected to.\n
+  [bold]Внутривенные стойки[/bold] позволяют вам оставить [bold]внутривенную[/bold] линию подключённой к пациенту, пока вы уходите в другое место, но вы можете использовать [bold]внутривенные пакеты[/bold] без стойки, пока вы остаётесь рядом с человеком, к которому она подключена.\n
 
 
 </Document>

@@ -104,8 +104,8 @@ namespace Content.Client.Lobby.UI
 
         private ISawmill _sawmill;
 
-        public string ThresholdLore = "Travel into the Threshold is strictly one way and so you left everything behind the moment you passed through the true-space barrier.\nThe Threshold is divided into sectors; each sector has an abundance of rare materials and xeno-artifacts.\nYou settled within one of these sectors and intended to stay until..";
-        public string NexusLore = "At the center of each Threshold is the [bold]Nexus Space[/bold].\nThis space is shared and accessible through the Thresholds of over a dozen universes.\nThis sector is colonized as neutral territory to prevent the outbreak of [bold][color=red]Universal War[/bold][/color].\nThe major powers from the connected universes send colonists into the Nexus Space as 'independents'.";
+		public string ThresholdLore = Loc.GetString("humanoid-profile-editor-threshold-lore");
+		public string NexusLore = Loc.GetString("humanoid-profile-editor-nexus-lore");
 
         private MarkingsViewModel _markingsModel = new();
 
@@ -140,7 +140,7 @@ namespace Content.Client.Lobby.UI
 
             _maxNameLength = _cfgManager.GetCVar(CCVars.MaxNameLength);
             _allowFlavorText = _cfgManager.GetCVar(CCVars.FlavorText);
-            AlignmentButton.AddItem("*UNSELECTED*");
+            AlignmentButton.AddItem(Loc.GetString("humanoid-profile-editor-unselected"));
             foreach (var alignment in _prototypeManager.EnumeratePrototypes<AlignmentPrototype>())
             {
                 AlignmentButton.AddItem(alignment.Name);
@@ -151,7 +151,7 @@ namespace Content.Client.Lobby.UI
             {
                 SelectAlignment(args);
             };
-            BGButton.AddItem("*UNSELECTED*");
+            BGButton.AddItem(Loc.GetString("humanoid-profile-editor-unselected"));
             foreach (var background in _prototypeManager.EnumeratePrototypes<UniverseOriginPrototype>())
             {
                 BGButton.AddItem(background.Name);
@@ -162,7 +162,7 @@ namespace Content.Client.Lobby.UI
                 SelectUniverseOrigin(args);
             };
 
-            MotiveButton.AddItem("*UNSELECTED*");
+            MotiveButton.AddItem(Loc.GetString("humanoid-profile-editor-unselected"));
             foreach (var motive in _prototypeManager.EnumeratePrototypes<MotivePrototype>())
             {
                 MotiveButton.AddItem(motive.Name);
@@ -171,7 +171,7 @@ namespace Content.Client.Lobby.UI
 
             ThresholdLoreLabel.Text = ThresholdLore;
             NexusLoreLabel.Text = NexusLore;
-            TurningPointButton.AddItem("*UNSELECTED*");
+            TurningPointButton.AddItem(Loc.GetString("humanoid-profile-editor-unselected"));
             foreach (var tp in _prototypeManager.EnumeratePrototypes<TurningPointPrototype>())
             {
                 TurningPointButton.AddItem(tp.Name);
@@ -337,6 +337,9 @@ namespace Content.Client.Lobby.UI
             #region Jobs
 
             TabContainer.SetTabTitle(1, Loc.GetString("humanoid-profile-editor-markings-tab"));
+			TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-background-tab"));
+			TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-journey-tab"));
+			TabContainer.SetTabTitle(4, Loc.GetString("humanoid-profile-editor-traits-tab"));
 
             _jobCategories = new Dictionary<string, BoxContainer>();
 
@@ -681,7 +684,7 @@ namespace Content.Client.Lobby.UI
             if (!alignmentSelected || !originSelected || !motiveSelected)
             {
                 RequirementsLbl.Visible = true;
-                RequirementsLbl.Text = "[color=red]Complete the Background Page.";
+                RequirementsLbl.Text = $"[color=red]{Loc.GetString("humanoid-profile-editor-requirements-background")}";
             }
             else
             {
@@ -689,7 +692,7 @@ namespace Content.Client.Lobby.UI
             }
             if (!turningPointSelected)
             {
-                RequirementsJourneyLbl.Text = "[color=red]Complete the Journey Page.";
+                RequirementsJourneyLbl.Text = $"[color=red]{Loc.GetString("humanoid-profile-editor-requirements-journey")}";
                 RequirementsJourneyLbl.Visible = true;
             }
             else
@@ -698,7 +701,7 @@ namespace Content.Client.Lobby.UI
             }
             if (!nameSelected)
             {
-                RequirementsNameLbl.Text = "[color=red]Set Character Name.";
+                RequirementsNameLbl.Text = $"[color=red]{Loc.GetString("humanoid-profile-editor-requirements-name")}";
                 RequirementsNameLbl.Visible = true;
             }
             else

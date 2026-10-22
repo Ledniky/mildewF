@@ -1,16 +1,16 @@
 <Document>
-# Gas Mining
+# Газовая добыча
 
-Gas mining is a crucial part of the station's livability, economy, and providing valuable resources that are used in various industries.
+Газовая добыча является важнейшей частью жизнеобеспечения станции, экономики и поставки ценных ресурсов, используемых в различных отраслях.
 
-Note that gas mining is a step up from regular mining, and it is not recommended to start with it if you are new to mining in general. It is recommended to get familiar with regular mining first before trying out gas mining.
+Обратите внимание, что газовая добыча — это шаг вперёд по сравнению с обычной добычей, и её не рекомендуется начинать, если вы новичок в добыче в целом. Рекомендуется сначала освоиться с обычной добычей, прежде чем пробовать газовую добычу.
 
-## Equipment & Preparation
-Before you can start mining, you need a a few  things:
-- A [color=cyan]Gas Analyzer[/color]: This device reveals the amount of gas trapped in the asteroid. All gasses except nitrous oxide can be obtained from gas mining.
-- At least one [color=cyan]Gas miner[/color]: This machine is the primary tool for extracting gas from asteroids.
-- Two [color=cyan]Multi-chanel Transfer Nodes[/color] (MCTNs): These are used to transfer gas from the mining site to the shuttle, and from the shuttle to the station you will be selling gas to.
-- [color=cyan]MV Cables[/color]: These are used to connect the gas miner(s) to the MCTNs.
+## Оборудование и подготовка
+Прежде чем начать добычу, вам нужно несколько вещей:
+- [color=cyan]Газовый анализатор[/color]: Это устройство показывает количество газа, заключённого в астероиде. Все газы, кроме закиси азота, можно получить путём газовой добычи.
+- Как минимум один [color=cyan]Газодобытчик[/color]: Эта машина является основным инструментом для извлечения газа из астероидов.
+- Два [color=cyan]Многоканальных узла передачи[/color] (МКУП): Они используются для передачи газа от места добычи к шаттлу и от шаттла к станции, которой вы будете продавать газ.
+- [color=cyan]МВ-кабели[/color]: Они используются для подключения газодобытчика(ов) к МКУП.
 
 <Box>
    <GuideEntityEmbed Entity="GasAnalyzer"/>
@@ -19,18 +19,18 @@ Before you can start mining, you need a a few  things:
    <GuideEntityEmbed Entity="CableMVStack"/>
 </Box>
 
-## Mining
-To start mining, you need to:
-- Anchor the gas miner(s) onto the asteroid
-- Connect the gas miner(s) to the MCTN (on the asteroid) with MV cables and pipes.
-- Interact with the MCTNs and select the appropriate pipe line and MV line.
+## Добыча
+Чтобы начать добычу, вам нужно:
+- Закрепить газодобытчик(и) на астероиде
+- Подключить газодобытчик(и) к МКУП (на астероиде) с помощью МВ-кабелей и труб.
+- Взаимодействовать с МКУП и выбрать соответствующий трубопровод и МВ-линию.
 
-Note that the MCTNs need to be anchored and close to each others before you can connect them together.
+Обратите внимание, что МКУП должны быть закреплены и находиться близко друг к другу, прежде чем вы сможете соединить их вместе.
 
-- While waiting, you will notice that the mining process will start to slow down significantly as time goes on. This is because the gas is being depleted. It is usually inefficient to completely drain an asteroid. Everyone has their preferences, but 10kPa is a good point to stop.
+- Пока вы ждёте, вы заметите, что процесс добычи начнёт значительно замедляться со временем. Это происходит потому, что газ истощается. Обычно неэффективно полностью опустошать астероид. У всех свои предпочтения, но 10 кПа — хорошая точка для остановки.
 
-### Storage
-To have a profitable mining trip, you need to make sure that you have enough storage for the gas you are mining. There are two main options for storing gas: canisters and gas chambers.
+### Хранение
+Чтобы поездка за добычей была прибыльной, вам нужно убедиться, что у вас достаточно места для хранения газа, который вы добываете. Есть два основных варианта хранения газа: канистры и газовые камеры.
 
-Gas chambers are a more efficient way to store gas, but they are also more expensive and require more preparation. Canisters are cheaper and easier to use, but they take more work to manage and transport.
+Газовые камеры — более эффективный способ хранения газа, но они также дороже и требуют больше подготовки. Канистры дешевле и проще в использовании, но они требуют больше работы для управления и транспортировки.
 </Document>

@@ -197,6 +197,16 @@
     intensitySlope: 2
     totalIntensity: 100
   - type: WallMount
+  # Art-start
+  - type: NodeContainer
+    nodes:
+      input:
+        !type:CableDirectionalDeviceNode
+        nodeGroupID: HVPower
+      output:
+        !type:CableDirectionalDeviceNode
+        nodeGroupID: MVPower
+  # Art-end
 
 # Substations in use
 

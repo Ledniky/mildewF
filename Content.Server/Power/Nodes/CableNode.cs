@@ -1,6 +1,7 @@
 using Content.Server.NodeContainer.Nodes;
 using Content.Shared.NodeContainer;
 using Robust.Shared.Map.Components;
+using Content.Server._Art.Power.Nodes; // Art-edit
 
 namespace Content.Server.Power.Nodes
 {
@@ -31,6 +32,25 @@ namespace Content.Server.Power.Nodes
                 {
                     nodeDirs.Add((dir, node));
                 }
+
+                // Art-start
+                if (node is CableDirectionalDeviceNode devNode && devNode.NodeGroupID == NodeGroupID)
+                {
+                    var devDir = xformQuery.GetComponent(node.Owner).LocalRotation.GetCardinalDir();
+
+                    if (dir == Direction.Invalid)
+                    {
+                        terminalDirs |= CableDirectionalDeviceNode.CardinalMask & ~(1 << (int)devDir);
+                        nodeDirs.Add((Direction.Invalid, node));
+                    }
+                    else if (dir != devDir.GetOpposite())
+                    {
+                        terminalDirs |= 1 << (int)dir;
+                    }
+
+                    continue;
+                }
+                // Art-end
 
                 if (node is CableDeviceNode && dir == Direction.Invalid)
                 {
