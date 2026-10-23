@@ -30,6 +30,8 @@ using Content.Shared.Power;
 using Content.Shared.Power.Components;
 using Content.Shared.Prayer;
 using Content.Shared.Station.Components;
+using Content.Shared.Xenoarchaeology.Artifact;
+using Content.Shared.Xenoarchaeology.Artifact.Components;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -44,10 +46,13 @@ using Robust.Shared.Utility;
 using System.Linq;
 using System.Numerics;
 
+#pragma warning disable IDE1006 // Naming Styles
 namespace Content.Shared._Persistence14.Rumors.Systems;
+#pragma warning restore IDE1006 // Naming Styles
 
 public sealed partial class RumorsSystem : EntitySystem
 {
+    [Dependency] private EntityQuery<MobStateComponent> _mobStateQuery = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IPrototypeManager _protoMan = default!;
     [Dependency] private CrewMetaRecordsSystem _crewMeta = default!;
@@ -60,6 +65,7 @@ public sealed partial class RumorsSystem : EntitySystem
     [Dependency] private EntityQuery<SalvageMobRestrictionsComponent> _salvMobQuery = default!;
     [Dependency] private EntityQuery<RumorHealingTargetComponent> _healingTargetQuery = default!;
     [Dependency] private EntityQuery<RumorPowerTargetComponent> _powerTargetQuery = default!;
+    [Dependency] private EntityQuery<XenoArtifactComponent> _artifactQuery = default!;
     [Dependency] private IChatManager _chatManager = default!;
     [Dependency] private ChatSystem _chatSystem = default!;
     [Dependency] private MetaDataSystem _meta = default!;
@@ -74,6 +80,7 @@ public sealed partial class RumorsSystem : EntitySystem
     [Dependency] private IAfkManager _afkManager = default!;
     [Dependency] private IPlayerManager _playerManager = default!;
     [Dependency] private ServerGlobalSoundSystem _globalsound = default!;
+    private List<(Entity<TransformComponent> Entity, EntityUid MapUid, Vector2 LocalPosition)> _detachEnts = new();
     public override void Initialize()
     {
         base.Initialize();
@@ -86,6 +93,39 @@ public sealed partial class RumorsSystem : EntitySystem
         SubscribeLocalEvent<RumorPowerTargetComponent, ChargeChangedEvent>(OnBatteryChargeChanged);
         SubscribeLocalEvent<EdibleComponent, IngestedRumorEvent>(OnEdibleIngested);
         SubscribeLocalEvent<PrayableComponent, PrayedEvent>(OnPrayed);
+        SubscribeLocalEvent<RumorArtifactNodeUnlockTargetComponent, ArtifactUnlockingFinishedEvent>(OnArtifactNodeUnlock);
+    }
+
+    private void OnArtifactNodeUnlock(Entity<RumorArtifactNodeUnlockTargetComponent> ent, ref ArtifactUnlockingFinishedEvent args)
+    {
+        if (!args.Success) return;
+        if (!TryComp<PersistentIdentifierComponent>(ent, out var pid) || pid == null) return;
+        _pid.TryGetId((ent, pid), out var pID);
+        if (pID == null) return;
+        var query = EntityQueryEnumerator<RumorGetterComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            foreach (var rumor in comp.Rumors.ShallowClone())
+            {
+                if (rumor.CompletionType == CompletionType.ArtifactNodesUnlock)
+                {
+                    if (rumor.Targets.Contains(pID))
+                    {
+                        rumor.CompletionProgress++;
+                        var rumorProto = _protoMan.Index(rumor.OriginalPrototype);
+                        if (rumor.CompletionProgress >= rumorProto.CompletionTarget)
+                        {
+                            EntityUid? player = null;
+                            var implant = Transform(uid);
+                            player = implant.ParentUid;
+                            if (player == null) return;
+                            CompleteRumor((uid, comp), player.Value, rumor);
+                        }
+                        return;
+                    }
+                }
+            }
+        }
     }
 
     private void GenerateRumorRewards(Entity<RumorGetterComponent> ent)
@@ -308,9 +348,9 @@ public sealed partial class RumorsSystem : EntitySystem
             }
             if (passed)
             {
-                rumor.CurrentConsumption += args.Split.Volume.Int();
+                rumor.CompletionProgress += args.Split.Volume.Int();
                 var originalProto = _protoMan.Index<RumorPrototype>(rumor.OriginalPrototype);
-                if (rumor.CurrentConsumption >= originalProto.ConsumptionTarget)
+                if (rumor.CompletionProgress >= originalProto.CompletionTarget)
                 {
                     CompleteRumor(getter.Value, args.Target, rumor);
                 }
@@ -351,6 +391,7 @@ public sealed partial class RumorsSystem : EntitySystem
                                 if (sisterBattery.LastCharge < sisterBattery.MaxCharge)
                                 {
                                     pass = false;
+                                    break;
                                 }
 
                             }
@@ -583,6 +624,12 @@ public sealed partial class RumorsSystem : EntitySystem
             {
                 SelfDeleteGrid(uid);
             }
+            else if (_timing.CurTime > comp.AnnounceTime)
+            {
+                comp.AnnounceTime = _timing.CurTime + comp.AnnounceCooldown;
+                SelfDeleteGridAnnounce(uid, comp);
+            }
+
         }
         var query = EntityQueryEnumerator<RumorGetterComponent>();
         while (query.MoveNext(out var uid, out var comp))
@@ -593,6 +640,13 @@ public sealed partial class RumorsSystem : EntitySystem
             if (player == null) continue;
             foreach (var rumor in comp.Rumors.ShallowClone())
             {
+                if (rumor.Cancelable)
+                {
+                    if (rumor.CancelTime < _timing.CurTime)
+                    {
+                        FailRumor(uid, comp, rumor);
+                    }
+                }
                 if (rumor.DebugComplete)
                 {
                     CompleteRumor((uid, comp), player.Value, rumor);
@@ -622,22 +676,66 @@ public sealed partial class RumorsSystem : EntitySystem
         base.Update(frameTime);
     }
 
+    private void SelfDeleteGridAnnounce(EntityUid uid, GridSelfDeleteComponent comp)
+    {
+        var sound = new SoundPathSpecifier("/Audio/Misc/notice2.ogg");
+        var actorQuery = AllEntityQuery<ActorComponent>();
+        var timeleft = comp.DeleteTime - _timing.CurTime;
+        while (actorQuery.MoveNext(out var actorUid, out _))
+        {
+            if (Transform(actorUid).GridUid == uid)
+            {
+                NotifyPlayer(actorUid, $"This grid is temporary and will despawn in {timeleft.ToString("hh\\:mm\\:ss")}.", sound);
+            }
+        }
+    }
+
+    private void FailRumor(EntityUid uid, RumorGetterComponent comp, ActiveRumor rumor)
+    {
+        comp.Rumors.Remove(rumor);
+        EntityUid? player = null;
+        var implant = Transform(uid);
+        player = implant.ParentUid;
+        NotifyPlayer(player.Value, $"The rumor {rumor.Name} has expired.");
+        _jobnet.UpdateUserInterface(player, uid);
+    }
+
     private void SelfDeleteGrid(EntityUid uid)
     {
+        // Uhh yeah don't delete mobs or whatever
         var mobQuery = AllEntityQuery<MobStateComponent, TransformComponent>();
-        List<(Entity<TransformComponent> Entity, EntityUid MapUid, Vector2 LocalPosition)> detachEnts = new();
+        _detachEnts.Clear();
+
         while (mobQuery.MoveNext(out var mobUid, out _, out var xform))
         {
-            if (xform.GridUid == null || xform.GridUid != uid || xform.MapUid == null)
+            if (xform.GridUid == null || uid != xform.GridUid || xform.MapUid == null)
                 continue;
 
             if (_salvMobQuery.HasComp(mobUid))
                 continue;
-            detachEnts.Add(((mobUid, xform), xform.MapUid.Value, _transform.GetWorldPosition(xform)));
+
+            bool CheckParents(EntityUid uid)
+            {
+                do
+                {
+                    uid = _transform.GetParentUid(uid);
+                    if (_mobStateQuery.HasComp(uid))
+                        return true;
+                } while (uid != xform.GridUid && uid != EntityUid.Invalid);
+                return false;
+            }
+
+            if (CheckParents(mobUid))
+                continue;
+
+            // Can't parent directly to map as it runs grid traversal.
+            _detachEnts.Add(((mobUid, xform), xform.MapUid.Value, _transform.GetWorldPosition(xform)));
             _transform.DetachEntity(mobUid, xform);
         }
+
         QueueDel(uid);
-        foreach (var entity in detachEnts)
+
+        foreach (var entity in _detachEnts)
         {
             _transform.SetCoordinates(entity.Entity.Owner, new EntityCoordinates(entity.MapUid, entity.LocalPosition));
         }
@@ -694,7 +792,7 @@ public sealed partial class RumorsSystem : EntitySystem
         var currentPos = Transform(player).MapPosition;
         if (targetPos == null) return;
         var dist = Vector2.Distance(targetPos.Value.Position, currentPos.Position);
-        if (currentPos.MapId == targetPos.Value.MapId && dist <= 500)
+        if (currentPos.MapId == targetPos.Value.MapId && dist <= 800)
         {
             NotifyPlayer(player, $"The grids from the {rumor.Name} rumor have appeared nearby!");
             SpawnEventGrids(rumor, player);
@@ -861,6 +959,10 @@ public sealed partial class RumorsSystem : EntitySystem
             if (!_pid.TryResolveId(active.TargetStation, out var targetStation)) return rumor.Description;
             addon += $"\nRevive and heal the crew on the grids and bring them to {Name(targetStation)}.";
         }
+        if (rumor.CompletionType == CompletionType.ArtifactNodesUnlock)
+        {
+            addon += $"\nFind xeno-artifacts on the grids and unlock at least {rumor.CompletionTarget} nodes from them.";
+        }
         if (rumor.CompletionType == CompletionType.Eat || rumor.CompletionType == CompletionType.Drink)
         {
             if (active.Targets.Count < 1) return rumor.Description;
@@ -969,7 +1071,11 @@ public sealed partial class RumorsSystem : EntitySystem
             return;
 
         mapChildren = salvMapXform.ChildEnumerator;
-
+        if (originalProto.DespawnGrids)
+        {
+            rumor.Cancelable = true;
+            rumor.CancelTime = originalProto.GridLifetime + _timing.CurTime;
+        }
         // It worked, move it into position and cleanup values.
         while (mapChildren.MoveNext(out var mapChild))
         {
@@ -982,6 +1088,8 @@ public sealed partial class RumorsSystem : EntitySystem
             {
                 var comp = EnsureComp<GridSelfDeleteComponent>(mapChild);
                 comp.DeleteTime = originalProto.GridLifetime + _timing.CurTime;
+                rumor.Cancelable = true;
+                rumor.CancelTime = comp.DeleteTime;
             }
             var salvXForm = Transform(mapChild);
             var localPos = salvXForm.LocalPosition;
@@ -1014,6 +1122,13 @@ public sealed partial class RumorsSystem : EntitySystem
                 {
                     if (!_healingTargetQuery.TryGetComponent(child, out _))
                         continue;
+                    rumor.Targets.Add(_pid.EnsureId(child));
+                }
+                if (rumor.CompletionType == CompletionType.ArtifactNodesUnlock)
+                {
+                    if (!_artifactQuery.TryGetComponent(child, out _))
+                        continue;
+                    EnsureComp<RumorArtifactNodeUnlockTargetComponent>(child);
                     rumor.Targets.Add(_pid.EnsureId(child));
                 }
 
