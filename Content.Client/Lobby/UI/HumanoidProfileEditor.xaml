@@ -174,25 +174,23 @@
                 </BoxContainer>
                 <BoxContainer Name="Journey" Orientation="Vertical" Margin="10">
                     <ScrollContainer VerticalExpand="True" HScrollEnabled="False" >
-                        <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                        <BoxContainer Orientation="Vertical">
                             <Label Text="{Loc 'humanoid-profile-editor-threshold-title'}" StyleClasses="LabelHeading" />
                             <Control MinHeight="30" />
-                            <RichTextLabel Name="ThresholdLoreLabel" HorizontalExpand="True" />
+                            <RichTextLabel Name="ThresholdLoreLabel" HorizontalAlignment="Left" />
                             <Control MinHeight="30" />
                             <BoxContainer Orientation="Horizontal">
                                 <Label Text="{Loc 'humanoid-profile-editor-turning-point-prefix'}" />
                                 <OptionButton Name="TurningPointButton" HorizontalAlignment="Right" />
                             </BoxContainer>
-							<BoxContainer Orientation="Vertical">
-								<Label Name="TurningPointTitleLabel" Text="" StyleClasses="LabelHeading" />
-								<Control MinHeight="30" />
-								<RichTextLabel Name="TurningPointLabel" HorizontalAlignment="Left" />
-								<RichTextLabel Name="TurningPointEffectsLabel" HorizontalAlignment="Left" />
-							</BoxContainer>
+                            <Label Name="TurningPointTitleLabel" StyleClasses="LabelHeading" />
+                            <Control MinHeight="30" />
+                            <RichTextLabel Name="TurningPointLabel" HorizontalAlignment="Left" />
+                            <RichTextLabel Name="TurningPointEffectsLabel" HorizontalAlignment="Left" />
                             <Control MinHeight="30" />
                             <Label Text="{Loc 'humanoid-profile-editor-nexus-title'}" StyleClasses="LabelHeading" />
                             <Control MinHeight="30" />
-                            <RichTextLabel Name="NexusLoreLabel" HorizontalExpand="True" />
+                            <RichTextLabel Name="NexusLoreLabel" HorizontalAlignment="Left" />
                         </BoxContainer>
                     </ScrollContainer>
                 </BoxContainer>
