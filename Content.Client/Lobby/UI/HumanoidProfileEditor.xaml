@@ -183,10 +183,12 @@
                                 <Label Text="{Loc 'humanoid-profile-editor-turning-point-prefix'}" />
                                 <OptionButton Name="TurningPointButton" HorizontalAlignment="Right" />
                             </BoxContainer>
-                            <Label Name="TurningPointTitleLabel" StyleClasses="LabelHeading" />
-                            <Control MinHeight="30" />
-                            <RichTextLabel Name="TurningPointLabel" HorizontalExpand="True" />
-                            <RichTextLabel Name="TurningPointEffectsLabel" HorizontalExpand="True" />
+							<BoxContainer Orientation="Vertical">
+								<Label Name="TurningPointTitleLabel" Text="" StyleClasses="LabelHeading" />
+								<Control MinHeight="30" />
+								<RichTextLabel Name="TurningPointLabel" HorizontalAlignment="Left" />
+								<RichTextLabel Name="TurningPointEffectsLabel" HorizontalAlignment="Left" />
+							</BoxContainer>
                             <Control MinHeight="30" />
                             <Label Text="{Loc 'humanoid-profile-editor-nexus-title'}" StyleClasses="LabelHeading" />
                             <Control MinHeight="30" />

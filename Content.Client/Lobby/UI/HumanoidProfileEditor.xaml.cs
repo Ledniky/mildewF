@@ -400,8 +400,8 @@ namespace Content.Client.Lobby.UI
             if (args.Id == 0)
             {
                 TurningPointTitleLabel.Text = string.Empty;
-                TurningPointLabel.Text = string.Empty;
-                TurningPointEffectsLabel.Text = string.Empty;
+                TurningPointLabel.SetMarkup(string.Empty);
+                TurningPointEffectsLabel.SetMarkup(string.Empty);
                 Profile?.TurningPoint = null;
                 CheckReady();
                 RefreshBackgroundTraits();
@@ -413,17 +413,15 @@ namespace Content.Client.Lobby.UI
                 return;
             var e = backgroundslist.ElementAt(ind);
             TurningPointTitleLabel.Text = e.Name;
-            TurningPointLabel.Text = e.Description;
-            TurningPointEffectsLabel.Text = "";
-            foreach (var effect in e.Effects)
-            {
-                var effectProto = _prototypeManager.Index<BackgroundEffectPrototype>(effect);
-                TurningPointEffectsLabel.Text += $"\n{effectProto.Description}";
-            }
+            TurningPointLabel.SetMarkup(e.Description);
+
+            var turningPointEffectsText = string.Concat(e.Effects.Select(effect =>
+                $"\n{_prototypeManager.Index<BackgroundEffectPrototype>(effect).Description}"));
+            TurningPointEffectsLabel.SetMarkup(turningPointEffectsText);
+
             Profile?.TurningPoint = e.ID;
             CheckReady();
             RefreshBackgroundTraits();
-            return;
         }
 
         private Action<OptionButton.ItemSelectedEventArgs> SelectMotive()
@@ -434,7 +432,8 @@ namespace Content.Client.Lobby.UI
                 if (args.Id == 0)
                 {
                     MotiveTitleLabel.Text = string.Empty;
-                    MotiveDescLabel.Text = string.Empty;
+                    MotiveDescLabel.SetMarkup(string.Empty);
+                    MotiveEffectsLabel.SetMarkup(string.Empty);
                     Profile?.Motive = null;
                     CheckReady();
                     RefreshBackgroundTraits();
@@ -446,13 +445,12 @@ namespace Content.Client.Lobby.UI
                     return;
                 var e = motiveslist.ElementAt(ind);
                 MotiveTitleLabel.Text = e.Name;
-                MotiveDescLabel.Text = e.Description;
-                MotiveEffectsLabel.Text = "";
-                foreach (var effect in e.Effects)
-                {
-                    var effectProto = _prototypeManager.Index<BackgroundEffectPrototype>(effect);
-                    MotiveEffectsLabel.Text += $"\n{effectProto.Description}";
-                }
+                MotiveDescLabel.SetMarkup(e.Description);
+
+                var motiveEffectsText = string.Concat(e.Effects.Select(effect =>
+                    $"\n{_prototypeManager.Index<BackgroundEffectPrototype>(effect).Description}"));
+                MotiveEffectsLabel.SetMarkup(motiveEffectsText);
+
                 Profile?.Motive = e.ID;
                 CheckReady();
                 RefreshBackgroundTraits();
@@ -465,7 +463,8 @@ namespace Content.Client.Lobby.UI
             if (args.Id == 0)
             {
                 BGTitleLabel.Text = string.Empty;
-                BGDescLabel.Text = string.Empty;
+                BGDescLabel.SetMarkup(string.Empty);
+                BGEffectsLabel.SetMarkup(string.Empty);
                 Profile?.UniverseOrigin = null;
                 CheckReady();
                 RefreshBackgroundTraits();
@@ -477,17 +476,15 @@ namespace Content.Client.Lobby.UI
                 return;
             var e = backgroundslist.ElementAt(ind);
             BGTitleLabel.Text = e.Name;
-            BGDescLabel.Text = e.Description;
-            BGEffectsLabel.Text = "";
-            foreach (var effect in e.Effects)
-            {
-                var effectProto = _prototypeManager.Index<BackgroundEffectPrototype>(effect);
-                BGEffectsLabel.Text += $"\n{effectProto.Description}";
-            }
+            BGDescLabel.SetMarkup(e.Description);
+
+            var bgEffectsText = string.Concat(e.Effects.Select(effect =>
+                $"\n{_prototypeManager.Index<BackgroundEffectPrototype>(effect).Description}"));
+            BGEffectsLabel.SetMarkup(bgEffectsText);
+
             Profile?.UniverseOrigin = e.ID;
             CheckReady();
             RefreshBackgroundTraits();
-            return;
         }
 
         private void SelectAlignment(OptionButton.ItemSelectedEventArgs args)
@@ -496,8 +493,8 @@ namespace Content.Client.Lobby.UI
             if (args.Id == 0)
             {
                 AlignTitleLabel.Text = string.Empty;
-                AlignDescLabel.Text = string.Empty;
-                AlignEffectsLabel.Text = string.Empty;
+                AlignDescLabel.SetMarkup(string.Empty);
+                AlignEffectsLabel.SetMarkup(string.Empty);
                 Profile?.Alignment = null;
                 CheckReady();
                 RefreshBackgroundTraits();
@@ -509,17 +506,15 @@ namespace Content.Client.Lobby.UI
                 return;
             var e = alignmentslist.ElementAt(ind);
             AlignTitleLabel.Text = e.Name;
-            AlignDescLabel.Text = e.Description;
-            AlignEffectsLabel.Text = "";
-            foreach (var effect in e.Effects)
-            {
-                var effectProto = _prototypeManager.Index<BackgroundEffectPrototype>(effect);
-                AlignEffectsLabel.Text += $"\n{effectProto.Description}";
-            }
+            AlignDescLabel.SetMarkup(e.Description);
+
+            var alignEffectsText = string.Concat(e.Effects.Select(effect =>
+                $"\n{_prototypeManager.Index<BackgroundEffectPrototype>(effect).Description}"));
+            AlignEffectsLabel.SetMarkup(alignEffectsText);
+
             Profile?.Alignment = e.ID;
             CheckReady();
             RefreshBackgroundTraits();
-            return;
         }
 
         private void RefreshBackgroundTraits()
@@ -799,13 +794,11 @@ namespace Content.Client.Lobby.UI
                     {
                         MotiveButton.SelectId(ind);
                         MotiveTitleLabel.Text = motive.Name;
-                        MotiveDescLabel.Text = motive.Description;
-                        MotiveEffectsLabel.Text = "";
-                        foreach (var effect in motive.Effects)
-                        {
-                            var effectProto = _prototypeManager.Index<BackgroundEffectPrototype>(effect);
-                            MotiveEffectsLabel.Text += $"\n{effectProto.Description}";
-                        }
+                        MotiveDescLabel.SetMarkup(motive.Description);
+
+                        var motiveEffectsText = string.Concat(motive.Effects.Select(effect =>
+                            $"\n{_prototypeManager.Index<BackgroundEffectPrototype>(effect).Description}"));
+                        MotiveEffectsLabel.SetMarkup(motiveEffectsText);
                     }
                 }
             }
@@ -813,9 +806,10 @@ namespace Content.Client.Lobby.UI
             {
                 MotiveButton.SelectId(0);
                 MotiveTitleLabel.Text = string.Empty;
-                MotiveDescLabel.Text = string.Empty;
-                MotiveEffectsLabel.Text = string.Empty;
+                MotiveDescLabel.SetMarkup(string.Empty);
+                MotiveEffectsLabel.SetMarkup(string.Empty);
             }
+
             var originStatus = Profile?.UniverseOrigin;
             if (originStatus != null)
             {
@@ -827,13 +821,11 @@ namespace Content.Client.Lobby.UI
                     {
                         BGButton.SelectId(ind);
                         BGTitleLabel.Text = background.Name;
-                        BGDescLabel.Text = background.Description;
-                        BGEffectsLabel.Text = "";
-                        foreach (var effect in background.Effects)
-                        {
-                            var effectProto = _prototypeManager.Index<BackgroundEffectPrototype>(effect);
-                            BGEffectsLabel.Text += $"\n{effectProto.Description}";
-                        }
+                        BGDescLabel.SetMarkup(background.Description);
+
+                        var bgEffectsText = string.Concat(background.Effects.Select(effect =>
+                            $"\n{_prototypeManager.Index<BackgroundEffectPrototype>(effect).Description}"));
+                        BGEffectsLabel.SetMarkup(bgEffectsText);
                     }
                 }
             }
@@ -841,9 +833,10 @@ namespace Content.Client.Lobby.UI
             {
                 BGButton.SelectId(0);
                 BGTitleLabel.Text = string.Empty;
-                BGDescLabel.Text = string.Empty;
-                BGEffectsLabel.Text = string.Empty;
+                BGDescLabel.SetMarkup(string.Empty);
+                BGEffectsLabel.SetMarkup(string.Empty);
             }
+
             var alignmentStatus = Profile?.Alignment;
             if (alignmentStatus != null)
             {
@@ -855,13 +848,11 @@ namespace Content.Client.Lobby.UI
                     {
                         AlignmentButton.SelectId(ind);
                         AlignTitleLabel.Text = alignment.Name;
-                        AlignDescLabel.Text = alignment.Description;
-                        AlignEffectsLabel.Text = "";
-                        foreach (var effect in alignment.Effects)
-                        {
-                            var effectProto = _prototypeManager.Index<BackgroundEffectPrototype>(effect);
-                            AlignEffectsLabel.Text += $"\n{effectProto.Description}";
-                        }
+                        AlignDescLabel.SetMarkup(alignment.Description);
+
+                        var alignEffectsText = string.Concat(alignment.Effects.Select(effect =>
+                            $"\n{_prototypeManager.Index<BackgroundEffectPrototype>(effect).Description}"));
+                        AlignEffectsLabel.SetMarkup(alignEffectsText);
                     }
                 }
             }
@@ -869,9 +860,10 @@ namespace Content.Client.Lobby.UI
             {
                 AlignmentButton.SelectId(0);
                 AlignTitleLabel.Text = string.Empty;
-                AlignDescLabel.Text = string.Empty;
-                AlignEffectsLabel.Text = string.Empty;
+                AlignDescLabel.SetMarkup(string.Empty);
+                AlignEffectsLabel.SetMarkup(string.Empty);
             }
+
             CheckReady();
             RefreshBackgroundTraits();
         }
