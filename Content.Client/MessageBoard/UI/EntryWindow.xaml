@@ -23,8 +23,8 @@
                 <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Vertical" Margin="5 10 5 10">
                     <PanelContainer StyleClasses="BackgroundPanel" HorizontalExpand="True" MinHeight="30" Margin="10 10 10 0">
                         <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Vertical">
-                            <LineEdit Name="AddCommentLE" HorizontalExpand="True" PlaceHolder="Add a comment" Access="Public"/>
-                            <Button Name="AddCommentBtn" Text="Add Comment" Access="Public"/>
+							<LineEdit Name="AddCommentLE" HorizontalExpand="True" PlaceHolder="{Loc 'entry-window-add-comment-placeholder'}" Access="Public"/>
+							<Button Name="AddCommentBtn" Text="{Loc 'entry-window-add-comment-button'}" Access="Public"/>
                         </BoxContainer>
                     </PanelContainer>
                     <BoxContainer Orientation="Vertical" Name="CommentBC"></BoxContainer>

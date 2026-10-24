@@ -14,7 +14,7 @@ public sealed partial class CommentHeader : PanelContainer
         IoCManager.InjectDependencies(this);
 
         CommentLabel.Text = content;
-        AuthorLabel.Text = $"Posted by {author} on {date}";
+        AuthorLabel.Text = Loc.GetString("comment-header-posted-by", ("author", author), ("date", date));
         DeleteButton.Visible = deleteEnabled;
     }
 }

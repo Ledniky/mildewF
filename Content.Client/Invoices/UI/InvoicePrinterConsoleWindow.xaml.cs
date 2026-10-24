@@ -74,20 +74,20 @@ namespace Content.Client.Invoices.UI
                 {
                     ChangeModeInvoice.Pressed = true;
                     ChangeModePayslip.Pressed = false;
-                    InvoiceModeLabel.Text = $"An invoice paid to {state.SelectedName} by the reciever.";
-                    PrintButton.Text = "Print Invoice";
+                    InvoiceModeLabel.Text = Loc.GetString("invoice-printer-console-window-invoice-description", ("name", state.SelectedName));
+                    PrintButton.Text = Loc.GetString("invoice-printer-console-window-print-invoice");
                 }
                 else
                 {
                     ChangeModeInvoice.Pressed = false;
                     ChangeModePayslip.Pressed = true;
-                    InvoiceModeLabel.Text = $"A payslip paid by {state.SelectedName} and deposited by the reciever.";
-                    PrintButton.Text = "Pay & Print Payslip";
+                    InvoiceModeLabel.Text = Loc.GetString("invoice-printer-console-window-payslip-description", ("name", state.SelectedName));
+                    PrintButton.Text = Loc.GetString("invoice-printer-console-window-pay-print-payslip");
                 }
             }
             else
             {
-                InvoiceModeLabel.Text = $"An invoice paid to {state.TargetName} by the reciever.";
+                InvoiceModeLabel.Text = Loc.GetString("invoice-printer-console-window-invoice-description", ("name", state.TargetName ?? string.Empty));
                 ChangeModeInvoice.Pressed = true;
                 ChangeModePayslip.Disabled = true;
                 PossibleStations.Visible = false;
@@ -109,9 +109,9 @@ namespace Content.Client.Invoices.UI
                 TaxDetails.Visible = false;
             }
             TaxingAccountLabel.Text = state.TaxingName;
-            TaxRateLabel.Text = $"Sales Tax: {state.TaxRate}%";
-            PossibleStations.Clear();
-            PossibleStations.AddItem("Select Faction");
+			TaxRateLabel.Text = Loc.GetString("invoice-printer-console-window-sales-tax", ("rate", state.TaxRate));
+			PossibleStations.Clear();
+			PossibleStations.AddItem(Loc.GetString("invoice-printer-console-window-select-faction"));
             foreach (var kv in state.FormattedStations)
             {
                 PossibleStations.AddItem(kv.Value, kv.Key);

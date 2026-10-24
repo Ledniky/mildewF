@@ -18,8 +18,8 @@
                 <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Vertical" Margin="5 10 5 10">
                     <PanelContainer StyleClasses="BackgroundPanel" HorizontalExpand="True" MinHeight="30" Margin="10 10 10 0">
                         <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Vertical">
-                            <LineEdit Name="SendLE" HorizontalExpand="True" PlaceHolder="Send Direct Message" Access="Public"/>
-                            <Button Name="SendBtn" Text="Send" Access="Public"/>
+                            <LineEdit Name="SendLE" HorizontalExpand="True" PlaceHolder="{Loc 'conversation-window-send-placeholder'}" Access="Public"/>
+                            <Button Name="SendBtn" Text="{Loc 'conversation-window-send-button'}" Access="Public"/>
                         </BoxContainer>
                     </PanelContainer>
                     <BoxContainer Orientation="Vertical" Name="CommentBC"></BoxContainer>

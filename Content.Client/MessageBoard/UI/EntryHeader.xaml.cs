@@ -14,9 +14,9 @@ public sealed partial class EntryHeader : PanelContainer
         IoCManager.InjectDependencies(this);
 
         TitleLabel.Text = title;
-        AuthorLabel.Text = $"Posted by {author}";
+        AuthorLabel.Text = Loc.GetString("entry-header-posted-by", ("author", author));
         DateLabel.Text = date;
-        CommentsLabel.Text = $"{commentCount} Comments";
+        CommentsLabel.Text = Loc.GetString("entry-header-comments", ("count", commentCount));
         DeleteButton.Visible = deleteEnabled;
     }
 }

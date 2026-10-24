@@ -19,7 +19,7 @@ public sealed partial class MessageBoard : FancyWindow
         IoCManager.InjectDependencies(this);
         _owner = owner;
         Title = entMan.GetComponent<MetaDataComponent>(owner).EntityName;
-        BoardTabContainer.SetTabTitle(0, "Public Board");
-        BoardTabContainer.SetTabTitle(1, "Direct Messages");
+		BoardTabContainer.SetTabTitle(0, Loc.GetString("message-board-window-public-tab"));
+		BoardTabContainer.SetTabTitle(1, Loc.GetString("message-board-window-direct-tab"));
     }
 }

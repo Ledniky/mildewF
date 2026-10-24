@@ -35,7 +35,8 @@ public sealed partial class ConversationWindow : DefaultWindow
         {
             var finalTime = message.SendTime.AddYears(yearOffset);
             RichTextLabel label = new();
-            label.Text = $"{message.Sender} ({finalTime}): {message.Body}";
+            label.Text = Loc.GetString("conversation-window-message-format",
+				("sender", message.Sender), ("time", finalTime.ToString()), ("body", message.Body));
             MessagesBC.AddChild(label);
 
         }
@@ -50,7 +51,8 @@ public sealed partial class ConversationWindow : DefaultWindow
         {
             var finalTime = message.SendTime.AddYears(yearOffset);
             RichTextLabel label = new();
-            label.Text = $"{message.Sender} ({finalTime}): {message.Body}";
+            label.Text = Loc.GetString("conversation-window-message-format",
+				("sender", message.Sender), ("time", finalTime.ToString()), ("body", message.Body));
             MessagesBC.AddChild(label);
 
         }

@@ -6,7 +6,7 @@
         <BoxContainer Orientation="Horizontal">
             <RichTextLabel Access="Public" Name="AuthorLabel" Text="Posted by Chester Cheetah on 2248-05-01 14:17" />
             <Control HorizontalExpand="True" />
-            <Button Text="Delete" Name="DeleteButton" Access="Public" />
+            <Button Text="{Loc 'comment-header-delete-button'}" Name="DeleteButton" Access="Public" />
         </BoxContainer>
     </BoxContainer>
 </PanelContainer>

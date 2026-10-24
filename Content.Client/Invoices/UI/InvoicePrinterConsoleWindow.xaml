@@ -5,52 +5,52 @@
             <Label Text="{Loc 'id-card-console-window-privileged-id'}" StyleClasses="LabelKeyText" />
             <Button Name="PrivilegedIdButton" Access="Public"/>
             <Control HorizontalExpand="True"/>
-            <Label Text="Account:" />
-            <Button Name="ChangeModeStation" Text="Faction" Access="Public" />
-            <Button Name="ChangeModePersonal" Text="Personal" Access="Public" />
+            <Label Text="{Loc 'invoice-printer-console-window-account-label'}" />
+            <Button Name="ChangeModeStation" Text="{Loc 'invoice-printer-console-window-faction-button'}" Access="Public" />
+            <Button Name="ChangeModePersonal" Text="{Loc 'invoice-printer-console-window-personal-button'}" Access="Public" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
-            <Label Text="Target Account:" StyleClasses="LabelKeyText" />
+            <Label Text="{Loc 'invoice-printer-console-window-target-account'}" StyleClasses="LabelKeyText" />
             <Control MinWidth="5"/>
             <Label Name="TargetAccountLabel" Text="Station Name" />
             <Control HorizontalExpand="True"/>
             <OptionButton Name="PossibleStations" Access="Public"/>
         </BoxContainer>
         <BoxContainer Orientation="Horizontal" Name="TaxDetails">
-            <Label Text="Taxing Account:" />
+            <Label Text="{Loc 'invoice-printer-console-window-taxing-account'}" />
             <Control MinWidth="5"/>
             <Label Name="TaxingAccountLabel" Text="Station Name" />
             <Control HorizontalExpand="True"/>
-            <Label Name="TaxRateLabel" Text="Sales Tax: 0%" />
+            <Label Name="TaxRateLabel" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
-            <Label Text="Invoice Mode:" StyleClasses="LabelKeyText" />
+            <Label Text="{Loc 'invoice-printer-console-window-invoice-mode'}" StyleClasses="LabelKeyText" />
             <Control MinWidth="5"/>
             <Label Name="InvoiceModeLabel" />
             <Control HorizontalExpand="True"/>
-            <Button Name="ChangeModeInvoice" Text="Invoice" Access="Public" />
-            <Button Name="ChangeModePayslip" Text="Payslip" Access="Public" />
+            <Button Name="ChangeModeInvoice" Text="{Loc 'invoice-printer-console-window-invoice-button'}" Access="Public" />
+            <Button Name="ChangeModePayslip" Text="{Loc 'invoice-printer-console-window-payslip-button'}" Access="Public" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
-            <Label Text="Title:" StyleClasses="LabelKeyText" />
+            <Label Text="{Loc 'invoice-printer-console-window-title-label'}" StyleClasses="LabelKeyText" />
             <Control MinWidth="5"/>
             <LineEdit Name="InvoiceTitleLE"
-                PlaceHolder="Enter Title Here"
+                PlaceHolder="{Loc 'invoice-printer-console-window-title-placeholder'}"
                 Access="Public"
                 HorizontalExpand="True" />
         </BoxContainer>
-        <Label Text="Reason: " StyleClasses="LabelKeyText" />
+        <Label Text="{Loc 'invoice-printer-console-window-reason-label'}" StyleClasses="LabelKeyText" />
         <BoxContainer Orientation="Horizontal" MinHeight ="150" VerticalExpand="True">
             <PanelContainer StyleIdentifier="PaperEditBackground" VerticalExpand="True" HorizontalExpand="True">
                 <TextEdit Name="ReasonLineEdit"  Access="Public" HorizontalExpand="True" VerticalExpand="True"/>
             </PanelContainer>
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
-            <Label Text="Cost:    $" StyleClasses="LabelKeyText" />
+            <Label Text="{Loc 'invoice-printer-console-window-cost-label'}" StyleClasses="LabelKeyText" />
             <SpinBox Name="CostSpinBox" Value="0" MinWidth="150"/>
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
-            <Button Name="PrintButton" Access="Public" Text="Print Invoice"/>
+            <Button Name="PrintButton" Access="Public" />
         </BoxContainer>
     </BoxContainer>
 </DefaultWindow>

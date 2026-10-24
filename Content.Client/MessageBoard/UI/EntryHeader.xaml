@@ -8,7 +8,7 @@
         <BoxContainer Orientation="Horizontal">
             <Label Access="Public" Name="AuthorLabel" Text="Posted by Chester Cheetah" />
             <Control HorizontalExpand="True" />
-            <Button Text="Delete" Name="DeleteButton" Access="Public" />
+            <Button Text="{Loc 'entry-header-delete-button'}" Name="DeleteButton" Access="Public" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
             <Label Access="Public" Name="DateLabel" Text="14:17 2246-05-01" />

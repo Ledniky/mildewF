@@ -43,17 +43,17 @@ namespace Content.Client.Invoices.UI
             PaidToLabel.Text = state.PaidTo;
             if (state.PayslipMode)
             {
-                PaidToTitle.Text = "Paid by:";
-                CostTitle.Text = "Value:";
-                PayingTitle.Text = "Receiving Account:";
-                PayButton.Text = "Deposit Payslip";
+                PaidToTitle.Text = Loc.GetString("invoice-window-paid-by-label");
+                CostTitle.Text = Loc.GetString("invoice-window-value-label");
+                PayingTitle.Text = Loc.GetString("invoice-window-receiving-account");
+                PayButton.Text = Loc.GetString("invoice-window-deposit-payslip");
             }
             else
             {
-                PaidToTitle.Text = "Paid to:";
-                CostTitle.Text = "Cost:";
-                PayingTitle.Text = "Paying Account:";
-                PayButton.Text = "Pay Invoice";
+                PaidToTitle.Text = Loc.GetString("invoice-window-paid-to-label");
+                CostTitle.Text = Loc.GetString("invoice-window-cost-label");
+                PayingTitle.Text = Loc.GetString("invoice-window-paying-account");
+                PayButton.Text = Loc.GetString("invoice-window-pay-invoice");
             }
             if (state.Paid)
             {
@@ -66,7 +66,7 @@ namespace Content.Client.Invoices.UI
                 {
                     var yearOffset = _cfgManager.GetCVar(CCVars.YearOffset);
                     var finalTime = state.PaidTime.Value.AddYears(yearOffset);
-                    PaidLabel.Text = $"*Paid on {finalTime.ToString()}*";
+                    PaidLabel.Text = Loc.GetString("invoice-window-paid-on", ("date", finalTime.ToString()));  
                 }
             }
             else

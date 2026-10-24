@@ -31,7 +31,7 @@ public sealed partial class EntryWindow : DefaultWindow
         _playerName = playerName;
         MainTitleLabel.Text = entry.Title;
         var adjustedMainTime = entry.CreationTime.AddYears(_cfg.GetCVar(CCVars.YearOffset));
-        AuthorLabel.Text = $"Posted by {entry.Author} on {adjustedMainTime.ToString()}";
+        AuthorLabel.Text = Loc.GetString("entry-window-posted-by", ("author", entry.Author), ("date", adjustedMainTime.ToString()));
         MainContentLabel.SetMarkup(entry.Body);
         entry.Comments.Reverse();
         foreach (var comment in entry.Comments)
@@ -56,7 +56,7 @@ public sealed partial class EntryWindow : DefaultWindow
         this.Title = entry.Title;
         MainTitleLabel.Text = entry.Title;
         var adjustedMainTime = entry.CreationTime.AddYears(_cfg.GetCVar(CCVars.YearOffset));
-        AuthorLabel.Text = $"Posted by {entry.Author} on {adjustedMainTime.ToString()}";
+        AuthorLabel.Text = Loc.GetString("entry-window-posted-by", ("author", entry.Author), ("date", adjustedMainTime.ToString()));
         MainContentLabel.SetMarkup(entry.Body);
         CommentBC.RemoveAllChildren();
         entry.Comments.Reverse();
