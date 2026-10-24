@@ -1,7 +1,7 @@
 - type: rumor
   id: ArtifactNodeBasic
-  name: Artifact Research
-  description: "There is a Xeno-Artifact of particular interest that we'd like you to look into."
+  name: Исследование артефакта
+  description: "Есть ксено-артефакт, представляющий особый интерес — нам хотелось бы, чтобы вы его изучили."
   eventGrids:
     - /Maps/Rumors/Salvage/Medium/medium-library-tech1g1art.yml
     - /Maps/Rumors/Salvage/Medium/outpost-arm-1art1anom.yml

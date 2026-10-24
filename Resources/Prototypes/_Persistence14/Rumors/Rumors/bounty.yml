@@ -1,7 +1,7 @@
 - type: rumor
   id: BountyBasicGeneral
-  name: Personal Bounty
-  description: "Here's an export opportunity just for you!"
+  name: Личный заказ
+  description: "Вот возможность экспорта специально для вас!"
   cashReward: 2500
   reputationReward: 50
   completionType: Bounty
@@ -86,8 +86,8 @@
 
 - type: rumor
   id: BountyBasicScience
-  name: Profit Margins
-  description: "We need materials for the lab!"
+  name: Рентабельность
+  description: "Нам нужны материалы для лаборатории!"
   cashReward: 4000
   reputationReward: 50
   completionType: Bounty
@@ -127,8 +127,8 @@
 
 - type: rumor
   id: BountyBasicCriminal
-  name: Dealer, Dealer
-  description: "Send this out for a tidy profit!"
+  name: Делец, дельцов
+  description: "Отправьте это ради хорошей прибыли!"
   cashReward: 5000
   reputationReward: 50
   completionType: Bounty
@@ -148,8 +148,8 @@
 
 - type: rumor
   id: BountyBasicWeapon
-  name: Angry Bounty
-  description: "Complete this bounty."
+  name: Злой заказ
+  description: "Выполните этот заказ."
   cashReward: 3000
   reputationReward: 50
   completionType: Bounty

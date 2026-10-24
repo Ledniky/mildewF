@@ -37,19 +37,19 @@ public sealed partial class RumorBoxFragment : PanelContainer
         {
             var requirement = originalProto.CompletionTarget;
             var current = activeRumor.CompletionProgress;
-            ReqLabel.Text = $"{current}/{requirement} units consumed.";
+            ReqLabel.Text = Loc.GetString("job-net-menu-rumor-eat-drink-progress", ("current", current), ("requirement", requirement));
             Requirements.Visible = true;
 
         }
         if (activeRumor.CompletionType == CompletionType.Rescue && !activeRumor.ShouldSpawn)
         {
             var targets = activeRumor.Targets.Count;
-            ReqLabel.Text = $"{targets} crew need to be saved.";
+            ReqLabel.Text = Loc.GetString("job-net-menu-rumor-rescue-progress", ("targets", targets));
             Requirements.Visible = true;
         }
         if (activeRumor.CompletionType == CompletionType.ArtifactNodesUnlock && !activeRumor.ShouldSpawn)
         {
-            ReqLabel.Text = $"{originalProto.CompletionTarget} nodes left to unlock.";
+            ReqLabel.Text = Loc.GetString("job-net-menu-rumor-artifact-progress", ("nodes", originalProto.CompletionTarget));
         }
         if(activeRumor.Cancelable)
         {
@@ -69,17 +69,17 @@ public sealed partial class RumorBoxFragment : PanelContainer
         if(activeRumor.ReputationReward != 0)
         {
             if (newline) RewardLabel.Text += "\n";
-            RewardLabel.Text += $"[color=orange]{activeRumor.ReputationReward} REP ({factionProto.Name})[/color]";
+            RewardLabel.Text += $"[color=orange]{Loc.GetString("job-net-menu-rumor-reputation", ("amount", activeRumor.ReputationReward), ("faction", factionProto.Name))}[/color]";
             newline = true;
             if(activeRumor.Transfer)
             {
-                RewardLabel.Text += $"\n[color=gray](Reputation split 50% with {activeRumor.OriginalOwner})[/color]";
+                RewardLabel.Text += $"\n[color=gray]{Loc.GetString("job-net-menu-rumor-reputation-split", ("owner", activeRumor.OriginalOwner ?? string.Empty))}[/color]";
             }
         }
         if(originalProto.RewardRumors != 0)
         {
             if (newline) RewardLabel.Text += "\n";
-            RewardLabel.Text += $"[color=yellow]This will lead to a rewarding rumor[/color]";
+            RewardLabel.Text += $"[color=yellow]{Loc.GetString("job-net-menu-rumor-leads-to-reward")}[/color]";
         }
        
     }

@@ -1,7 +1,7 @@
 - type: rumor
   id: DiscoverSmallSalvage
-  name: Salvage Tip
-  description: "We've lost track of a small bit of salvage. Find it!"
+  name: Наводка на утиль
+  description: "Мы потеряли след небольшого количества утиля. Найдите его!"
   eventGrids:
     - /Maps/Rumors/Salvage/Small/small-1-hallways.yml
     - /Maps/Rumors/Salvage/Small/small-4-tinybarfragment.yml
@@ -16,12 +16,12 @@
     - /Maps/Rumors/Salvage/Medium/security-chunk.yml
   cashReward: 2500
   reputationReward: 50
-  descriptionAddon: "Board the grid!"
+  descriptionAddon: "Высадитесь на грид!"
 
 - type: rumor
   id: DiscoverSmallScience
-  name: For Science!
-  description: "We left behind an artifact and science equipment! Find it and its yours!"
+  name: Ради науки!
+  description: "Мы оставили позади артефакт и научное оборудование! Найдите их — и они ваши!"
   eventGrids:
     - /Maps/Rumors/Salvage/Small/chunked_tcomms-sci.yml
     - /Maps/Rumors/Salvage/Small/small-ai-survey-drone-2e1g.yml
@@ -31,12 +31,12 @@
     - /Maps/Rumors/Salvage/Medium/medium-1-sci.yml
   cashReward: 2500
   reputationReward: 50
-  descriptionAddon: "Board the grid!"
+  descriptionAddon: "Высадитесь на грид!"
 
 - type: rumor
   id: DiscoverSmallShadow
-  name: Strange Places
-  description: "*BZZT*Find the installation*ZZkkt*"
+  name: Странные места  
+  description: "*БЗЗТ* Найдите объект *ЗЗхрр*"
   eventGrids:
     - /Maps/Rumors/Salvage/Small/small-chapel-greengrave.yml
     - /Maps/Rumors/Salvage/Small/small-a-1-asteroidtreescrystals.yml
@@ -45,12 +45,12 @@
     - /Maps/Rumors/Salvage/Medium/wrecklaimer-1anomcult2t1g.yml
   cashReward: 2500
   reputationReward: 50
-  descriptionAddon: "Board the grid!"
+  descriptionAddon: "Высадитесь на грид!"
 
 - type: rumor
   id: DiscoverSmallCriminal
-  name: Lucky Find
-  description: "Here's a lucky set of coordinates."
+  name: Счастливая находка
+  description: "Вот удачный набор координат."
   eventGrids:
     - /Maps/Rumors/Salvage/Small/small-2-barcasino.yml
     - /Maps/Rumors/Salvage/Small/small-ai-survey-drone-2e1g.yml
@@ -60,4 +60,4 @@
     - /Maps/Rumors/Salvage/Medium/rigged_outpost-multi1anom.yml
   cashReward: 2500
   reputationReward: 50
-  descriptionAddon: "Board the grid!"
+  descriptionAddon: "Высадитесь на грид!"

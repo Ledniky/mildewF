@@ -1,7 +1,7 @@
 - type: rumor
   id: RescueBasic
-  name: Rescue Time
-  description: "Rescue our lost crew members!"
+  name: Время спасения
+  description: "Спасите наших потерянных членов экипажа!"
   eventGrids:
     - /Maps/Rumors/Rescue/Medium/medium-ruined-emergency-shuttle-2t1g3v.yml
   cashReward: 5000
@@ -10,8 +10,8 @@
 
 - type: rumor
   id: RescuePrecursor
-  name: Survival of the Fittest
-  description: "Rescue the three people on board the facility!"
+  name: Выживание сильнейших
+  description: "Спасите трёх человек на борту объекта!"
   eventGrids:
     - /Maps/Rumors/Rescue/Medium/SyndicateRescue.yml
   cashReward: 5000
@@ -20,8 +20,8 @@
 
 - type: rumor
   id: RescueShadow
-  name: Rejected Offerings
-  description: "Three humanoids need to be retrieved and revived from this location."
+  name: Отвергнутые подношения
+  description: "Трое гуманоидов должны быть найдены и возвращены к жизни в этом месте."
   eventGrids:
     - /Maps/Rumors/Rescue/Medium/ChurchMeat.yml
   cashReward: 5000

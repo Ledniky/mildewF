@@ -1,7 +1,7 @@
 - type: rumor
   id: EatBasicFriendly
-  name: "Chow Down"
-  description: "Rumors are hiding just beneath the surface."
+  name: "Перекусить"
+  description: "Слухи скрываются прямо под поверхностью."
   cashReward: 0
   reputationReward: 10
   completionType: Eat
@@ -23,8 +23,8 @@
 
 - type: rumor
   id: EatBasicEvil
-  name: Fridge Raid
-  description: "Opportunites await for the strong and well-fed."
+  name: Набег на холодильник
+  description: "Возможности ждут сильных и сытых."
   cashReward: 0
   reputationReward: 10
   completionType: Eat

@@ -36,10 +36,10 @@ public sealed partial class RumorRewardBoxFragment : PanelContainer
         Icon.Texture = spriteSystem.Frame0(rewardProto.Icon);
         TitleLabel.Text = rewardProto.Name;
         ContentLabel.Text = rewardProto.Description;
-        AvailableAtLbl.Text = $"[italic][color=gray]Import to {activeRumor.TradeStationName}";
+        AvailableAtLbl.Text = $"[italic][color=gray]{Loc.GetString("job-net-menu-rumor-reward-import", ("station", activeRumor.TradeStationName))}";
         if(activeRumor.Purchased)
         {
-            PurchaseBtn.Text = $"Purchased";
+            PurchaseBtn.Text = Loc.GetString("job-net-menu-rumor-reward-purchased");
             PurchaseBtn.Pressed = true;
         }
         else if(unlocked)
@@ -56,7 +56,7 @@ public sealed partial class RumorRewardBoxFragment : PanelContainer
         }
         else
         {
-            PurchaseBtn.Text = "Locked";
+            PurchaseBtn.Text = Loc.GetString("job-net-menu-rumor-reward-locked");
             PurchaseBtn.Disabled = true;
         }
 

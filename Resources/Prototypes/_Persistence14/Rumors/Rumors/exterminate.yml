@@ -1,19 +1,19 @@
 - type: rumor
   id: ExterminateCult
-  name: Dark Hunt
-  description: "Kill everything on board"
+  name: Тёмная охота
+  description: "Убейте всех на борту"
   eventGrids:
     - /Maps/Rumors/Exterminate/Medium/meatball.yml
     - /Maps/Rumors/Exterminate/Medium/tick-colony.yml
   cashReward: 5000
   reputationReward: 70
   completionType: Exterminate
-  descriptionAddon: "Kill all hostile creatures aboard!"
+  descriptionAddon: "Убейте всех враждебных существ на борту!"
 
 - type: rumor
   id: ExterminateGeneral
-  name: Dark Hunt
-  description: "We need a wreck cleared of creatures!"
+  name: Тёмная охота
+  description: "Нам нужно, чтобы на обломке корабля уничтожили существ!"
   eventGrids:
     - /Maps/Rumors/Exterminate/Medium/atmos_interchange.yml
     - /Maps/Rumors/Exterminate/Medium/jokers_ruins.yml
@@ -22,16 +22,16 @@
   cashReward: 5000
   reputationReward: 70
   completionType: Exterminate
-  descriptionAddon: "Kill all hostile creatures aboard!"
+  descriptionAddon: "Убейте всех враждебных существ на борту!"
 
 - type: rumor
   id: ExterminateLuminal
-  name: Cleansing Light
-  description: "Cleanse the hostiles from the grid!"
+  name: Очищающий свет
+  description: "Очистите грид от враждебных существ!"
   eventGrids:
     - /Maps/Rumors/Exterminate/Medium/vegan-meatball.yml
     - /Maps/Rumors/Exterminate/Medium/medium-silent-orchestra.yml
   cashReward: 5000
   reputationReward: 70
   completionType: Exterminate
-  descriptionAddon: "Kill all hostile creatures aboard!"
+  descriptionAddon: "Убейте всех враждебных существ на борту!" 

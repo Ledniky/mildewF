@@ -1,7 +1,7 @@
 - type: rumor
   id: DrinkBasicFriendly
-  name: Small Break
-  description: "Take a small break to find rumors"
+  name: Небольшой перерыв
+  description: "Сделайте небольшой перерыв, чтобы найти слухи"
   cashReward: 0
   reputationReward: 10
   completionType: Drink
@@ -39,8 +39,8 @@
 
 - type: rumor
   id: DrinkBasicEvil
-  name: Fruitful Whispers
-  description: "Lucrative opportunities await"
+  name: Плодотворные шёпоты
+  description: "Вас ждут прибыльные возможности"
   cashReward: 0
   reputationReward: 10
   completionType: Drink
