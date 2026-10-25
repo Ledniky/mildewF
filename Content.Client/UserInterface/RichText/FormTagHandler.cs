@@ -5,11 +5,11 @@ using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 
-namespace Content.Client.UserInterface.RichText;
-
 /// <summary>
 /// Converts [form] tags into clickable buttons that open fill-in dialogs.
 /// </summary>
+namespace Content.Client.UserInterface.RichText;
+
 public sealed class FormTagHandler : IMarkupTagHandler
 {
     public string Name => "form";
@@ -58,7 +58,10 @@ public sealed class FormTagHandler : IMarkupTagHandler
         {
             if (PaperTagHelper.FindPaperWindow(btn) is { } paperWindow)
             {
-                var buttonIndex = PaperTagHelper.CountButtonsBefore(btn, b => b.Text == Loc.GetString("paper-form-fill-button"));
+                var buttonIndex = PaperTagHelper.CountButtonsBefore(
+                    paperWindow.WrittenContent,
+                    btn,
+                    b => b.Text == Loc.GetString("paper-form-fill-button"));
                 paperWindow.OpenFormDialog(buttonIndex);
             }
         };

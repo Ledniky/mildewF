@@ -44,11 +44,14 @@ public sealed class SignatureTagHandler : IMarkupTagHandler
             {
                 if (hasField)
                 {
-                    paperWindow.SendFieldSignatureRequest(field ?? ""); // It won't be null here... but appeasing the editor.
+                    paperWindow.SendFieldSignatureRequest(field ?? "");
                 }
                 else
                 {
-                    var buttonIndex = PaperTagHelper.CountButtonsBefore(btn, b => b.Text == Loc.GetString("paper-signature-sign-button"));
+                    var buttonIndex = PaperTagHelper.CountButtonsBefore(
+                        paperWindow.WrittenContent,
+                        btn,
+                        b => b.Text == Loc.GetString("paper-signature-sign-button"));
                     paperWindow.SendSignatureRequest(buttonIndex);
                 }
             }

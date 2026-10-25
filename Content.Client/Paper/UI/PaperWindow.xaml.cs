@@ -122,6 +122,20 @@ namespace Content.Client.Paper.UI
 			InsertImageButton.Text = Loc.GetString("paper-ui-insert-image-button");  
 			InsertImageButton.ToolTip = Loc.GetString("paper-ui-insert-image-tooltip");  
 			InsertImageButton.OnPressed += _ => OnInsertImagePressed();
+			
+			// Art-start
+			ImageScaleSelector.AddItem("100%", 100);
+			ImageScaleSelector.AddItem("75%", 75);
+			ImageScaleSelector.AddItem("50%", 50);
+			ImageScaleSelector.AddItem("25%", 25);
+			ImageScaleSelector.AddItem("10%", 10);
+			ImageScaleSelector.SelectId(100);
+			
+			ImageScaleSelector.OnItemSelected += args =>
+			{
+				ImageScaleSelector.SelectId(args.Id);
+			};
+			// Art-end
 
             SaveButton.Text = Loc.GetString("paper-ui-save-button",
                 ("keybind", _inputManager.GetKeyFunctionButtonString(EngineKeyFunctions.MultilineTextSubmit)));
@@ -280,9 +294,10 @@ namespace Content.Client.Paper.UI
 
             InputContainer.Visible = isEditing;
             EditButtons.Visible = isEditing;
-            // WrittenTextLabel.Visible = !isEditing; // Art-edit
-            WrittenTextContainer.Visible = false;
-            BlankPaperIndicator.Visible = !isEditing && state.Text.Length == 0;
+			WrittenTextLabel.Visible = false;
+			WrittenContent.Visible = !isEditing && state.Text.Length > 0;
+			WrittenTextContainer.Visible = false;
+			BlankPaperIndicator.Visible = !isEditing && state.Text.Length == 0;
 
             if (isEditing)
             {
@@ -303,18 +318,12 @@ namespace Content.Client.Paper.UI
                 return;
             }
 
-            FormTagHandler.SetFormText(state.Text);
-            FormTagHandler.ResetFormCounter();
-            SignatureTagHandler.ResetSignatureCounter();
-            CheckTagHandler.ResetCheckCounter();
+			FormTagHandler.SetFormText(state.Text);
+			FormTagHandler.ResetFormCounter();
+			SignatureTagHandler.ResetSignatureCounter();
+			CheckTagHandler.ResetCheckCounter();
 
-            var fm = new FormattedMessage();
-            fm.AddMarkupPermissive(state.Text);
-            WrittenTextLabel.SetMessage(fm, _allowedTags, _writtenTextColor);
-			// Art-start
-			WrittenContent.Visible = state.Text.Length > 0;
 			RebuildWrittenContent(state.Text, state.StampedBy.Count > 0);
-			// Art-end
 
             var tagCount = CountTags(state.Text);
             var extraBottomMargin = tagCount * 3.0f; // 3 pixels per tag for extra height
@@ -412,41 +421,40 @@ namespace Content.Client.Paper.UI
             _imageDialogOpen = true;
             InsertImageButton.Disabled = true;
 
-            var filters = new FileDialogFilters(
-                new FileDialogFilters.Group("png", "webp", "jpg", "jpeg", "gif", "bmp"),
-                new FileDialogFilters.Group("png"),
-                new FileDialogFilters.Group("webp"),
-                new FileDialogFilters.Group("jpg", "jpeg"));
-            await using var file = await _fileDialogs.OpenFile(filters, FileAccess.Read);
-
-            _imageDialogOpen = false;
-
-            if (Disposed)
-                return;
-
-            if (file == null)
+            try
             {
-                UpdateFillState();
-                return;
-            }
+                var filters = new FileDialogFilters(
+                    new FileDialogFilters.Group("png", "webp", "jpg", "jpeg", "gif", "bmp"));
 
-            var maxChars = GetRemainingInputChars();
-            if (!PaperPixelArtImporter.TryImport(file, maxChars, 100, out var markup, out var error))
-            {
-                FillStatus.Text = Loc.GetString(error switch
+                await using var file = await _fileDialogs.OpenFile(filters, FileAccess.Read);
+
+                if (Disposed || file == null)
+                    return;
+
+                var maxChars = GetRemainingInputChars();
+                var fillPercent = GetSelectedFillPercent();
+
+                if (!PaperPixelArtImporter.TryImport(file, maxChars, fillPercent, out var markup, out var error))
                 {
-                    PaperPixelArtImportError.FileTooLarge => "paper-ui-insert-image-too-large",
-                    PaperPixelArtImportError.NoSpace => "paper-ui-insert-image-no-space",
-                    _ => "paper-ui-insert-image-failed"
-                });
-                UpdateFillState(keepStatusMessage: true);
-                return;
-            }
+                    return;
+                }
 
-            InsertDrawingMarkup(markup);
-            UpdateFillState();
+                InsertDrawingMarkup(markup);
+            }
+            finally
+            {
+                _imageDialogOpen = false;
+                InsertImageButton.Disabled = false;
+                UpdateFillState();
+            }
         }
 
+		private int GetSelectedFillPercent()
+		{
+			var id = ImageScaleSelector.SelectedId;
+			return id > 0 ? id : 100;
+		}
+		
         private void InsertDrawingMarkup(string markup)
         {
             var text = Rope.Collapse(Input.TextRope);

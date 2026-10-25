@@ -2,11 +2,11 @@ using Content.Client.Paper.UI;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
-namespace Content.Client.UserInterface.RichText;
-
 /// <summary>
 /// Shared helper methods for paper form tag handlers ([form], [signature], [check]).
 /// </summary>
+namespace Content.Client.UserInterface.RichText;
+
 public static class PaperTagHelper
 {
     public static float FontLineHeight { get; set; } = 16.0f;
@@ -20,12 +20,8 @@ public static class PaperTagHelper
         return parent as PaperWindow;
     }
 
-    public static int CountButtonsBefore(Control target, Func<Button, bool> predicate)
+    public static int CountButtonsBefore(Control root, Control target, Func<Button, bool> predicate)
     {
-        var root = target;
-        while (root.Parent != null)
-            root = root.Parent;
-
         var count = 0;
         var found = false;
         CountButtonsRecursive(root, target, predicate, ref count, ref found);

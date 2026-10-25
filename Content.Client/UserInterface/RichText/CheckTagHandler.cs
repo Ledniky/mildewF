@@ -40,7 +40,10 @@ public sealed class CheckTagHandler : IMarkupTagHandler
         {
             if (PaperTagHelper.FindPaperWindow(btn) is { } paperWindow)
             {
-                var buttonIndex = PaperTagHelper.CountButtonsBefore(btn, b => Array.Exists(PaperTagHelper.CheckSymbols, s => s == b.Text));
+                var buttonIndex = PaperTagHelper.CountButtonsBefore(
+                    paperWindow.WrittenContent,
+                    btn,
+                    b => Array.Exists(PaperTagHelper.CheckSymbols, s => s == b.Text));
                 paperWindow.OpenCheckDialog(buttonIndex);
             }
         };
