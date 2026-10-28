@@ -30,7 +30,10 @@ public sealed partial class PlantCryoxadoneEntityEffectSystem : EntityEffectSyst
             ? (int)Math.Max(entity.Comp.Maturation - 1, plantHolder.Age - random.Next(7, 10))
             : (int)(entity.Comp.Maturation / entity.Comp.GrowthStages);
 
-        _plantHarvest.AffectGrowth(entity.Owner, -deviation);
+        // ss14-art edit start
+        // Revert the plant's age (true rejuvenation) instead of adding a single SkipAging charge.
+        _plantHolder.AdjustsAge((entity.Owner, plantHolder), -deviation);
+        // ss14-art edit end
         _plant.ForceUpdate(entity.AsNullable());
     }
 }

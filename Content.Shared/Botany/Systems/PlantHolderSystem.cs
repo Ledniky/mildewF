@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using Content.Shared.Botany.Components;
+using Content.Shared.Botany.Traits.Components; // ss14-art edit
 using Content.Shared.Cloning.Events;
 using Content.Shared.Damage.Systems;
 using Robust.Shared.Serialization.Manager;
@@ -156,6 +157,9 @@ public sealed partial class PlantHolderSystem : EntitySystem
         ent.Comp.Dead = true;
         ent.Comp.Health = Math.Max(0, ent.Comp.Health);
         DirtyFields(ent, null, nameof(ent.Comp.Dead), nameof(ent.Comp.Health));
+
+        // The kudzu gene no longer persists on a dead plant. // ss14-art edit
+        RemComp<PlantTraitKudzuComponent>(ent.Owner); // ss14-art edit
     }
 
     /// <summary>
