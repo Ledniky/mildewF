@@ -74,7 +74,7 @@ public sealed partial class PlantSystem : EntitySystem
 
         _mutation.CrossInt(ref ent.Comp.Yield, pollenData.Yield);
         _mutation.CrossFloat(ref ent.Comp.Endurance, pollenData.Endurance);
-        _mutation.CrossFloat(ref ent.Comp.Lifespan, pollenData.Lifespan);
+        //_mutation.CrossFloat(ref ent.Comp.Lifespan, pollenData.Lifespan); // ss14-art edit: longevity gene is not inherited via swab
         _mutation.CrossFloat(ref ent.Comp.Maturation, pollenData.Maturation);
         _mutation.CrossFloat(ref ent.Comp.Production, pollenData.Production);
         //_mutation.CrossFloat(ref ent.Comp.Potency, pollenData.Potency); // Persistence: Remove potency

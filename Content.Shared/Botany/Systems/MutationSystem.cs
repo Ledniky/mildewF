@@ -54,6 +54,28 @@ public sealed partial class PlantMutationSystem : EntitySystem
         {
             if (Random(Math.Min(mutation.BaseOdds * severity, 1.0f)))
             {
+                // ss14-art edit start
+                // A new mutation suppresses the death gene (Unviable) and resets the longevity
+                // and self-harvest genes back to the plant prototype's base values.
+                RemCompDeferred<PlantTraitUnviableComponent>(ent.Owner);
+
+                var baseProtoId = MetaData(ent.Owner).EntityPrototype?.ID;
+                if (baseProtoId != null
+                    && _botany.TryGetPlantComponent<PlantComponent>(null, baseProtoId, out var basePlant))
+                {
+                    ent.Comp.Lifespan = basePlant.Lifespan;
+                    Dirty(ent);
+                }
+
+                if (TryComp(ent.Owner, out PlantHarvestComponent? harvest)
+                    && baseProtoId != null
+                    && _botany.TryGetPlantComponent<PlantHarvestComponent>(null, baseProtoId, out var baseHarvest))
+                {
+                    harvest.HarvestRepeat = baseHarvest.HarvestRepeat;
+                    Dirty(ent.Owner, harvest);
+                }
+                // ss14-art edit end
+
                 if (mutation.AppliesToPlant)
                     _entityEffects.TryApplyEffect(ent, mutation.Effect);
 
@@ -269,6 +291,10 @@ public sealed partial class PlantMutationSystem : EntitySystem
         {
             if (component is not PlantTraitsComponent)
                 continue;
+
+            // The death gene (Unviable) is not inherited from pollen captured on a swab. // ss14-art edit
+            if (component is PlantTraitUnviableComponent) // ss14-art edit
+                continue; // ss14-art edit
 
             if (HasComp(val, component.GetType()))
                 continue;
